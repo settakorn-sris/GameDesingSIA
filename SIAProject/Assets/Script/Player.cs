@@ -33,7 +33,7 @@ public class Player : MonoBehaviour, IPlayerControlActions
 
     private void OnFire()
     {
-
+        Debug.Log("Fire");
     }
 
 

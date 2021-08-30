@@ -56,13 +56,13 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Library\PackageCache\com.unity.ide.vscode@1.2.3\Editor\ProjectGeneration\ProjectGeneration.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.vscode@1.2.3\Editor\ProjectGeneration\FileIO.cs" />
     <Compile Include="Library\PackageCache\com.unity.ide.vscode@1.2.3\Editor\VSCodeDiscovery.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.vscode@1.2.3\Editor\ProjectGeneration\ProjectGenerationFlag.cs" />
-    <Compile Include="Library\PackageCache\com.unity.ide.vscode@1.2.3\Editor\VSCodeScriptEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.ide.vscode@1.2.3\Editor\ProjectGeneration\GUIDGenerator.cs" />
     <Compile Include="Library\PackageCache\com.unity.ide.vscode@1.2.3\Editor\ProjectGeneration\AssemblyNameProvider.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ide.vscode@1.2.3\Editor\ProjectGeneration\ProjectGeneration.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ide.vscode@1.2.3\Editor\ProjectGeneration\FileIO.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ide.vscode@1.2.3\Editor\ProjectGeneration\ProjectGenerationFlag.cs" />
+    <Compile Include="Library\PackageCache\com.unity.ide.vscode@1.2.3\Editor\VSCodeScriptEditor.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Library\PackageCache\com.unity.ide.vscode@1.2.3\Editor\Unity.com.unity.vscode.Editor.asmdef" />
@@ -297,12 +297,6 @@
     <Reference Include="UnityEditor.Android.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.AppleTV.Extensions">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.AppleTV.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
@@ -311,15 +305,6 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
