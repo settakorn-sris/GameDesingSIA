@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static PlayerInput;
 
 public class Player : MonoBehaviour, IPlayerControlActions
 {
+    public event Action OnPlayerIsDie;
 
     [SerializeField]private float speed = 10;
    
@@ -16,11 +18,12 @@ public class Player : MonoBehaviour, IPlayerControlActions
     float rotationSpeed = 20;
 
     // For Mouse Look
-    private Camera main;
-    private Vector2 mousePositionOnScreen;
-    float angle;
-
     
+    private Vector2 mousePositionOnScreen;
+   
+
+
+
     void Awake()
     {
         
@@ -32,13 +35,8 @@ public class Player : MonoBehaviour, IPlayerControlActions
     // Update is called once per frame
     void Update()
     {
-        main = Camera.main;
-        if (playerDiraction == Vector3.zero) return;
         transform.position += Positon();
-        transform.rotation = Rotatetion();
-
-
-        //transform.rotation  = Rotate(); // For Mouse Look
+        PlayerRotateMouseControll();
     }
     private void OnEnable()
     {
@@ -57,37 +55,26 @@ public class Player : MonoBehaviour, IPlayerControlActions
     }
     public void OnMousePosition(InputAction.CallbackContext ctx)
     {
-        //Vector2 getMousePositionOnScreen = ctx.ReadValue<Vector2>();
-        
-        //mousePositionOnScreen = new Vector2(getMousePositionOnScreen.x,getMousePositionOnScreen.y);
+        Vector2 getMousePositionOnScreen = ctx.ReadValue<Vector2>();
+
+        mousePositionOnScreen = new Vector2(getMousePositionOnScreen.x, getMousePositionOnScreen.y);
+
      
     }
 
-
     // For Mouse Look
-
-    //private Quaternion Rotate()
-    //{
-    //    Vector3 mouseWorldPosition = main.ScreenToViewportPoint(mousePositionOnScreen);
-    //    Vector3 target = mouseWorldPosition - transform.position;
-    //    angle = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg - 90f;
-    //    return Quaternion.Euler(new Vector3(0, angle, 0));
-    //}
+    private void PlayerRotateMouseControll()
+    {
+       
+        transform.rotation = Quaternion.Euler(new Vector3(0, mousePositionOnScreen.x, 0));
+      
+    }
 
     private Vector3 Positon()
     {
         return playerDiraction * speed * Time.deltaTime;
     }
 
-    private Quaternion Rotatetion()
-    {
-        return Quaternion.LookRotation(Rotate());
-    }
-    private Vector3 Rotate()
-    {
-        return Vector3.RotateTowards(transform.forward, playerDiraction, rotationSpeed * Time.deltaTime, 0);
-    }
-   
     private void OnFire()
     {
         Debug.Log("Fire");
@@ -95,6 +82,11 @@ public class Player : MonoBehaviour, IPlayerControlActions
     }
 
    
-  
+    //other
+
+   private void PlayerDie()
+    {
+        // implement next time
+    }
 }
 
