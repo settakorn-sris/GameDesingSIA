@@ -7,7 +7,7 @@ using static PlayerInput;
 
 public class Player : MonoBehaviour, IPlayerControlActions
 {
-    public event Action OnPlayerIsDie;
+    //public event Action OnPlayerIsDie;
 
     [SerializeField]private float speed = 10;
    
