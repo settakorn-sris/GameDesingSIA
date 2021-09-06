@@ -132,4 +132,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: -5146337944074032427}
-  player: {fileID: 0}
+  player: {fileID: 1263959202622115607, guid: 3d890f454ad0b6145bb634478f97fef6, type: 3}
