@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     private float xPosition;
     private float zPosition;
 
+    [SerializeField] private PlayerCharecter player;
+
     //public event Action OnBossOrPlayerIsDie;
 
    
@@ -32,12 +34,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         SpawnEnemy();
+
     }
 
     private void HideMouse()
     {
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void SpawnEnemy()
@@ -45,8 +47,8 @@ public class GameManager : MonoBehaviour
         float timeCount = 0;
        while(countEnemySpawnInround < enemyInThisRound)
         {
-            xPosition = UnityEngine.Random.Range(-4, 4);
-            zPosition = UnityEngine.Random.Range(-3, 3.5f);
+            xPosition = UnityEngine.Random.Range(-29, 30);
+            zPosition = UnityEngine.Random.Range(-25, 28);
 
             timeCount += Time.deltaTime;
 
