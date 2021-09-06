@@ -15,11 +15,11 @@ F:/GameDesingPro/GameDesingSIA/SIAProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-7130
+6141
 Successfully changed project path to: F:/GameDesingPro/GameDesingSIA/SIAProject
 F:/GameDesingPro/GameDesingSIA/SIAProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 30.98 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 34.41 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.9f1 (108be757e447)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -35,340 +35,56 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56252
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006591 seconds.
+Registered in 0.007106 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 30.34 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 38.45 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.808 seconds
+- Completed reload, in  1.981 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001533 seconds.
+Registered in 0.001271 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000001B1EA7117B0 doesn't match image F:\GameDesingPro\GameDesingSIA\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-000001FDFAFF74D0 doesn't match image F:\GameDesingPro\GameDesingSIA\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 32.83 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 32.50 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.162 seconds
+- Completed reload, in  1.267 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1417 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 67.6 MB.
-System memory in use after: 67.7 MB.
+System memory in use after: 67.6 MB.
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1860.
-Total: 2.603000 ms (FindLiveObjects: 0.359700 ms CreateObjectMapping: 0.068400 ms MarkObjects: 2.071400 ms  DeleteObjects: 0.101300 ms)
+Total: 2.042700 ms (FindLiveObjects: 0.178400 ms CreateObjectMapping: 0.035800 ms MarkObjects: 1.720100 ms  DeleteObjects: 0.106900 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/New Material.mat
-  artifactKey: Guid(084b6902610a58545884ec3175d408a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Material.mat using Guid(084b6902610a58545884ec3175d408a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c1cfe1b731571b2c0e0b6d1b8182048') in 0.312589 seconds
-  Import took 0.343425 seconds .
+  path: Assets/Scenes
+  artifactKey: Guid(8883771754e54d940865ebc1bcf4345d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(8883771754e54d940865ebc1bcf4345d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b93f6e332ad938a8ea95f21e0c6a824d') in 0.171186 seconds
+  Import took 0.211429 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000378 seconds.
-  path: Assets/PlayerInput.inputactions
-  artifactKey: Guid(b1c757cc228189e4ea0a2a49ce8f4125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PlayerInput.inputactions using Guid(b1c757cc228189e4ea0a2a49ce8f4125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab81bee4071f16146d3d883af626bd21') in 0.089709 seconds
-  Import took 0.125752 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.107590 seconds.
+  Time since last request: 5.070747 seconds.
   path: Assets/Script/GameManager.cs
   artifactKey: Guid(a89cf0cf61dcbf44aa2cfa63360da789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Script/GameManager.cs using Guid(a89cf0cf61dcbf44aa2cfa63360da789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99f29f4b6b456b904c31049ec1213067') in 0.171067 seconds
-  Import took 0.185170 seconds .
+Start importing Assets/Script/GameManager.cs using Guid(a89cf0cf61dcbf44aa2cfa63360da789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '594aa71f34121360ad00eec055fe35ce') in 0.216997 seconds
+  Import took 0.282668 seconds .
 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001141 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001B1E563F010 doesn't match image F:\GameDesingPro\GameDesingSIA\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.092 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1415 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.0 MB.
-System memory in use after: 71.1 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1903.
-Total: 2.062800 ms (FindLiveObjects: 0.204300 ms CreateObjectMapping: 0.042900 ms MarkObjects: 1.748700 ms  DeleteObjects: 0.065200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001366 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001B1EBAA8020 doesn't match image F:\GameDesingPro\GameDesingSIA\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.152 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1415 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.0 MB.
-System memory in use after: 71.1 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1906.
-Total: 2.256500 ms (FindLiveObjects: 0.203700 ms CreateObjectMapping: 0.041500 ms MarkObjects: 1.890200 ms  DeleteObjects: 0.119400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.002072 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001B1E563F010 doesn't match image F:\GameDesingPro\GameDesingSIA\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.191 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1415 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.0 MB.
-System memory in use after: 71.1 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1909.
-Total: 2.802800 ms (FindLiveObjects: 0.212200 ms CreateObjectMapping: 0.049500 ms MarkObjects: 2.461700 ms  DeleteObjects: 0.077400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001279 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001B1ED888040 doesn't match image F:\GameDesingPro\GameDesingSIA\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.163 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.42 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1415 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.1 MB.
-System memory in use after: 71.1 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1912.
-Total: 2.893000 ms (FindLiveObjects: 0.242700 ms CreateObjectMapping: 0.050100 ms MarkObjects: 2.519500 ms  DeleteObjects: 0.078800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 1650.206772 seconds.
-  path: Assets/Prefabs
-  artifactKey: Guid(903d01175563fd94fa9cfb3a8335fdc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs using Guid(903d01175563fd94fa9cfb3a8335fdc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f5af930cd82445c1cb6ed2b0d7c3fd6') in 0.082369 seconds
-  Import took 0.086426 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.135938 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8542429e7b6d72cbe9049eac2951799') in 0.185181 seconds
-  Import took 0.188447 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001600 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001B1ECB97070 doesn't match image F:\GameDesingPro\GameDesingSIA\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.457 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1415 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.1 MB.
-System memory in use after: 71.2 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1917.
-Total: 2.750700 ms (FindLiveObjects: 0.253900 ms CreateObjectMapping: 0.052300 ms MarkObjects: 2.363100 ms  DeleteObjects: 0.079700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001236 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001B1ECB97070 doesn't match image F:\GameDesingPro\GameDesingSIA\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.41 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.441 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.69 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1415 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.1 MB.
-System memory in use after: 71.2 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1920.
-Total: 3.194500 ms (FindLiveObjects: 0.242700 ms CreateObjectMapping: 0.040700 ms MarkObjects: 2.824800 ms  DeleteObjects: 0.084200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001248 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001B1EDACC010 doesn't match image F:\GameDesingPro\GameDesingSIA\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.214 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1415 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.1 MB.
-System memory in use after: 71.2 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1923.
-Total: 2.141300 ms (FindLiveObjects: 0.243200 ms CreateObjectMapping: 0.042500 ms MarkObjects: 1.786600 ms  DeleteObjects: 0.067600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001275 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001B1EDAEC030 doesn't match image F:\GameDesingPro\GameDesingSIA\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.241 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1415 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.1 MB.
-System memory in use after: 71.2 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1926.
-Total: 2.739600 ms (FindLiveObjects: 0.215300 ms CreateObjectMapping: 0.042900 ms MarkObjects: 2.380400 ms  DeleteObjects: 0.098400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001275 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001B1EDD3C010 doesn't match image F:\GameDesingPro\GameDesingSIA\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.236 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.35 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1415 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.1 MB.
-System memory in use after: 71.2 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1929.
-Total: 2.059300 ms (FindLiveObjects: 0.194200 ms CreateObjectMapping: 0.036300 ms MarkObjects: 1.762700 ms  DeleteObjects: 0.064600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001233 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001B1EDE7B840 doesn't match image F:\GameDesingPro\GameDesingSIA\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.296 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1415 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.1 MB.
-System memory in use after: 71.2 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1932.
-Total: 2.659000 ms (FindLiveObjects: 0.226300 ms CreateObjectMapping: 0.036900 ms MarkObjects: 2.327300 ms  DeleteObjects: 0.066200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
