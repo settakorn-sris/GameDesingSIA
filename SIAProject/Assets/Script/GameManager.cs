@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    [SerializeField] private GameObject enemy;
+    [SerializeField] private EnemyCharecter enemy;
     [SerializeField] private GameObject boss;
 
     [SerializeField] private int enemyInThisRound = 5;
@@ -19,8 +19,15 @@ public class GameManager : MonoBehaviour
     private float zPosition;
 
     [SerializeField] private PlayerCharecter player;
+    [SerializeField] private int playerHp;
+    [SerializeField] private float playerSpeed;
 
-    //public event Action OnBossOrPlayerIsDie;
+    //[SerializeField] private PoolingOBJ bulletPooling;
+    //[SerializeField] private PlayerBullet Typebullet;
+
+
+    Vector3 playerSpawnPosition;
+    //public event Action OnStart;
 
    
 
@@ -33,7 +40,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnEnemy();
+       // SpawnEnemy();
 
     }
 
@@ -41,6 +48,13 @@ public class GameManager : MonoBehaviour
     {
         Cursor.visible = false;
     }
+
+    private void SpawnPlayer()
+    {
+        Instantiate(player, playerSpawnPosition, Quaternion.identity);
+        player.Init(playerHp,playerSpeed);
+    }
+
 
     private void SpawnEnemy()
     {
@@ -55,7 +69,7 @@ public class GameManager : MonoBehaviour
             if (timeCount > 1)
             {
                 Instantiate(enemy, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
-
+                //enemy.Init()
                 timeCount = 0;
                 countEnemySpawnInround++;
             }   

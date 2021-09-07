@@ -9,21 +9,14 @@ public class Player : MonoBehaviour, IPlayerControlActions
 {
     //public event Action OnPlayerIsDie;
 
-    [SerializeField]private float speed = 10;
-   
-  
+    [SerializeField] private PlayerCharecter player;
     private PlayerInput playerInput;
     private Vector3 playerDiraction;
-    
-    float rotationSpeed = 20;
 
     // For Mouse Look
     
     private Vector2 mousePositionOnScreen;
-   
-
-
-
+ 
     void Awake()
     {
         
@@ -72,12 +65,14 @@ public class Player : MonoBehaviour, IPlayerControlActions
 
     private Vector3 Positon()
     {
-        return playerDiraction * speed * Time.deltaTime;
+       // return playerDiraction * player.Speed * Time.deltaTime;
+        return playerDiraction * 10 * Time.deltaTime;
     }
 
     private void OnFire()
     {
         Debug.Log("Fire");
+        player.Attack();
         //get from pooling class
     }
 
