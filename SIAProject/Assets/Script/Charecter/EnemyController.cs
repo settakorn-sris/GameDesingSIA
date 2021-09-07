@@ -4,7 +4,11 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private Transform player;
+    private Transform player;
+    private void Awake()
+    {
+        player = GameObject.Find("Player").transform;
+    }
     void Update()
     {
         agent.SetDestination(player.position);
