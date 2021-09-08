@@ -25,23 +25,25 @@ public class GameManager : MonoBehaviour
     //[SerializeField] private PoolingOBJ bulletPooling;
     //[SerializeField] private PlayerBullet Typebullet;
 
-
+    
     Vector3 playerSpawnPosition;
     //public event Action OnStart;
 
-   
 
-    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        SpawnPlayer();
+    }
     void Start()
     {
         HideMouse();
     }
 
-    // Update is called once per frame
     void Update()
     {
-       // SpawnEnemy();
-
+       SpawnEnemy();
+       
     }
 
     private void HideMouse()
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnPlayer()
     {
-        Instantiate(player, playerSpawnPosition, Quaternion.identity);
+        Instantiate(player, new Vector3(0,1,0), Quaternion.identity);
         player.Init(playerHp,playerSpeed);
     }
 
@@ -61,15 +63,15 @@ public class GameManager : MonoBehaviour
         float timeCount = 0;
        while(countEnemySpawnInround < enemyInThisRound)
         {
-            xPosition = UnityEngine.Random.Range(-29, 30);
-            zPosition = UnityEngine.Random.Range(-25, 28);
+            xPosition = UnityEngine.Random.Range(-12, 13);
+            zPosition = UnityEngine.Random.Range(-11, 13);
 
             timeCount += Time.deltaTime;
 
             if (timeCount > 1)
             {
                 Instantiate(enemy, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
-                //enemy.Init()
+                enemy.Init(100, 10);
                 timeCount = 0;
                 countEnemySpawnInround++;
             }   
