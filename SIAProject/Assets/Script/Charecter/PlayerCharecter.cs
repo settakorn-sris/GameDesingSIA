@@ -24,6 +24,7 @@ public class PlayerCharecter : Charecter
     public override void IsDie()
     {
         gameObject.SetActive(false);
+        
     }
 
 }

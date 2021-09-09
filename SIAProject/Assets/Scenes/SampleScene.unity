@@ -1261,14 +1261,14 @@ MonoBehaviour:
   Panel: {fileID: 2004668655}
   button: {fileID: 1668539279}
   enemy: {fileID: 8373430092916138176, guid: 97121a672b9c3c94eac3cb3385ad0649, type: 3}
-  boss: {fileID: 0}
+  boss: {fileID: 8373430092916138176, guid: 5c018e3ff765f4c49881da0380622871, type: 3}
   enemyInThisRound: 5
   timeToBuy: 0
   scoreManager: {fileID: 798746469}
   player: {fileID: 5954075894018821184, guid: 3580cc075b8c89f438ce925fcfe9000b, type: 3}
   playerHp: 100
   playerSpeed: 5
-  enemyHp: 100
+  enemyHp: 1
   enemySpeed: 2
 --- !u!114 &950208658
 MonoBehaviour:
@@ -2175,7 +2175,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1668539280}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 950208657}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1668539280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2238,7 +2250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939538816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.4, y: 1, z: -11.3}
+  m_LocalPosition: {x: -8.2, y: 1, z: 13.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
