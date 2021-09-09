@@ -33,6 +33,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""ee47da19-0f62-4367-a287-d6223a4f90f3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(pressPoint=0.5)""
                 }
             ],
             ""bindings"": [
@@ -101,6 +109,17 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c60157a6-16e7-4e19-a7e2-40fad94d4170"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -111,6 +130,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_PlayerControl = asset.FindActionMap("PlayerControl", throwIfNotFound: true);
         m_PlayerControl_Movement = m_PlayerControl.FindAction("Movement", throwIfNotFound: true);
         m_PlayerControl_MousePosition = m_PlayerControl.FindAction("MousePosition", throwIfNotFound: true);
+        m_PlayerControl_Fire = m_PlayerControl.FindAction("Fire", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -162,12 +182,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private IPlayerControlActions m_PlayerControlActionsCallbackInterface;
     private readonly InputAction m_PlayerControl_Movement;
     private readonly InputAction m_PlayerControl_MousePosition;
+    private readonly InputAction m_PlayerControl_Fire;
     public struct PlayerControlActions
     {
         private @PlayerInput m_Wrapper;
         public PlayerControlActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_PlayerControl_Movement;
         public InputAction @MousePosition => m_Wrapper.m_PlayerControl_MousePosition;
+        public InputAction @Fire => m_Wrapper.m_PlayerControl_Fire;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -183,6 +205,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @MousePosition.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnMousePosition;
                 @MousePosition.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnMousePosition;
                 @MousePosition.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnMousePosition;
+                @Fire.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnFire;
+                @Fire.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnFire;
+                @Fire.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnFire;
             }
             m_Wrapper.m_PlayerControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -193,6 +218,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @MousePosition.started += instance.OnMousePosition;
                 @MousePosition.performed += instance.OnMousePosition;
                 @MousePosition.canceled += instance.OnMousePosition;
+                @Fire.started += instance.OnFire;
+                @Fire.performed += instance.OnFire;
+                @Fire.canceled += instance.OnFire;
             }
         }
     }
@@ -201,5 +229,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
     }
 }

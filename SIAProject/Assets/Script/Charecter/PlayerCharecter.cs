@@ -16,9 +16,14 @@ public class PlayerCharecter : Charecter
     {
         bullet.GetBulletType(bulletType);
     }
-    public override void Attack()
+    public void Attack()
     {
         bullet.GetPool();
+        //Instantiate(bulletType, bullet.transform.position, Quaternion.identity);
     }
-   
+    public override void IsDie()
+    {
+        gameObject.SetActive(false);
+    }
+
 }

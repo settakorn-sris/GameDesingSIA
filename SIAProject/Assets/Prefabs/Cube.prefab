@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 8373430092916138176}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,7 +447,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3008025009367314515}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -488,6 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: -5146337944074032427}
   player: {fileID: 7502358062115217009, guid: 3580cc075b8c89f438ce925fcfe9000b, type: 3}
+  enemy: {fileID: 8373430092916138176}
 --- !u!114 &8373430092916138176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,3 +502,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 5133777066358336655}
+  Hp: 100
+  Speed: 2
+  damage: 10
