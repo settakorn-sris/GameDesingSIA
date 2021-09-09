@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rb;
-    [SerializeField] private float speed;
+    [SerializeField] public Rigidbody rb;
     [SerializeField] private int damage;
+    
+    private int speed;
 
-    private void Awake()
+
+    public int GetSpeed(int bulletSpeed)
     {
-
-        rb.velocity = new Vector3(1, 0, 0) * speed;
-
+        return speed = bulletSpeed;
     }
     private void OnTriggerEnter(Collider other)
     {

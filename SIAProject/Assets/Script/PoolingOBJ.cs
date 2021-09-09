@@ -5,9 +5,11 @@ using UnityEngine;
 public class PoolingOBJ : MonoBehaviour
 {
      private PlayerBullet bullet;
+    [SerializeField] private int bulletSpeed;
     [SerializeField] private PlayerBullet[] bulletInPool;
-    [SerializeField] private int poolAmount;
-    
+    [SerializeField] private int poolAmount = 0;
+    //[SerializeField] private Vector3 gunPosition;
+
     private int ControlPool = 0;
 
 
@@ -19,13 +21,16 @@ public class PoolingOBJ : MonoBehaviour
 
     public void GetPool()
     {
-        if (ControlPool == poolAmount) ControlPool = 0;
-        else
+        if (ControlPool == poolAmount)
         {
-            bulletInPool[ControlPool].transform.position = transform.position;
-            bulletInPool[ControlPool].gameObject.SetActive(true);
-            ControlPool++;
+            ControlPool = 0;
         }
+
+        bulletInPool[ControlPool].transform.position = transform.position;
+        bulletInPool[ControlPool].gameObject.SetActive(true);
+        bulletInPool[ControlPool].rb.velocity = transform.forward * bulletInPool[ControlPool].GetSpeed(bulletSpeed);
+        ControlPool++;
+
 
     }
 

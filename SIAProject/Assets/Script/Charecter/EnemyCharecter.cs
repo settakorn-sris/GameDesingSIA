@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class EnemyCharecter : Charecter
 {
+    [SerializeField]private int damage = 10;
 
-    public override void Attack()
+    private void OnTriggerEnter(Collider other)
     {
-        throw new System.NotImplementedException();
+        var player = other.gameObject.GetComponent<ITakeDamage>();
+        player?.TakeDamage(damage);
+        print("atk");
+    }
+
+    public override void IsDie()
+    {
+        Destroy(gameObject);
+        ScoreManager.Instance.AddScore(1);
     }
 }
