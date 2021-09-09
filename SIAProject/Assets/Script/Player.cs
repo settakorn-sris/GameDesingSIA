@@ -69,19 +69,20 @@ public class Player : MonoBehaviour, IPlayerControlActions
         return playerDiraction * 10 * Time.deltaTime;
     }
 
-    private void OnFire()
+
+    void IPlayerControlActions.OnFire(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Fire");
         player.Attack();
-        //get from pooling class
+        //get from pooling clas
     }
 
-   
     //other
 
-   private void PlayerDie()
+    private void PlayerDie()
     {
         // implement next time
     }
+
+    
 }
 

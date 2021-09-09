@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public abstract class Charecter : MonoBehaviour
+public abstract class Charecter : MonoBehaviour,ITakeDamage
 {
     [SerializeField] private HealthBar healthBar;
     public int Hp;
 
     public float Speed;
+    public event Action OnDie;
     private void Start()
     {
         healthBar.SetMaxHealth(Hp);
+        OnDie += IsDie;
     }
     private void Update()
     {
@@ -21,7 +24,16 @@ public abstract class Charecter : MonoBehaviour
         this.Hp = hp;
         this.Speed = speed;
     }
-    public abstract  void Attack();
+
+    public void TakeDamage(int damage)
+    {
+        Hp -= damage;
+        if (Hp > 0) return;
+        OnDie();
+    }
+
+    public abstract void IsDie();
+    
     
     
 }
