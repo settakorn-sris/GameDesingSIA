@@ -505,3 +505,4 @@ MonoBehaviour:
   Hp: 100
   Speed: 2
   damage: 10
+  dieParticle: {fileID: 8894045807073587843, guid: d2685fc7db8a0864f8e48f5c36cab38f, type: 3}

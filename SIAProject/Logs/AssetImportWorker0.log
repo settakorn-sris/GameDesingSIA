@@ -15,11 +15,11 @@ D:/ProjectSIA01/SIAProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56567
+51856
 Successfully changed project path to: D:/ProjectSIA01/SIAProject
 D:/ProjectSIA01/SIAProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 29.69 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 25.83 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.9f1 (108be757e447)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -35,31 +35,31 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56248
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56272
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002656 seconds.
+Registered in 0.002433 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 28.63 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 25.67 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.735 seconds
+- Completed reload, in  1.569 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000568 seconds.
+Registered in 0.000529 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000001E12624C810 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file data-0000019D7A1D6030 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E2FFA129D0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file data-0000019D79B8F470 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E2FF969010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-0000019D7EA9F010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 26.34 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 26.26 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  0.883 seconds
@@ -67,127 +67,119 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1449 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 70.9 MB.
 System memory in use after: 70.9 MB.
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1896.
-Total: 2.007500 ms (FindLiveObjects: 0.137900 ms CreateObjectMapping: 0.041200 ms MarkObjects: 1.743500 ms  DeleteObjects: 0.084000 ms)
+Total: 1.876600 ms (FindLiveObjects: 0.167600 ms CreateObjectMapping: 0.052600 ms MarkObjects: 1.575700 ms  DeleteObjects: 0.079500 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/New Material.mat
-  artifactKey: Guid(084b6902610a58545884ec3175d408a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Material.mat using Guid(084b6902610a58545884ec3175d408a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dab6f630bf6b15a97ac140b72990f3de') in 0.165738 seconds
-  Import took 0.168070 seconds .
+  path: Assets/Matrials
+  artifactKey: Guid(1968740a02b9eac4d97e8793193d9069) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Matrials using Guid(1968740a02b9eac4d97e8793193d9069) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b20be450cbfe403b70960287f6f2986') in 0.007217 seconds
+  Import took 0.009223 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000259 seconds.
-  path: Assets/PlayerInput.inputactions
-  artifactKey: Guid(b1c757cc228189e4ea0a2a49ce8f4125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PlayerInput.inputactions using Guid(b1c757cc228189e4ea0a2a49ce8f4125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4baf9e849f723d9a9dd9b2d30d495cbe') in 0.032043 seconds
-  Import took 0.034292 seconds .
+  Time since last request: 5.020995 seconds.
+  path: Assets/Materials
+  artifactKey: Guid(1968740a02b9eac4d97e8793193d9069) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials using Guid(1968740a02b9eac4d97e8793193d9069) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1046cbda08340cf9d7f2a76ba9428e17') in 0.005124 seconds
+  Import took 0.007346 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000217 seconds.
-  path: Assets/Untitled_Artwork.jpg
-  artifactKey: Guid(b338bd33de0a7ad43b510249286b19fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Untitled_Artwork.jpg using Guid(b338bd33de0a7ad43b510249286b19fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71741ae1b935f41901f685bdfa836624') in 0.052267 seconds
-  Import took 0.054384 seconds .
+  Time since last request: 19.897612 seconds.
+  path: Assets/Materials/Cube met.mat
+  artifactKey: Guid(73374d625f5e38946923e8f77cccb0d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Cube met.mat using Guid(73374d625f5e38946923e8f77cccb0d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35906d6b11e39aa63e2754346db49b7a') in 0.105463 seconds
+  Import took 0.107763 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 36.242385 seconds.
-  path: Assets/Prefabs/Boss.prefab
-  artifactKey: Guid(5c018e3ff765f4c49881da0380622871) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Boss.prefab using Guid(5c018e3ff765f4c49881da0380622871) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76f5f314aec7d96c3f0b6bd5815680fa') in 0.049528 seconds
-  Import took 0.052043 seconds .
+  Time since last request: 1916.332533 seconds.
+  path: Assets/Prefabs
+  artifactKey: Guid(903d01175563fd94fa9cfb3a8335fdc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs using Guid(903d01175563fd94fa9cfb3a8335fdc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd2873cde855ec74dafe82b9ffa185d2') in 0.007854 seconds
+  Import took 0.010499 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000255 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '027dd97350ba42e0df765a0e57ea506a') in 0.010907 seconds
-  Import took 0.013275 seconds .
+  Time since last request: 3.094624 seconds.
+  path: Assets/Prefabs/EffectDie.prefab
+  artifactKey: Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/EffectDie.prefab using Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '780ec65081e46fbf63fc0855661fbf50') in 0.017767 seconds
+  Import took 0.020362 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000191 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efd207aa18bdedf12aadd6cc2729d9eb') in 0.009625 seconds
-  Import took 0.012161 seconds .
+  Time since last request: 14.968172 seconds.
+  path: Assets/Script/Charecter
+  artifactKey: Guid(bd0a96c723668f846a568f473250f303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/Charecter using Guid(bd0a96c723668f846a568f473250f303) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db4c442d9ffea32642a93e6514ebf4f7') in 0.008486 seconds
+  Import took 0.011091 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 15.206365 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c5c46795fec25de6c52c8c5ffdd56bd') in 0.006585 seconds
-  Import took 0.009243 seconds .
+  Time since last request: 1.274835 seconds.
+  path: Assets/Script/Charecter/EnemyCharecter.cs
+  artifactKey: Guid(a943155af5fdcb14e82e1cbbd540a6ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/Charecter/EnemyCharecter.cs using Guid(a943155af5fdcb14e82e1cbbd540a6ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d2f2ff3e09e9b7346abb91517d7ddcc') in 0.009098 seconds
+  Import took 0.011494 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 70.567935 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef0618d3398971a36d214697ea419cf1') in 0.014568 seconds
-  Import took 0.017145 seconds .
+  Time since last request: 0.362325 seconds.
+  path: Assets/Script/Charecter/PlayerCharecter.cs
+  artifactKey: Guid(710501c25548f3041b59d2c17882356b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/Charecter/PlayerCharecter.cs using Guid(710501c25548f3041b59d2c17882356b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '589e464ef56be96a7c2c9d062efc0b98') in 0.007454 seconds
+  Import took 0.009999 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.729472 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3facc1decb0a4f034e1a88cdebe4249') in 0.034597 seconds
-  Import took 0.037024 seconds .
+  Time since last request: 0.563928 seconds.
+  path: Assets/Script/Charecter/EnemyController.cs
+  artifactKey: Guid(0abe2d5381abf8241ba1d03ba36aa2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/Charecter/EnemyController.cs using Guid(0abe2d5381abf8241ba1d03ba36aa2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31effb01080e7dc4f5a3fb4fa468d2fd') in 0.006362 seconds
+  Import took 0.009052 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.799791 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f64f869fd7ceda45ea5f4be8d8170ff') in 0.014952 seconds
-  Import took 0.022473 seconds .
+  Time since last request: 0.000965 seconds.
+  path: Assets/Script/Charecter/EnemyController.cs
+  artifactKey: Guid(0abe2d5381abf8241ba1d03ba36aa2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/Charecter/EnemyController.cs using Guid(0abe2d5381abf8241ba1d03ba36aa2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31effb01080e7dc4f5a3fb4fa468d2fd') in 0.001902 seconds
+  Import took 0.004226 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.237004 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac45e7ddde11de5a7ecdc93b14ad6784') in 0.005892 seconds
-  Import took 0.008279 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 35.233329 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f214b71e173654d6b6d84dec5e1ca14') in 0.007860 seconds
-  Import took 0.010891 seconds .
+  Time since last request: 19.324500 seconds.
+  path: Assets/Script/ITakeDamage.cs
+  artifactKey: Guid(3425fac85736b194599979fb23d99dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/ITakeDamage.cs using Guid(3425fac85736b194599979fb23d99dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d5b9bb935c05806d088e3682b365cc0') in 0.020521 seconds
+  Import took 0.024433 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000535 seconds.
+Registered in 0.000540 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000001E125796CA0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file data-0000019D79E96C60 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12839FA40 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file data-0000019D79E3B8C0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E2FF3B1580 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-0000019B8126C020 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.823 seconds
+- Completed reload, in  0.844 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
 Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
@@ -196,220 +188,52 @@ Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 72.8 MB.
 System memory in use after: 72.9 MB.
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1944.
-Total: 1.777800 ms (FindLiveObjects: 0.141100 ms CreateObjectMapping: 0.046700 ms MarkObjects: 1.540400 ms  DeleteObjects: 0.048700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000611 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001E2FF281A40 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E126B278A0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E125730080 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.790 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 72.9 MB.
-System memory in use after: 72.9 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1947.
-Total: 1.860200 ms (FindLiveObjects: 0.143000 ms CreateObjectMapping: 0.046000 ms MarkObjects: 1.603600 ms  DeleteObjects: 0.066600 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1941.
+Total: 1.670200 ms (FindLiveObjects: 0.143600 ms CreateObjectMapping: 0.040900 ms MarkObjects: 1.437300 ms  DeleteObjects: 0.047600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Import Request.
-  Time since last request: 174.707313 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35af9fed5957b5977eeff069dffabcf1') in 0.050358 seconds
-  Import took 0.053151 seconds .
+  Time since last request: 132.102856 seconds.
+  path: Assets/Prefabs/Boss.prefab
+  artifactKey: Guid(5c018e3ff765f4c49881da0380622871) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Boss.prefab using Guid(5c018e3ff765f4c49881da0380622871) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad085196b4209c694c8ba55e9f71d7fa') in 0.068944 seconds
+  Import took 0.071753 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.657015 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4faa5fb29ba19f08a5744a094d6ccd64') in 0.012520 seconds
-  Import took 0.014950 seconds .
+  Time since last request: 0.000243 seconds.
+  path: Assets/Prefabs/Cube.prefab
+  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '530eeeb5e801cf8b6d3e7bbed1b7b021') in 0.011494 seconds
+  Import took 0.014657 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.190237 seconds.
+  path: Assets/Prefabs/Cube.prefab
+  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b923692299100f859cd49fefebda72f') in 0.013745 seconds
+  Import took 0.016580 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000537 seconds.
+Registered in 0.000588 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000001E2FF9ED870 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file data-0000019D79E96C60 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E2FF292890 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file data-0000019D7E236880 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12B8D20F0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-0000019DA010C010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.803 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 72.9 MB.
-System memory in use after: 73.0 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1951.
-Total: 2.236500 ms (FindLiveObjects: 0.149000 ms CreateObjectMapping: 0.044400 ms MarkObjects: 1.990100 ms  DeleteObjects: 0.051900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 49.509972 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd105505e443d8d150ac1ce3375966412') in 0.050837 seconds
-  Import took 0.053193 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.538165 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3883ae3d89446f4fa34972976ac5c0d') in 0.011576 seconds
-  Import took 0.013867 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000594 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001E127689A30 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E125911870 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E1272E8010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.812 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.30 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 72.9 MB.
-System memory in use after: 73.0 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1955.
-Total: 1.917600 ms (FindLiveObjects: 0.172100 ms CreateObjectMapping: 0.055400 ms MarkObjects: 1.630200 ms  DeleteObjects: 0.058600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 10.793045 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccc35d83ea82b7a12c25fc14ab3630cf') in 0.096257 seconds
-  Import took 0.098768 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 65.821202 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '411cdb5da25b21e5cc0aec33804d2422') in 0.005856 seconds
-  Import took 0.008239 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000594 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001E2FEFF7010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E125911870 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12BC1F010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.806 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 72.9 MB.
-System memory in use after: 73.0 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1959.
-Total: 1.706500 ms (FindLiveObjects: 0.142000 ms CreateObjectMapping: 0.042600 ms MarkObjects: 1.472800 ms  DeleteObjects: 0.048300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 41.525024 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdac01efad78105641d0ab4a0f333786') in 0.051505 seconds
-  Import took 0.053732 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.894326 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7769d8c0eb70d1d69f283b30739a75d7') in 0.005679 seconds
-  Import took 0.008170 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.909771 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b406177ea1b74ab1c66c0cdb13e54d3f') in 0.006558 seconds
-  Import took 0.008876 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000505 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001E127689A30 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E125911870 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12BCA3010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.816 seconds
+- Completed reload, in  0.848 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
 Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
@@ -418,438 +242,430 @@ Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 72.9 MB.
 System memory in use after: 73.0 MB.
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1963.
-Total: 2.305000 ms (FindLiveObjects: 0.150200 ms CreateObjectMapping: 0.047600 ms MarkObjects: 2.053400 ms  DeleteObjects: 0.052500 ms)
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1946.
+Total: 1.707900 ms (FindLiveObjects: 0.135700 ms CreateObjectMapping: 0.041100 ms MarkObjects: 1.485500 ms  DeleteObjects: 0.044800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
-Received Import Request.
-  Time since last request: 71.502087 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22a225a015e31e4d76f738e0cc198cac') in 0.063236 seconds
-  Import took 0.065611 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.765941 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '678b8739c6782a6fe76c2c491b8b5e95') in 0.006434 seconds
-  Import took 0.008808 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 57.688102 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1faebc5afa162e3d3f3391548d52463f') in 0.007496 seconds
-  Import took 0.010455 seconds .
-
-========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000530 seconds.
+Registered in 0.000528 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000001E12880A3B0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file data-0000019B8170CC50 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E125911870 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file data-0000019D7E236880 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12BEC3020 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.931 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.32 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.0 MB.
-System memory in use after: 73.1 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1967.
-Total: 2.239500 ms (FindLiveObjects: 0.191200 ms CreateObjectMapping: 0.129000 ms MarkObjects: 1.841700 ms  DeleteObjects: 0.076300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 13.977521 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '404c07df6009e1320afc7695ea6f655e') in 0.111198 seconds
-  Import took 0.113784 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 38.663748 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b6d2a1638da8a6580d3bc922476fe3c') in 0.016209 seconds
-  Import took 0.018867 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 22.918035 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c35019050a1a12abba6ed7971a48f017') in 0.020667 seconds
-  Import took 0.023042 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000495 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001E2FFA21200 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E15889B850 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12BEC3020 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-0000019B80C99010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.825 seconds
+- Completed reload, in  0.815 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.0 MB.
-System memory in use after: 73.1 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1971.
-Total: 1.711900 ms (FindLiveObjects: 0.146100 ms CreateObjectMapping: 0.044200 ms MarkObjects: 1.473000 ms  DeleteObjects: 0.047700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 7.754867 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41dfc6b7258f96d2eeb53ad5475fd518') in 0.054671 seconds
-  Import took 0.057070 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 29.611890 seconds.
-  path: Assets/Script/Bullet
-  artifactKey: Guid(d3ebf60bf3c3dc4408094254dd0435cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Script/Bullet using Guid(d3ebf60bf3c3dc4408094254dd0435cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41fbcde62d6b9307ef41597bd6bb48d6') in 0.001835 seconds
-  Import took 0.004251 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.786220 seconds.
-  path: Assets/Script/Bullet/PlayerBullet.cs
-  artifactKey: Guid(96206c62023650547b36d652563eeddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Script/Bullet/PlayerBullet.cs using Guid(96206c62023650547b36d652563eeddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92243146d3e7c5143c974f64cfe7f5c4') in 0.011564 seconds
-  Import took 0.013961 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000904 seconds.
-  path: Assets/Script/Bullet/PlayerBullet.cs
-  artifactKey: Guid(96206c62023650547b36d652563eeddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Script/Bullet/PlayerBullet.cs using Guid(96206c62023650547b36d652563eeddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92243146d3e7c5143c974f64cfe7f5c4') in 0.001975 seconds
-  Import took 0.004283 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 181.369395 seconds.
-  path: Assets/Prefabs/Player 1.prefab
-  artifactKey: Guid(3580cc075b8c89f438ce925fcfe9000b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player 1.prefab using Guid(3580cc075b8c89f438ce925fcfe9000b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac4688d3ef443da040e9d19eb6d05151') in 0.030464 seconds
-  Import took 0.033875 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000568 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001E12880A3B0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E125911870 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12C1994A0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.831 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.0 MB.
-System memory in use after: 73.1 MB.
+System memory in use before: 72.9 MB.
+System memory in use after: 73.0 MB.
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1975.
-Total: 2.076000 ms (FindLiveObjects: 0.150100 ms CreateObjectMapping: 0.044400 ms MarkObjects: 1.824100 ms  DeleteObjects: 0.056200 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1949.
+Total: 2.139700 ms (FindLiveObjects: 0.156900 ms CreateObjectMapping: 0.045200 ms MarkObjects: 1.878300 ms  DeleteObjects: 0.058200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 81.049937 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0d3fae559dc27d9215d5a1b5e366257') in 0.059483 seconds
-  Import took 0.061781 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.224200 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bb78d87646d3daed710916c993ce5f8') in 0.070383 seconds
-  Import took 0.072857 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.971100 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd16fb40441bfee4e539a9e2f4950d4f2') in 0.006354 seconds
-  Import took 0.008725 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.929364 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd61785879b29574d8f5878596461e17') in 0.014214 seconds
-  Import took 0.016666 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000541 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001E2FEFF7010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E15889B850 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12C28D020 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.837 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.1 MB.
-System memory in use after: 73.1 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1979.
-Total: 1.728500 ms (FindLiveObjects: 0.156500 ms CreateObjectMapping: 0.046500 ms MarkObjects: 1.474600 ms  DeleteObjects: 0.049800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 20.838303 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2104d5f2abd1e6e307218534e81b0950') in 0.054994 seconds
-  Import took 0.057274 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.548393 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2104d5f2abd1e6e307218534e81b0950') in 0.006081 seconds
-  Import took 0.008345 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000610 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001E12880A3B0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E125911870 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12C3651D0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.853 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.1 MB.
-System memory in use after: 73.2 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1983.
-Total: 1.912800 ms (FindLiveObjects: 0.156600 ms CreateObjectMapping: 0.048600 ms MarkObjects: 1.657000 ms  DeleteObjects: 0.049700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 30.525039 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abbb3aa935548e028e3a7816f8957909') in 0.064833 seconds
-  Import took 0.067108 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 18.848392 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66cf590fa343dcf132fca216c745f5f5') in 0.021442 seconds
-  Import took 0.025920 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.626733 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '861b96344302ee2c3c2fa91fd705fb74') in 0.015193 seconds
-  Import took 0.017658 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000544 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001E12B79A030 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E15889B850 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12C459020 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.840 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.1 MB.
-System memory in use after: 73.2 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1987.
-Total: 2.193700 ms (FindLiveObjects: 0.151400 ms CreateObjectMapping: 0.046200 ms MarkObjects: 1.864100 ms  DeleteObjects: 0.131000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 28.953212 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '519c8b3387d1363cd29efb31f2b80c9d') in 0.061772 seconds
-  Import took 0.067486 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.319088 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93eb10cdb79a4cc67acf07513552a4a8') in 0.012097 seconds
-  Import took 0.015145 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000568 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001E2FFA21200 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E15889B850 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12C551380 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.859 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.1 MB.
-System memory in use after: 73.2 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1991.
-Total: 2.057600 ms (FindLiveObjects: 0.189300 ms CreateObjectMapping: 0.054800 ms MarkObjects: 1.754100 ms  DeleteObjects: 0.058100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 6.023927 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd8d40b45daf3e8b696daace99829bbd') in 0.057100 seconds
-  Import took 0.059585 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 26.458217 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3070e51edd5cd17a5bb4988626f62e6f') in 0.011731 seconds
-  Import took 0.018487 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.307971 seconds.
-  path: Assets/Prefabs/Bullet.prefab
-  artifactKey: Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bullet.prefab using Guid(533ca9c49d3b0d44987682d3aa0d461a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ff9bdf490d84ca4920bb91d411581f7') in 0.006162 seconds
-  Import took 0.008518 seconds .
-
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.000521 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000001E12880A3B0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file data-0000019B81A6BD10 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E15889B850 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file data-0000019D7E236880 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12C6F0080 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-0000019DA0224020 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.832 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 72.9 MB.
+System memory in use after: 73.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1952.
+Total: 1.744400 ms (FindLiveObjects: 0.136400 ms CreateObjectMapping: 0.039700 ms MarkObjects: 1.523000 ms  DeleteObjects: 0.044400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000507 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019B80562E70 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019B91164070 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019DA04CE010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.867 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 72.9 MB.
+System memory in use after: 73.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1955.
+Total: 7.863800 ms (FindLiveObjects: 0.147400 ms CreateObjectMapping: 0.048100 ms MarkObjects: 7.614500 ms  DeleteObjects: 0.052600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 348.813179 seconds.
+  path: Assets/Prefabs/EffectDie.prefab
+  artifactKey: Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/EffectDie.prefab using Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c591ec24dff2c17d1bb2392a2603b755') in 0.026911 seconds
+  Import took 0.029758 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000543 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019D79E96C60 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019D7EFD00C0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019DA06EA010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.850 seconds
+- Completed reload, in  0.817 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 72.9 MB.
+System memory in use after: 73.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1958.
+Total: 1.793100 ms (FindLiveObjects: 0.134300 ms CreateObjectMapping: 0.043600 ms MarkObjects: 1.572000 ms  DeleteObjects: 0.042400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000535 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019D79E96C60 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019D7EFD00C0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019DA06EA010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.857 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 72.9 MB.
+System memory in use after: 73.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1961.
+Total: 1.833500 ms (FindLiveObjects: 0.131300 ms CreateObjectMapping: 0.038200 ms MarkObjects: 1.614300 ms  DeleteObjects: 0.048700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000524 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019D79E96C60 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019D7EFD00C0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019DA074A0A0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.832 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 72.9 MB.
+System memory in use after: 73.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1964.
+Total: 1.802900 ms (FindLiveObjects: 0.161400 ms CreateObjectMapping: 0.049200 ms MarkObjects: 1.541300 ms  DeleteObjects: 0.050000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000527 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019D79E96C60 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019D7EFD00C0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019DA0948060 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.869 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 73.0 MB.
+System memory in use after: 73.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1967.
+Total: 1.966200 ms (FindLiveObjects: 0.146400 ms CreateObjectMapping: 0.040800 ms MarkObjects: 1.730200 ms  DeleteObjects: 0.047900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000692 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019B81A6BD10 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019D7EFD00C0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019DA0BCE010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.854 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.31 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 73.0 MB.
+System memory in use after: 73.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1970.
+Total: 2.291100 ms (FindLiveObjects: 0.191700 ms CreateObjectMapping: 0.126800 ms MarkObjects: 1.920200 ms  DeleteObjects: 0.051300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 425.876263 seconds.
+  path: Assets/Prefabs/EffectDie.prefab
+  artifactKey: Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/EffectDie.prefab using Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef65b4dcdb300aef928a4b6ec98516ac') in 0.030742 seconds
+  Import took 0.033645 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.394263 seconds.
+  path: Assets/Prefabs/EffectDie.prefab
+  artifactKey: Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/EffectDie.prefab using Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '078a30ad253e8169d712d6c63d349fd7') in 0.004325 seconds
+  Import took 0.007409 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.235131 seconds.
+  path: Assets/Prefabs/EffectDie.prefab
+  artifactKey: Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/EffectDie.prefab using Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6804795ecec131d3b40f8f1721d869a') in 0.005555 seconds
+  Import took 0.010411 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000560 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019D7E344070 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019D7E236880 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019DA08F8020 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.858 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 73.0 MB.
+System memory in use after: 73.0 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1973.
+Total: 1.746700 ms (FindLiveObjects: 0.138700 ms CreateObjectMapping: 0.041000 ms MarkObjects: 1.521900 ms  DeleteObjects: 0.043900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 110.144900 seconds.
+  path: Assets/Prefabs/EffectDie.prefab
+  artifactKey: Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/EffectDie.prefab using Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7387eeb2b6c3ecf29e4cbc9f5db7ec6c') in 0.030661 seconds
+  Import took 0.033739 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.584995 seconds.
+  path: Assets/Prefabs/EffectDie.prefab
+  artifactKey: Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/EffectDie.prefab using Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49e1749cda6ee6cda7143702e34a57ae') in 0.004233 seconds
+  Import took 0.007053 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000672 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019B81A6BD10 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019D7EA490A0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019DA074A0A0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.901 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 73.0 MB.
+System memory in use after: 73.1 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1976.
+Total: 1.902200 ms (FindLiveObjects: 0.144900 ms CreateObjectMapping: 0.042500 ms MarkObjects: 1.667400 ms  DeleteObjects: 0.046300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 25.094736 seconds.
+  path: Assets/Prefabs/Cube.prefab
+  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96219965a74311522fa176390ff96f89') in 0.074025 seconds
+  Import took 0.076987 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.155925 seconds.
+  path: Assets/Prefabs/Cube.prefab
+  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f7b6645de5462654d78580cc792faf3') in 0.011556 seconds
+  Import took 0.014297 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000543 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019B80562E70 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019D7EA490A0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019DA072A090 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.851 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 73.0 MB.
+System memory in use after: 73.1 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1980.
+Total: 1.660300 ms (FindLiveObjects: 0.141700 ms CreateObjectMapping: 0.041500 ms MarkObjects: 1.428300 ms  DeleteObjects: 0.048000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 29.273452 seconds.
+  path: Assets/Prefabs/Cube.prefab
+  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd8f603e0c37577b70d4c8b68757c8ba') in 0.071337 seconds
+  Import took 0.073999 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000542 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019D7E3E9A30 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019D7EA490A0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019DA072A090 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.895 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
 Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
@@ -858,397 +674,77 @@ Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 73.1 MB.
 System memory in use after: 73.2 MB.
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1995.
-Total: 1.783500 ms (FindLiveObjects: 0.144400 ms CreateObjectMapping: 0.043200 ms MarkObjects: 1.547900 ms  DeleteObjects: 0.047100 ms)
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1984.
+Total: 2.104700 ms (FindLiveObjects: 0.160800 ms CreateObjectMapping: 0.096900 ms MarkObjects: 1.795000 ms  DeleteObjects: 0.051100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000568 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019B81A6BD10 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019D7EA490A0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019DA0F1C020 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.875 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 73.1 MB.
+System memory in use after: 73.2 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1987.
+Total: 2.443600 ms (FindLiveObjects: 0.181500 ms CreateObjectMapping: 0.044000 ms MarkObjects: 2.164500 ms  DeleteObjects: 0.052200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Import Request.
-  Time since last request: 1515.677571 seconds.
+  Time since last request: 125.182274 seconds.
   path: Assets/Prefabs/Cube.prefab
   artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '946d85973a47f12a9a9123c4db753676') in 0.076604 seconds
-  Import took 0.079560 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.108604 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0cf073e4902732ccfa02f921b892d3a') in 0.016430 seconds
-  Import took 0.019196 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.173757 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c8d1d532ec3a8e1a13527892693ad27') in 0.118065 seconds
-  Import took 0.121251 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.948075 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04274c073e5cfaa024ee6112ecce361f') in 0.015515 seconds
-  Import took 0.020233 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.137213 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1aaaa16a0186b2fbb1415402569fc50') in 0.011267 seconds
-  Import took 0.014010 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.548458 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a98e92df27780f576147415411f00a1') in 0.011736 seconds
-  Import took 0.014644 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.555230 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa320eec2ac75b7b3b4b57d79f8e1e1a') in 0.011590 seconds
-  Import took 0.014236 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.858643 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd22835fdbfd2a88178903e5afeb2d5c4') in 0.010726 seconds
-  Import took 0.013317 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.117901 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01f2c4330a7c977bc256b57c03aadc52') in 0.010413 seconds
-  Import took 0.013394 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003304 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01f2c4330a7c977bc256b57c03aadc52') in 0.010614 seconds
-  Import took 0.013541 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.807114 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '577223ff1f3121909441bd2f049190c3') in 0.010998 seconds
-  Import took 0.013904 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.139049 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b159d415dea8740c2e72a8831299120') in 0.012162 seconds
-  Import took 0.015837 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.744323 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd2024fa520bf1c31f9afccb5c3689ae') in 0.018291 seconds
-  Import took 0.020897 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.358984 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7c175c05385d909ddc2dcdd24e8943e') in 0.016793 seconds
-  Import took 0.019838 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.026706 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3287d10cfe3abe961a9ed148e3905d5') in 0.008723 seconds
-  Import took 0.011425 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 17.615327 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f6845616e09e49a4a04dade973c12fc') in 0.010750 seconds
-  Import took 0.014106 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.627980 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4d6da9a9673ab9f8c312b1170167b73') in 0.008697 seconds
-  Import took 0.019928 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 45.277706 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c44957ad3a546ff93ce9602cfd333a4a') in 0.024875 seconds
-  Import took 0.027396 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.852851 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f38966c709dc092234259a155046b5e1') in 0.010355 seconds
-  Import took 0.013152 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.653255 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afde34ad8fca7d7edc8b3cf4ac914db7') in 0.010528 seconds
-  Import took 0.014010 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.412513 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebbfb9e9339ef5e75a9a1cf124043250') in 0.012068 seconds
-  Import took 0.014644 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 34.708979 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5d7aa4e1a5c79bd83bb55c647e245d4') in 0.034602 seconds
-  Import took 0.037185 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 67.466551 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65089829b2dba12d50f9ae7f12e27163') in 0.009413 seconds
-  Import took 0.012251 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.256386 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7126b57a9ea7bd9bbadd0dbfd252dabd') in 0.029712 seconds
-  Import took 0.032908 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.960262 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2cc38009a6fd5872092c6bae97d419b') in 0.012979 seconds
-  Import took 0.015848 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 94.864933 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dc25ba8a79830e77e39275d6dff4525') in 0.011207 seconds
-  Import took 0.014289 seconds .
+Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cbdf9796ed92602f44f4131e1b09a4f') in 0.063225 seconds
+  Import took 0.065630 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000539 seconds.
+Registered in 0.000515 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000001E2FEFF7010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file data-0000019B80562E70 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E15889B850 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file data-0000019D7EA490A0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12C6F0080 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-0000019DA10C4A50 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.931 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.2 MB.
-System memory in use after: 73.3 MB.
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1999.
-Total: 1.795200 ms (FindLiveObjects: 0.167800 ms CreateObjectMapping: 0.066200 ms MarkObjects: 1.495400 ms  DeleteObjects: 0.064800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 100.969169 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd03643c50b9bf3fbbe95460bd9d10e56') in 0.072845 seconds
-  Import took 0.075624 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.092287 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af6d440eb6a84c5095771d171c326b8f') in 0.014627 seconds
-  Import took 0.017283 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.178059 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df8ad860a9d156673a942a3c4dbb25dc') in 0.011267 seconds
-  Import took 0.014662 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.688579 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2607c7fedd4030d466385791aeb85a5') in 0.026783 seconds
-  Import took 0.029501 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 55.360030 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '454cfd31a7e9eadd6411cd3a0c5ba8c1') in 0.024838 seconds
-  Import took 0.029172 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000562 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000001E12880A3B0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E15889B850 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001E12C6F0080 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.910 seconds
+- Completed reload, in  0.921 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
 Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.2 MB.
-System memory in use after: 73.3 MB.
+System memory in use before: 73.1 MB.
+System memory in use after: 73.2 MB.
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2003.
-Total: 2.169700 ms (FindLiveObjects: 0.158300 ms CreateObjectMapping: 0.042300 ms MarkObjects: 1.897600 ms  DeleteObjects: 0.070500 ms)
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1991.
+Total: 2.231900 ms (FindLiveObjects: 0.415500 ms CreateObjectMapping: 0.063500 ms MarkObjects: 1.682800 ms  DeleteObjects: 0.068900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 189.191414 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8da2952035bdb78d71be41edf0e8b461') in 0.090538 seconds
-  Import took 0.093414 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.956417 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4be345696c1cf09e52d84c70402bb7ac') in 0.008554 seconds
-  Import took 0.011508 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.688205 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9d6f175f367d9d7ac97ce2170764fbf') in 0.010133 seconds
-  Import took 0.012608 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 22.610630 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '942d7dafaefd53f211e8a248f7646952') in 0.009421 seconds
-  Import took 0.012103 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.646271 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebf3cc29c9fad0b3769ac1583e9700ed') in 0.010770 seconds
-  Import took 0.013261 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.398909 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cddf776550ff2e528386eafab61f670') in 0.009085 seconds
-  Import took 0.011553 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.201468 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '344ed7748a6abe1d0188f87bbb038fe8') in 0.008126 seconds
-  Import took 0.010939 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.943870 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39f01020a18a09be661cf2b7df8e50dd') in 0.019225 seconds
-  Import took 0.021982 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.208490 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ea820ea714d51cf887834c90779e4f3') in 0.009026 seconds
-  Import took 0.012029 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 19.173579 seconds.
-  path: Assets/Prefabs/Cube.prefab
-  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70dd497d2e2d7bc2bb7a894206b7bf87') in 0.011567 seconds
-  Import took 0.014368 seconds .
-
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
