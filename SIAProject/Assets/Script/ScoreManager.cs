@@ -18,4 +18,9 @@ public class ScoreManager : Singleton<ScoreManager>
         this.Score += score;
         scoreText.text = $"Score :{Score}";
     }
+    public void Rescore()
+    {
+        Score = 0;
+        scoreText.text= $"Score :{Score}";
+    }
 }

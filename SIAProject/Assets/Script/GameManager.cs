@@ -5,13 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
     [SerializeField] private RawImage Panel;
     [SerializeField] private Button button;
 
     [SerializeField] private EnemyCharecter enemy;
-    [SerializeField] private GameObject boss;
+    [SerializeField] private EnemyCharecter boss;
 
     [SerializeField] private int enemyInThisRound = 5;
 
@@ -37,32 +37,35 @@ public class GameManager : MonoBehaviour
     //[SerializeField] private PlayerBullet Typebullet;
 
     
-    Vector3 playerSpawnPosition;
-    //public event Action OnStart;
+    
+    //public event Action OnReStart;
 
 
 
     private void Awake()
     {
-       
+        //OnReStart += RestartGame;
     }
     void Start()
     {
-        button.onClick.AddListener(StartGame);
+        //button.onClick.AddListener(StartGame);
     }
 
     void Update()
     {
-       
+
         //CheckEnemyAndPlayerInScene();
-        
+        CheckEnemyForSpawnBoss();
+
+
     }
 
-    private void StartGame()
+    public void StartGame()
     {
         HideMouse();
         Panel.gameObject.SetActive(false);
         button.gameObject.SetActive(false);
+        scoreManager.Rescore();
         SpawnPlayer();
         SpawnEnemy();
     }
@@ -75,6 +78,7 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(player, new Vector3(0,1,0), Quaternion.identity);
         player.Init(playerHp,playerSpeed);
+        //OnReStart += player.IsDie;
     }
 
 
@@ -98,15 +102,20 @@ public class GameManager : MonoBehaviour
           
         }
 
-       //if all enemy is die 
-       // SpawnBoss();
-
+        //if all enemy is die 
+      
     }
 
     private void SpawnBoss()
     {
-        enemyInThisRound += 2;
-
+        //enemyInThisRound += 2;
+        var bossCheck = GameObject.FindGameObjectsWithTag("Boss");
+        if(bossCheck.Length ==0)
+        {
+            Instantiate(boss, new Vector3(-8, 0, 13), Quaternion.identity);
+            boss.Init(1000, 1);
+        }
+        
         //UpgradeItem() //if Boss Is Die
     }
 
@@ -128,28 +137,53 @@ public class GameManager : MonoBehaviour
         Round++;
     }
 
-    private void CheckEnemyAndPlayerInScene()
-    {
-        var enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
-        var playerCheck = GameObject.FindGameObjectsWithTag("Player");
+    //For MockUp
+    //private void CheckEnemyAndPlayerInScene()
+    //{
+    //    var enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
+    //    var playerCheck = GameObject.FindGameObjectsWithTag("Player");
         
       
-        if (enemyCheck.Length == 0 || playerCheck.Length == 0)
+    //    if (enemyCheck.Length == 0 || playerCheck.Length == 0)
+    //    {
+    //        Panel.gameObject.SetActive(true);
+    //        button.gameObject.SetActive(true);
+    //        Cursor.visible = true;
+    //        foreach (var enemy in enemyCheck)
+    //        {
+    //            Destroy(enemy);
+    //        }
+    //        foreach (var player in playerCheck)
+    //        {
+    //            Destroy(player);
+    //        }
+
+    //    }
+        
+    //}
+
+    private void CheckEnemyForSpawnBoss()
+    {
+        var enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
+
+        if (scoreManager.Score>0 && enemyCheck.Length ==0 )
         {
-            Panel.gameObject.SetActive(true);
-            button.gameObject.SetActive(true);
-            Cursor.visible = true;
-            foreach (var enemy in enemyCheck)
-            {
-                Destroy(enemy);
-            }
-            foreach (var player in playerCheck)
-            {
-                Destroy(player);
-            }
+            SpawnBoss();
 
         }
-        
+
     }
-   
+
+    //private void RestartGame()
+    //{
+    //    var enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
+    //    Panel.gameObject.SetActive(true);
+    //    button.gameObject.SetActive(true);
+    //    Cursor.visible = true;
+    //    foreach (var enemy in enemyCheck)
+    //    {
+    //        Destroy(enemy);
+    //    }
+    //}
+
 }
