@@ -489,6 +489,7 @@ MonoBehaviour:
   agent: {fileID: -5146337944074032427}
   player: {fileID: 7502358062115217009, guid: 3580cc075b8c89f438ce925fcfe9000b, type: 3}
   enemy: {fileID: 8373430092916138176}
+  distanceStopEnemy: 0
 --- !u!114 &8373430092916138176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,7 +503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 5133777066358336655}
-  Hp: 100
+  Hp: 1
   Speed: 2
   damage: 10
   dieParticle: {fileID: 8894045807073587843, guid: d2685fc7db8a0864f8e48f5c36cab38f, type: 3}

@@ -15,11 +15,11 @@ D:/ProjectSIA01/SIAProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60746
+50568
 Successfully changed project path to: D:/ProjectSIA01/SIAProject
 D:/ProjectSIA01/SIAProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 25.51 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 25.27 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.9f1 (108be757e447)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -35,233 +35,235 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56004
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56772
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002454 seconds.
+Registered in 0.002452 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 26.04 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 27.49 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.565 seconds
+- Completed reload, in  1.563 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.000556 seconds.
+Registered in 0.000509 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000002617A92D050 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file data-000001836D114610 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002617A6BF730 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file data-000001836CDAE010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002617553E850 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-000001836C73D0B0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 27.65 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 26.39 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.876 seconds
+- Completed reload, in  1.224 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 0.27 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1449 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1450 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 70.9 MB.
 System memory in use after: 70.9 MB.
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1896.
-Total: 1.666600 ms (FindLiveObjects: 0.125300 ms CreateObjectMapping: 0.038100 ms MarkObjects: 1.429900 ms  DeleteObjects: 0.072600 ms)
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1897.
+Total: 2.221500 ms (FindLiveObjects: 0.176600 ms CreateObjectMapping: 0.068200 ms MarkObjects: 1.883000 ms  DeleteObjects: 0.092100 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Script
-  artifactKey: Guid(c979bdb600393a1499fbe0b5f347f495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Script using Guid(c979bdb600393a1499fbe0b5f347f495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e28e3ec389ea04a196f1918d8b61814f') in 0.007321 seconds
-  Import took 0.009273 seconds .
+  path: Assets/Script/Charecter/EnemyCharecter.cs
+  artifactKey: Guid(a943155af5fdcb14e82e1cbbd540a6ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/Charecter/EnemyCharecter.cs using Guid(a943155af5fdcb14e82e1cbbd540a6ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4a107fc3000761f75eba45d96d03070') in 0.040646 seconds
+  Import took 0.045859 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.645078 seconds.
-  path: Assets/Script/NewBehaviourScript.cs
-  artifactKey: Guid(d26101c0b621fdd4bb53687aa857265c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Script/NewBehaviourScript.cs using Guid(d26101c0b621fdd4bb53687aa857265c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1a81c82d2eb2661c4516ad487d3ca5c') in 0.034161 seconds
-  Import took 0.036555 seconds .
+  Time since last request: 203.697274 seconds.
+  path: Assets/Script/Charecter/EnemyController.cs
+  artifactKey: Guid(0abe2d5381abf8241ba1d03ba36aa2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/Charecter/EnemyController.cs using Guid(0abe2d5381abf8241ba1d03ba36aa2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62260c6887e18be96a49b3ee328b84ad') in 0.022226 seconds
+  Import took 0.025035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005955 seconds.
+  path: Assets/Script/Charecter/EnemyController.cs
+  artifactKey: Guid(0abe2d5381abf8241ba1d03ba36aa2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/Charecter/EnemyController.cs using Guid(0abe2d5381abf8241ba1d03ba36aa2f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62260c6887e18be96a49b3ee328b84ad') in 0.002393 seconds
+  Import took 0.004526 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000509 seconds.
+Registered in 0.000553 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000002617AFC5A30 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file data-00000183726E1BF0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002617BE5A790 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file data-000001836CDAE010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002617A4C4020 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-000001836CAED590 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.775 seconds
+- Completed reload, in  0.798 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1435 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 69.4 MB.
 System memory in use after: 69.5 MB.
 
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1900.
-Total: 1.563200 ms (FindLiveObjects: 0.125200 ms CreateObjectMapping: 0.038500 ms MarkObjects: 1.355900 ms  DeleteObjects: 0.042700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000522 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000002617592E010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002617A3F7520 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000261751C14B0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.774 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1434 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 69.4 MB.
-System memory in use after: 69.5 MB.
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1902.
-Total: 1.654200 ms (FindLiveObjects: 0.122400 ms CreateObjectMapping: 0.037700 ms MarkObjects: 1.449000 ms  DeleteObjects: 0.044200 ms)
+Total: 1.754400 ms (FindLiveObjects: 0.134800 ms CreateObjectMapping: 0.040300 ms MarkObjects: 1.535200 ms  DeleteObjects: 0.043100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Import Request.
-  Time since last request: 25.830103 seconds.
-  path: Assets/Script/EffectObject.cs
-  artifactKey: Guid(49dc8c8696ebdae40b433828cc854868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Script/EffectObject.cs using Guid(49dc8c8696ebdae40b433828cc854868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8a9a6a32bea6cfbbded2cdfe610688b') in 0.007638 seconds
-  Import took 0.009888 seconds .
+  Time since last request: 8.200581 seconds.
+  path: Assets/Prefabs/Boss.prefab
+  artifactKey: Guid(5c018e3ff765f4c49881da0380622871) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Boss.prefab using Guid(5c018e3ff765f4c49881da0380622871) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1c77b0481b07582f8554621cdc0b57b') in 0.099676 seconds
+  Import took 0.102526 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Prefabs/Cube.prefab
+  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d7fbab23b58deb7e06e94b625381677') in 0.023634 seconds
+  Import took 0.026348 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/Prefabs/EffectDie.prefab
+  artifactKey: Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/EffectDie.prefab using Guid(d2685fc7db8a0864f8e48f5c36cab38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '726d66d1f93cefe14582c8bcc6bea17b') in 0.016722 seconds
+  Import took 0.019343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Prefabs/Cube.prefab
+  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d7fbab23b58deb7e06e94b625381677') in 0.011533 seconds
+  Import took 0.014195 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.597020 seconds.
+  path: Assets/Prefabs/Cube.prefab
+  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2491efb90e163c212f6a1672eaa84a79') in 0.022929 seconds
+  Import took 0.025510 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000481 seconds.
+Registered in 0.000524 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-0000026179CCE020 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file data-0000018373E50A10 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002617A0DDA20 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file data-0000018371A4E8D0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002617C058010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-000001836C73D0B0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.794 seconds
+- Completed reload, in  0.782 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1435 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 69.5 MB.
-System memory in use after: 69.6 MB.
+System memory in use before: 72.7 MB.
+System memory in use after: 72.7 MB.
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1906.
-Total: 1.794800 ms (FindLiveObjects: 0.131300 ms CreateObjectMapping: 0.042500 ms MarkObjects: 1.573200 ms  DeleteObjects: 0.047000 ms)
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1913.
+Total: 1.885100 ms (FindLiveObjects: 0.146500 ms CreateObjectMapping: 0.042500 ms MarkObjects: 1.642300 ms  DeleteObjects: 0.052900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.000823 seconds.
+Registered in 0.000607 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000002617C4EC440 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file data-00000183723CDA60 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002617B9ACA40 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file data-0000018371A4E8D0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002619D952010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.26 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.785 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1435 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 69.5 MB.
-System memory in use after: 69.6 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1909.
-Total: 1.601100 ms (FindLiveObjects: 0.124500 ms CreateObjectMapping: 0.036800 ms MarkObjects: 1.398000 ms  DeleteObjects: 0.041000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
-========================================================================
-Received Import Request.
-  Time since last request: 72.462115 seconds.
-  path: Assets/Script/EffectObject.cs
-  artifactKey: Guid(49dc8c8696ebdae40b433828cc854868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Script/EffectObject.cs using Guid(49dc8c8696ebdae40b433828cc854868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ca80119dd70f4ff185318cfb5ef1504') in 0.003384 seconds
-  Import took 0.005284 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.205670 seconds.
-  path: Assets/Scenes/SampleScene/NavMesh-GameManager.asset
-  artifactKey: Guid(4fb9aa3f63df1d247be74661ea82583d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene/NavMesh-GameManager.asset using Guid(4fb9aa3f63df1d247be74661ea82583d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71c48e9262498da8f4a3ffaf841c99fa') in 0.015388 seconds
-  Import took 0.017485 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.000448 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-00000261751BE8C0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000025FCCA76550 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002617C8B5460 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-0000018371008010 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.776 seconds
+- Completed reload, in  0.807 seconds
 Platform modules already initialized, skipping
 Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.22 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1435 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 69.5 MB.
-System memory in use after: 69.6 MB.
+System memory in use before: 72.7 MB.
+System memory in use after: 72.8 MB.
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1912.
-Total: 1.762000 ms (FindLiveObjects: 0.126900 ms CreateObjectMapping: 0.038100 ms MarkObjects: 1.554600 ms  DeleteObjects: 0.041600 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1916.
+Total: 1.654600 ms (FindLiveObjects: 0.126900 ms CreateObjectMapping: 0.035000 ms MarkObjects: 1.446900 ms  DeleteObjects: 0.045000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 339.759952 seconds.
+  path: Assets/Prefabs/Cube.prefab
+  artifactKey: Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cube.prefab using Guid(97121a672b9c3c94eac3cb3385ad0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6cc60a10e1814d5456d7a1adcbd7441') in 0.066773 seconds
+  Import took 0.069494 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000504 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001836CE89090 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponentsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000018371A4E8D0 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\NavMeshComponents.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000018395078110 doesn't match image D:\ProjectSIA01\SIAProject\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.788 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.23 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1435 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 72.7 MB.
+System memory in use after: 72.8 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1920.
+Total: 2.048800 ms (FindLiveObjects: 0.155100 ms CreateObjectMapping: 0.050300 ms MarkObjects: 1.791100 ms  DeleteObjects: 0.051000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
