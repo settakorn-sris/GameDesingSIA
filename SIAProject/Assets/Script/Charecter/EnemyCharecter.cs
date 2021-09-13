@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyCharecter : Charecter
 {
     [SerializeField]private int damage = 10;
+    [SerializeField]private ParticleSystem dieParticle;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +16,7 @@ public class EnemyCharecter : Charecter
 
     public override void IsDie()
     {
+        Instantiate(dieParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
         ScoreManager.Instance.AddScore(1);
     }
