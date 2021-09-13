@@ -108,7 +108,7 @@ public class GameManager : Singleton<GameManager>
     private void SpawnEnemy()
     {
         float timeCount = 0;
-        while (countEnemySpawnInround < enemyInThisRound)
+        while (countEnemySpawnInround <= enemyInThisRound)
         {
             xPosition = UnityEngine.Random.Range(-12, 13);
             zPosition = UnityEngine.Random.Range(-11, 13);
