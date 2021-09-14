@@ -20,14 +20,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Movement"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""71271a07-49e0-4e1b-ab33-4deba9130ff9"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""MousePosition"",
+                    ""name"": ""PlayerLook"",
                     ""type"": ""Value"",
                     ""id"": ""acdb4161-df9d-4487-9cc5-4eebf9875f36"",
                     ""expectedControlType"": ""Vector2"",
@@ -101,12 +101,23 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e536d585-b2c6-4c1c-ba4a-60d566a28626"",
-                    ""path"": ""<Mouse>/position"",
+                    ""id"": ""2bf42e82-a2a3-4706-968b-ad8289b61a8d"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MousePosition"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e038261d-7965-4616-99b4-ca00ce8a9712"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerLook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -129,7 +140,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         // PlayerControl
         m_PlayerControl = asset.FindActionMap("PlayerControl", throwIfNotFound: true);
         m_PlayerControl_Movement = m_PlayerControl.FindAction("Movement", throwIfNotFound: true);
-        m_PlayerControl_MousePosition = m_PlayerControl.FindAction("MousePosition", throwIfNotFound: true);
+        m_PlayerControl_PlayerLook = m_PlayerControl.FindAction("PlayerLook", throwIfNotFound: true);
         m_PlayerControl_Fire = m_PlayerControl.FindAction("Fire", throwIfNotFound: true);
     }
 
@@ -181,14 +192,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputActionMap m_PlayerControl;
     private IPlayerControlActions m_PlayerControlActionsCallbackInterface;
     private readonly InputAction m_PlayerControl_Movement;
-    private readonly InputAction m_PlayerControl_MousePosition;
+    private readonly InputAction m_PlayerControl_PlayerLook;
     private readonly InputAction m_PlayerControl_Fire;
     public struct PlayerControlActions
     {
         private @PlayerInput m_Wrapper;
         public PlayerControlActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_PlayerControl_Movement;
-        public InputAction @MousePosition => m_Wrapper.m_PlayerControl_MousePosition;
+        public InputAction @PlayerLook => m_Wrapper.m_PlayerControl_PlayerLook;
         public InputAction @Fire => m_Wrapper.m_PlayerControl_Fire;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControl; }
         public void Enable() { Get().Enable(); }
@@ -202,9 +213,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Movement.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnMovement;
-                @MousePosition.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnMousePosition;
-                @MousePosition.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnMousePosition;
-                @MousePosition.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnMousePosition;
+                @PlayerLook.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnPlayerLook;
+                @PlayerLook.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnPlayerLook;
+                @PlayerLook.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnPlayerLook;
                 @Fire.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnFire;
@@ -215,9 +226,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
-                @MousePosition.started += instance.OnMousePosition;
-                @MousePosition.performed += instance.OnMousePosition;
-                @MousePosition.canceled += instance.OnMousePosition;
+                @PlayerLook.started += instance.OnPlayerLook;
+                @PlayerLook.performed += instance.OnPlayerLook;
+                @PlayerLook.canceled += instance.OnPlayerLook;
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
@@ -228,7 +239,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     public interface IPlayerControlActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnMousePosition(InputAction.CallbackContext context);
+        void OnPlayerLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
     }
 }

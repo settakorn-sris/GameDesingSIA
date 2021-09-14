@@ -15,7 +15,7 @@ public class Player : MonoBehaviour, IPlayerControlActions
 
     // For Mouse Look
     
-    private Vector2 mousePositionOnScreen;
+    private Vector3 playerLookPosition;
  
     void Awake()
     {
@@ -46,21 +46,19 @@ public class Player : MonoBehaviour, IPlayerControlActions
 
         playerDiraction = new Vector3(direction.x, 0, direction.y);
     }
-    public void OnMousePosition(InputAction.CallbackContext ctx)
+    public void OnPlayerLook(InputAction.CallbackContext ctx)
     {
-        Vector2 getMousePositionOnScreen = ctx.ReadValue<Vector2>();
+        Vector2 getPositionfForPlayerLook = ctx.ReadValue<Vector2>();
+        playerLookPosition = new Vector3(getPositionfForPlayerLook.x,0, getPositionfForPlayerLook.y);
+        player.Attack();
 
-        mousePositionOnScreen = new Vector2(getMousePositionOnScreen.x, getMousePositionOnScreen.y);
-
-     
     }
 
     // For Mouse Look
     private void PlayerRotateMouseControll()
     {
-       
-        transform.rotation = Quaternion.Euler(new Vector3(0, mousePositionOnScreen.x, 0));
-      
+        Vector3 lookAtPosition = transform.position + playerLookPosition;
+        transform.LookAt(lookAtPosition); 
     }
 
     private Vector3 Positon()
@@ -76,13 +74,6 @@ public class Player : MonoBehaviour, IPlayerControlActions
         //get from pooling clas
     }
 
-    //other
 
-    private void PlayerDie()
-    {
-        // implement next time
-    }
-
-    
 }
 

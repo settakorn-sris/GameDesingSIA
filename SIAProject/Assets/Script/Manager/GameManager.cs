@@ -64,15 +64,9 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
-        HideMouse();
         scoreManager.Rescore();
         SpawnPlayer();
     }
-    private void HideMouse()
-    {
-        Cursor.visible = false;
-    }
-
   
     private void GameLoop()
     {
