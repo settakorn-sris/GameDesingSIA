@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Panel: {fileID: 2004668655}
   button: {fileID: 1668539279}
-  enemy: {fileID: 8373430092916138176, guid: 97121a672b9c3c94eac3cb3385ad0649, type: 3}
+  enemy: {fileID: 1071079978937696068, guid: 9c011b53696e32049b241f32695f6d98, type: 3}
   boss: {fileID: 8373430092916138176, guid: 5c018e3ff765f4c49881da0380622871, type: 3}
   enemyInThisRound: 5
   timeToBuy: 0
