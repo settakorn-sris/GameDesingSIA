@@ -6,8 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public enum Wave
-{
+public enum Wave{
     ENEMY,
     BOSS,
     BUY,
@@ -39,7 +38,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int playerHp;
     [SerializeField] private float playerSpeed;
 
-
+    
     [SerializeField] private int enemyHp;
     [SerializeField] private float enemySpeed;
 
@@ -60,39 +59,33 @@ public class GameManager : Singleton<GameManager>
 
     void Update()
     {
-        GameLoop();
+        GameLoop();   
     }
 
     public void StartGame()
     {
-        HideMouse();
         scoreManager.Rescore();
         SpawnPlayer();
     }
-    private void HideMouse()
-    {
-        Cursor.visible = false;
-    }
-
-
+  
     private void GameLoop()
     {
-
+        
         var enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
         var bossCheck = GameObject.FindGameObjectsWithTag("Boss");
 
-        if (wave == Wave.ENEMY && bossCheck.Length == 0)
+        if (wave==Wave.ENEMY && bossCheck.Length == 0 )
         {
             SpawnEnemy();
             wave = Wave.BOSS;
 
         }
-        else if (wave == Wave.BOSS && bossCheck.Length == 0 && enemyCheck.Length == 0)
+        else if(wave==Wave.BOSS && bossCheck.Length==0 && enemyCheck.Length == 0)
         {
             SpawnBoss();
             Debug.Log("Boss round");
         }
-        else if (wave == Wave.BUY && bossCheck.Length == 0)
+        else if(wave==Wave.BUY && bossCheck.Length==0)
         {
             //UpgradeItem();
             Debug.Log("BUY");
@@ -116,7 +109,7 @@ public class GameManager : Singleton<GameManager>
 
             timeCount = UnityEngine.Random.Range(1, 5);
             timeCount -= Time.deltaTime;
-
+           
             if (timeCount > 1)
             {
                 Instantiate(enemy, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
@@ -127,13 +120,13 @@ public class GameManager : Singleton<GameManager>
             }
             countEnemySpawnInround++;
         }
-
+        
     }
 
     private void SpawnBoss()
     {
         var bossCheck = GameObject.FindGameObjectsWithTag("Boss");
-        if (bossCheck.Length == 0)
+        if(bossCheck.Length ==0)
         {
             Instantiate(boss, new Vector3(-8, 0, 13), Quaternion.identity);
             boss.Init(1000, 1);
@@ -151,9 +144,9 @@ public class GameManager : Singleton<GameManager>
         if (timeCount == timeToBuy)
         {
             //Buy Panel SetActive(false)
-            wave = Wave.ENEMY;
+            wave = Wave.ENEMY; 
         }
-
+ 
     }
     private void GameReset()
     {
