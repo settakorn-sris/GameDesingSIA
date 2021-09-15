@@ -8,17 +8,25 @@ public class PoolingOBJ : MonoBehaviour
     [SerializeField] private int bulletSpeed;
     [SerializeField] private PlayerBullet[] bulletInPool;
     [SerializeField] private int poolAmount = 0;
-    //[SerializeField] private Vector3 gunPosition;
+    
 
     private int ControlPool = 0;
-
+    float timeCountForFire = 0.5f;//Player => GM => Pool (If we want to manage fireRate in plyer)
+    float fireRate = 0;
 
     void Start()
     {
         bulletInPool = new PlayerBullet[poolAmount];
         Pooling();
     }
-
+    private void Pooling()
+    {
+        for (var i = 0; i < poolAmount; i++)
+        {
+            bulletInPool[i] = Instantiate(bullet, transform.position, Quaternion.identity);
+            bulletInPool[i].gameObject.SetActive(false);
+        }
+    }
     public void GetPool()
     {
         if (ControlPool == poolAmount)
@@ -26,25 +34,19 @@ public class PoolingOBJ : MonoBehaviour
             ControlPool = 0;
         }
 
+        if (Time.time < fireRate) return;
+
         bulletInPool[ControlPool].transform.position = transform.position;
         bulletInPool[ControlPool].gameObject.SetActive(true);
         bulletInPool[ControlPool].rb.velocity = transform.forward * bulletInPool[ControlPool].GetSpeed(bulletSpeed);
+        fireRate = Time.time + timeCountForFire;
         ControlPool++;
-
-
+       
     }
 
     public void GetBulletType(PlayerBullet bulletType)
     {
         bullet = bulletType;
-    }
-    private void Pooling()
-    {
-        for(var i=0;i<poolAmount;i++)
-        {
-            bulletInPool[i] = Instantiate(bullet,transform.position, Quaternion.identity);
-            bulletInPool[i].gameObject.SetActive(false);
-        }
     }
 
 }
