@@ -14,6 +14,7 @@ public enum Wave{
 }
 public class GameManager : Singleton<GameManager>
 {
+    [Header("Game Setting")]
     [SerializeField] private RawImage Panel;
     [SerializeField] private Button button;
 
@@ -24,60 +25,65 @@ public class GameManager : Singleton<GameManager>
 
     //Wave
     private Wave wave = Wave.ENEMY;
-
-    [SerializeField] private int timeToBuy;
+    //BuY
+    [Header("Buy")]
+    [SerializeField] private GameObject buyPanel;
+    [SerializeField] private float timeToBuy;
 
     [SerializeField] private ScoreManager scoreManager;
-
+    private float timeCount;
     private int Round = 1;
     private int countEnemySpawnInround = 0;
     private float xPosition;
     private float zPosition;
 
+    [Header("Player")]
     [SerializeField] private PlayerCharecter player;
     [SerializeField] private int playerHp;
     [SerializeField] private float playerSpeed;
+    public float FireRate;
 
-    
+    [Header("Enemy")]
     [SerializeField] private int enemyHp;
     [SerializeField] private float enemySpeed;
+    [SerializeField] private int enemyDamage;
 
-
+    [Header("Boss")]
+    [SerializeField] private int bossHp;
+    [SerializeField] private float bossSpeed;
+    [SerializeField] private int bossDamage;
     //public event Action OnReStart;
-
-
 
     private void Awake()
     {
         //OnReStart += RestartGame;
-    }
-    void Start()
-    {
-        //button.onClick.AddListener(StartGame);
+        scoreManager = ScoreManager.Instance;
         StartGame();
     }
-
+   
     void Update()
     {
-        GameLoop();   
+        GameLoop();
+       
     }
 
     public void StartGame()
     {
         scoreManager.Rescore();
         SpawnPlayer();
+        wave = Wave.ENEMY;
     }
   
     private void GameLoop()
     {
-        
+        print(wave + "!!");
         var enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
         var bossCheck = GameObject.FindGameObjectsWithTag("Boss");
 
-        if (wave==Wave.ENEMY && bossCheck.Length == 0 )
+        if (wave==Wave.ENEMY)
         {
             SpawnEnemy();
-            wave = Wave.BOSS;
+            
 
         }
         else if(wave==Wave.BOSS && bossCheck.Length==0 && enemyCheck.Length == 0)
@@ -87,7 +93,7 @@ public class GameManager : Singleton<GameManager>
         }
         else if(wave==Wave.BUY && bossCheck.Length==0)
         {
-            //UpgradeItem();
+            UpgradeItem();
             Debug.Log("BUY");
         }
     }
@@ -112,15 +118,25 @@ public class GameManager : Singleton<GameManager>
            
             if (timeCount > 1)
             {
-                Instantiate(enemy, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
                 Debug.Log("Enemy round");
-                enemy.Init(enemyHp, enemySpeed);
+
+                enemy.Init(enemyHp, enemySpeed,enemyDamage);
+                Instantiate(enemy, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
+                
                 timeCount = 0;
 
             }
             countEnemySpawnInround++;
         }
+        wave = Wave.BOSS;
+        AddEnemyInAnotherRound();
+        countEnemySpawnInround = 0;
         
+    }
+    private void AddEnemyInAnotherRound()
+    {
+        var increaseEnemy = UnityEngine.Random.Range(1, 2);
+        enemyInThisRound += increaseEnemy;
     }
 
     private void SpawnBoss()
@@ -128,24 +144,37 @@ public class GameManager : Singleton<GameManager>
         var bossCheck = GameObject.FindGameObjectsWithTag("Boss");
         if(bossCheck.Length ==0)
         {
+            boss.Init(bossHp,bossSpeed,bossDamage);
             Instantiate(boss, new Vector3(-8, 0, 13), Quaternion.identity);
-            boss.Init(1000, 1);
         }
         //UpgradeItem() //if Boss Is Die
         wave = Wave.BUY;
+        timeCount = timeToBuy;
+        Round++;
     }
+    private void AddHPAndDamage(int hp,int damage,float speed)
+    {
+        var increaseHp = UnityEngine.Random.Range(10,20);
+        var increaseDamage = UnityEngine.Random.Range(2, 4);
+        var increaseSpeed = UnityEngine.Random.Range(0, 2);
+        hp += increaseHp;
+        damage += increaseDamage;
+        speed += increaseSpeed;
 
+    }
     private void UpgradeItem()
     {
         //Buy Panel SetActive(true)
-        float timeCount = 0;
-
-        timeCount += Time.deltaTime;
-        if (timeCount == timeToBuy)
-        {
-            //Buy Panel SetActive(false)
-            wave = Wave.ENEMY; 
-        }
+       
+        timeCount -= Time.deltaTime;
+        buyPanel.gameObject.SetActive(true);
+        print(timeCount);
+        if (timeCount > 0) return;
+        //Buy Panel SetActive(false)
+        buyPanel.gameObject.SetActive(false);
+        
+        wave = Wave.ENEMY;          
+        
  
     }
     private void GameReset()

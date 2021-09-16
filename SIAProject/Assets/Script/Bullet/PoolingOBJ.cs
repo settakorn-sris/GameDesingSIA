@@ -8,16 +8,25 @@ public class PoolingOBJ : MonoBehaviour
     [SerializeField] private int bulletSpeed;
     [SerializeField] private PlayerBullet[] bulletInPool;
     [SerializeField] private int poolAmount = 0;
-    
+    [SerializeField] float timeCountForFire = 1f;//Player => GM => Pool (If we want to manage fireRate in plyer)
+    [SerializeField] float fireRate = 0;
 
     private int ControlPool = 0;
-    float timeCountForFire = 0.5f;//Player => GM => Pool (If we want to manage fireRate in plyer)
-    float fireRate = 0;
+    private GameManager GM;
 
+    private void Awake()
+    {
+        GM = GameManager.Instance;
+        fireRate = GM.FireRate;
+    }
     void Start()
     {
         bulletInPool = new PlayerBullet[poolAmount];
         Pooling();
+    }
+    private void Update()
+    {
+        
     }
     private void Pooling()
     {
@@ -33,7 +42,7 @@ public class PoolingOBJ : MonoBehaviour
         {
             ControlPool = 0;
         }
-
+        
         if (Time.time < fireRate) return;
 
         bulletInPool[ControlPool].transform.position = transform.position;

@@ -19,7 +19,7 @@ public abstract class Charecter : MonoBehaviour,ITakeDamage
     {
         healthBar.SetHealth(Hp);
     }
-    public void Init(int hp, float speed)
+    protected void Init(int hp, float speed)
     {
         this.Hp = hp;
         this.Speed = speed;

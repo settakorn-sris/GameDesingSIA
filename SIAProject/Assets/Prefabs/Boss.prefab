@@ -447,7 +447,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3008025009367314515}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -489,6 +489,7 @@ MonoBehaviour:
   agent: {fileID: -5146337944074032427}
   player: {fileID: 7502358062115217009, guid: 3580cc075b8c89f438ce925fcfe9000b, type: 3}
   enemy: {fileID: 8373430092916138176}
+  distanceStopEnemy: 0
 --- !u!114 &8373430092916138176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,3 +506,4 @@ MonoBehaviour:
   Hp: 100
   Speed: 2
   damage: 10
+  dieParticle: {fileID: 8894045807073587843, guid: d2685fc7db8a0864f8e48f5c36cab38f, type: 3}
