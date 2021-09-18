@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour
         {
             GoToPlayer();
         }
+        
     }
     void GoToPlayer()
     {
