@@ -22,7 +22,6 @@ public class EnemyCharecter : Charecter
     {
         var player = collision.gameObject.GetComponent<ITakeDamage>();
         player?.TakeDamage(damage);
-        print("atk");
     }
     public override void IsDie()
     {

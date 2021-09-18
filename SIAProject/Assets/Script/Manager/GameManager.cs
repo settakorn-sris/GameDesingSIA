@@ -15,16 +15,17 @@ public enum Wave{
 public class GameManager : Singleton<GameManager>
 {
     [Header("Game Setting")]
-    [SerializeField] private RawImage Panel;
-    [SerializeField] private Button button;
+    [SerializeField] private RawImage gamePanel;
+    [SerializeField] private Button puseButton;
+    [SerializeField] private Button resumeButton;
 
+    [SerializeField] private TextMeshProUGUI roundText;
     [SerializeField] private EnemyCharecter enemy;
     [SerializeField] private EnemyCharecter boss;
 
     [SerializeField] private int enemyInThisRound = 5;
+    private float timeForEnemySpawn;
 
-    //Wave
-    private Wave wave = Wave.ENEMY;
     //BuY
     [Header("Buy")]
     [SerializeField] private GameObject buyPanel;
@@ -32,7 +33,7 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] private ScoreManager scoreManager;
     private float timeCount;
-    private int Round = 1;
+    private int round = 1;
     private int countEnemySpawnInround = 0;
     private float xPosition;
     private float zPosition;
@@ -41,7 +42,11 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private PlayerCharecter player;
     [SerializeField] private int playerHp;
     [SerializeField] private float playerSpeed;
+    
+    [Header("Bullet")]
     public float FireRate;
+    public int BulletDamage;
+    public int BulletSpeed;
 
     [Header("Enemy")]
     [SerializeField] private int enemyHp;
@@ -52,10 +57,16 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int bossHp;
     [SerializeField] private float bossSpeed;
     [SerializeField] private int bossDamage;
+  
+    //Wave
+    private Wave wave;
+
     //public event Action OnReStart;
 
     private void Awake()
     {
+        puseButton.onClick.AddListener(StopGame);
+        resumeButton.onClick.AddListener(ResumeGame);
         //OnReStart += RestartGame;
         scoreManager = ScoreManager.Instance;
         StartGame();
@@ -70,31 +81,28 @@ public class GameManager : Singleton<GameManager>
     public void StartGame()
     {
         scoreManager.Rescore();
+        RoundReset();
         SpawnPlayer();
         wave = Wave.ENEMY;
+        timeForEnemySpawn = 1;
     }
   
     private void GameLoop()
     {
-        print(wave + "!!");
         var enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
         var bossCheck = GameObject.FindGameObjectsWithTag("Boss");
 
         if (wave==Wave.ENEMY)
         {
             SpawnEnemy();
-            
-
         }
         else if(wave==Wave.BOSS && bossCheck.Length==0 && enemyCheck.Length == 0)
         {
             SpawnBoss();
-            Debug.Log("Boss round");
         }
         else if(wave==Wave.BUY && bossCheck.Length==0)
         {
             UpgradeItem();
-            Debug.Log("BUY");
         }
     }
 
@@ -107,26 +115,25 @@ public class GameManager : Singleton<GameManager>
 
     private void SpawnEnemy()
     {
-        float timeCount = 0;
+
         while (countEnemySpawnInround < enemyInThisRound)
         {
             xPosition = UnityEngine.Random.Range(-12, 13);
             zPosition = UnityEngine.Random.Range(-11, 13);
 
-            timeCount = UnityEngine.Random.Range(1, 5);
-            timeCount -= Time.deltaTime;
-           
-            if (timeCount > 1)
-            {
-                Debug.Log("Enemy round");
+            print(timeForEnemySpawn);
+            timeForEnemySpawn -= Time.deltaTime;
+            print(timeForEnemySpawn);
 
-                enemy.Init(enemyHp, enemySpeed,enemyDamage);
-                Instantiate(enemy, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
-                
-                timeCount = 0;
-
-            }
+            if (timeForEnemySpawn >= 0) return;
+            
+            Debug.Log("Enemy round");
+            enemy.Init(enemyHp, enemySpeed, enemyDamage);
+            Instantiate(enemy, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
+            timeForEnemySpawn = UnityEngine.Random.Range(1,3);
             countEnemySpawnInround++;
+            
+
         }
         wave = Wave.BOSS;
         AddEnemyInAnotherRound();
@@ -150,7 +157,6 @@ public class GameManager : Singleton<GameManager>
         //UpgradeItem() //if Boss Is Die
         wave = Wave.BUY;
         timeCount = timeToBuy;
-        Round++;
     }
     private void AddHPAndDamage(int hp,int damage,float speed)
     {
@@ -172,10 +178,30 @@ public class GameManager : Singleton<GameManager>
         if (timeCount > 0) return;
         //Buy Panel SetActive(false)
         buyPanel.gameObject.SetActive(false);
-        
-        wave = Wave.ENEMY;          
-        
- 
+
+        timeForEnemySpawn = 1;
+        wave = Wave.ENEMY;
+        RoundSetting(1);
+    }
+    private void RoundSetting(int round)
+    {
+        this.round += round;
+        roundText.text = $"Round:{this.round}";
+    }
+    private void RoundReset()
+    {
+        round = 1;
+        roundText.text = $"Round:{this.round}";
+    }
+    private void StopGame()
+    {
+        gamePanel.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+    private void ResumeGame()
+    {
+        gamePanel.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
     private void GameReset()
     {

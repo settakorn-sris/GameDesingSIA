@@ -12,7 +12,7 @@ public class PlayerCharecter : Charecter
     //{
     //    this.bullet = bullet;
     //}
-    public void Init(int hp, float speed)
+    public new void Init(int hp, float speed)
     {
         base.Init(hp, speed);
     }
@@ -32,7 +32,7 @@ public class PlayerCharecter : Charecter
     }
     public override void IsDie()
     {
-        gameObject.SetActive(false);
+        
         
     }
 
