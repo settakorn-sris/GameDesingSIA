@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class EnemyCharecter : Charecter
 {
-    [SerializeField]private int damage = 10;
+    private int damage = 10;
     [SerializeField]private ParticleSystem dieParticle;
-
-    private void OnTriggerEnter(Collider other)
+    private GameManager gM;
+    private void Awake()
     {
-        var player = other.gameObject.GetComponent<ITakeDamage>();
-        player?.TakeDamage(damage);
-        print("atk");
+        gM = GameManager.Instance;
     }
 
+    public void Init(int hp, float speed,int damage)
+    {
+        base.Init(hp, speed);
+        this.damage = damage;
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        var player = collision.gameObject.GetComponent<ITakeDamage>();
+        player?.TakeDamage(damage);
+    }
     public override void IsDie()
     {
         Instantiate(dieParticle, transform.position, Quaternion.identity);

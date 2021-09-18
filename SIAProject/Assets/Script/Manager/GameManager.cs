@@ -14,81 +14,95 @@ public enum Wave{
 }
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField] private RawImage Panel;
-    [SerializeField] private Button button;
+    [Header("Game Setting")]
+    [SerializeField] private RawImage gamePanel;
+    [SerializeField] private Button puseButton;
+    [SerializeField] private Button resumeButton;
 
+    [SerializeField] private TextMeshProUGUI roundText;
     [SerializeField] private EnemyCharecter enemy;
     [SerializeField] private EnemyCharecter boss;
 
     [SerializeField] private int enemyInThisRound = 5;
+    private float timeForEnemySpawn;
 
-    //Wave
-    private Wave wave = Wave.ENEMY;
-
-    [SerializeField] private int timeToBuy;
+    //BuY
+    [Header("Buy")]
+    [SerializeField] private GameObject buyPanel;
+    [SerializeField] private float timeToBuy;
 
     [SerializeField] private ScoreManager scoreManager;
-
-    private int Round = 1;
+    private float timeCount;
+    private int round = 1;
     private int countEnemySpawnInround = 0;
     private float xPosition;
     private float zPosition;
 
+    [Header("Player")]
     [SerializeField] private PlayerCharecter player;
     [SerializeField] private int playerHp;
     [SerializeField] private float playerSpeed;
-
     
+    [Header("Bullet")]
+    public float FireRate;
+    public int BulletDamage;
+    public int BulletSpeed;
+
+    [Header("Enemy")]
     [SerializeField] private int enemyHp;
     [SerializeField] private float enemySpeed;
+    [SerializeField] private int enemyDamage;
 
+    [Header("Boss")]
+    [SerializeField] private int bossHp;
+    [SerializeField] private float bossSpeed;
+    [SerializeField] private int bossDamage;
+  
+    //Wave
+    private Wave wave;
 
     //public event Action OnReStart;
 
-
-
     private void Awake()
     {
+        puseButton.onClick.AddListener(StopGame);
+        resumeButton.onClick.AddListener(ResumeGame);
         //OnReStart += RestartGame;
-    }
-    void Start()
-    {
-        //button.onClick.AddListener(StartGame);
+        scoreManager = ScoreManager.Instance;
         StartGame();
     }
-
+   
     void Update()
     {
-        GameLoop();   
+        GameLoop();
+       
     }
 
     public void StartGame()
     {
         scoreManager.Rescore();
+        RoundReset();
         SpawnPlayer();
+        wave = Wave.ENEMY;
+        timeForEnemySpawn = 1;
     }
   
     private void GameLoop()
     {
-        
         var enemyCheck = GameObject.FindGameObjectsWithTag("Enemy");
         var bossCheck = GameObject.FindGameObjectsWithTag("Boss");
 
-        if (wave==Wave.ENEMY && bossCheck.Length == 0 )
+        if (wave==Wave.ENEMY)
         {
             SpawnEnemy();
-            wave = Wave.BOSS;
-
         }
         else if(wave==Wave.BOSS && bossCheck.Length==0 && enemyCheck.Length == 0)
         {
             SpawnBoss();
-            Debug.Log("Boss round");
         }
         else if(wave==Wave.BUY && bossCheck.Length==0)
         {
-            //UpgradeItem();
-            Debug.Log("BUY");
+            UpgradeItem();
         }
     }
 
@@ -101,26 +115,35 @@ public class GameManager : Singleton<GameManager>
 
     private void SpawnEnemy()
     {
-        float timeCount = 0;
+
         while (countEnemySpawnInround < enemyInThisRound)
         {
             xPosition = UnityEngine.Random.Range(-12, 13);
             zPosition = UnityEngine.Random.Range(-11, 13);
 
-            timeCount = UnityEngine.Random.Range(1, 5);
-            timeCount -= Time.deltaTime;
-           
-            if (timeCount > 1)
-            {
-                Instantiate(enemy, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
-                Debug.Log("Enemy round");
-                enemy.Init(enemyHp, enemySpeed);
-                timeCount = 0;
+            print(timeForEnemySpawn);
+            timeForEnemySpawn -= Time.deltaTime;
+            print(timeForEnemySpawn);
 
-            }
+            if (timeForEnemySpawn >= 0) return;
+            
+            Debug.Log("Enemy round");
+            enemy.Init(enemyHp, enemySpeed, enemyDamage);
+            Instantiate(enemy, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
+            timeForEnemySpawn = UnityEngine.Random.Range(1,3);
             countEnemySpawnInround++;
+            
+
         }
+        wave = Wave.BOSS;
+        AddEnemyInAnotherRound();
+        countEnemySpawnInround = 0;
         
+    }
+    private void AddEnemyInAnotherRound()
+    {
+        var increaseEnemy = UnityEngine.Random.Range(1, 2);
+        enemyInThisRound += increaseEnemy;
     }
 
     private void SpawnBoss()
@@ -128,25 +151,57 @@ public class GameManager : Singleton<GameManager>
         var bossCheck = GameObject.FindGameObjectsWithTag("Boss");
         if(bossCheck.Length ==0)
         {
+            boss.Init(bossHp,bossSpeed,bossDamage);
             Instantiate(boss, new Vector3(-8, 0, 13), Quaternion.identity);
-            boss.Init(1000, 1);
         }
         //UpgradeItem() //if Boss Is Die
         wave = Wave.BUY;
+        timeCount = timeToBuy;
     }
+    private void AddHPAndDamage(int hp,int damage,float speed)
+    {
+        var increaseHp = UnityEngine.Random.Range(10,20);
+        var increaseDamage = UnityEngine.Random.Range(2, 4);
+        var increaseSpeed = UnityEngine.Random.Range(0, 2);
+        hp += increaseHp;
+        damage += increaseDamage;
+        speed += increaseSpeed;
 
+    }
     private void UpgradeItem()
     {
         //Buy Panel SetActive(true)
-        float timeCount = 0;
+       
+        timeCount -= Time.deltaTime;
+        buyPanel.gameObject.SetActive(true);
+        print(timeCount);
+        if (timeCount > 0) return;
+        //Buy Panel SetActive(false)
+        buyPanel.gameObject.SetActive(false);
 
-        timeCount += Time.deltaTime;
-        if (timeCount == timeToBuy)
-        {
-            //Buy Panel SetActive(false)
-            wave = Wave.ENEMY; 
-        }
- 
+        timeForEnemySpawn = 1;
+        wave = Wave.ENEMY;
+        RoundSetting(1);
+    }
+    private void RoundSetting(int round)
+    {
+        this.round += round;
+        roundText.text = $"Round:{this.round}";
+    }
+    private void RoundReset()
+    {
+        round = 1;
+        roundText.text = $"Round:{this.round}";
+    }
+    private void StopGame()
+    {
+        gamePanel.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
+    private void ResumeGame()
+    {
+        gamePanel.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
     private void GameReset()
     {
