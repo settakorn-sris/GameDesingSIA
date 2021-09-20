@@ -358,7 +358,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 084b6902610a58545884ec3175d408a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1038,7 +1038,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 084b6902610a58545884ec3175d408a1, type: 2}
+  - {fileID: 2100000, guid: a28b488a85a971645b72b0c4c8f3f770, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1448,7 +1448,7 @@ GameObject:
   - component: {fileID: 907466033}
   - component: {fileID: 907466032}
   m_Layer: 0
-  m_Name: Cube (11)
+  m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1462,7 +1462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907466030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 3.46, z: -13.4}
+  m_LocalPosition: {x: -0.4, y: 3.46, z: -14.21}
   m_LocalScale: {x: 31.924038, y: 7.935175, z: 0.56892}
   m_Children: []
   m_Father: {fileID: 1558119062}
@@ -1808,14 +1808,14 @@ MonoBehaviour:
   puseButton: {fileID: 857100865}
   resumeButton: {fileID: 1650742004}
   roundText: {fileID: 1284543252}
-  enemy: {fileID: 8373430092916138176, guid: 97121a672b9c3c94eac3cb3385ad0649, type: 3}
-  boss: {fileID: 8373430092916138176, guid: 5c018e3ff765f4c49881da0380622871, type: 3}
+  enemy: {fileID: 1071079978937696068, guid: 9c011b53696e32049b241f32695f6d98, type: 3}
+  boss: {fileID: 1071079978937696068, guid: bad8dfc61d938864db3d7ba0b5780caf, type: 3}
   enemyInThisRound: 5
   buyPanel: {fileID: 1709214145}
   timeToBuy: 5
   scoreManager: {fileID: 798746469}
   player: {fileID: 5954075894018821184, guid: 3580cc075b8c89f438ce925fcfe9000b, type: 3}
-  playerHp: 20
+  playerHp: 100
   playerSpeed: 5
   FireRate: 1
   BulletDamage: 20
@@ -2912,7 +2912,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 084b6902610a58545884ec3175d408a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3774,7 +3774,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 084b6902610a58545884ec3175d408a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
