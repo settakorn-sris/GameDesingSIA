@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56320aa92ea1efe43b8bfa5d3ee2d1c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 100
+  bulletSpeed: 20
   bulletInPool: []
   poolAmount: 20
 --- !u!1 &7438619457105116422
