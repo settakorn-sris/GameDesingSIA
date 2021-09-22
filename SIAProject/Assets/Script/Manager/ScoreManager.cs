@@ -15,12 +15,17 @@ public class ScoreManager : Singleton<ScoreManager>
        
     public void AddScore(int score)
     {
-        this.Score += score;
+        Score += score;
         scoreText.text = $"Score :{Score}";
     }
     public void Rescore()
     {
         Score = 0;
         scoreText.text= $"Score :{Score}";
+    }
+    public void MinusScore(int score)
+    {
+        Score -= score;
+        scoreText.text = $"Score :{Score}";
     }
 }
