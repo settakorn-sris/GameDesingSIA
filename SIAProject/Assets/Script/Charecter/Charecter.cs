@@ -31,7 +31,7 @@ public abstract class Charecter : MonoBehaviour,ITakeDamage
         if (Hp > 0) return;
         OnDie();
     }
-
+  
     public abstract void IsDie();
     
     

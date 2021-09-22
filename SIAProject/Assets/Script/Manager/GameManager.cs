@@ -30,18 +30,26 @@ public class GameManager : Singleton<GameManager>
     [Header("Buy")]
     [SerializeField] private GameObject buyPanel;
     [SerializeField] private float timeToBuy;
-
+    [SerializeField] private Button buyHealingButton;
     [SerializeField] private ScoreManager scoreManager;
+<<<<<<< HEAD
+    [SerializeField] private Button healingButton;
+=======
+
+    [SerializeField] private int healingPrice = 3;
+>>>>>>> ProgrammingPlzNoConfig
     private float timeCount;
     private int round = 1;
     private int countEnemySpawnInround = 0;
     private float xPosition;
     private float zPosition;
+   
 
     [Header("Player")]
     [SerializeField] private PlayerCharecter player;
     [SerializeField] private int playerHp;
     [SerializeField] private float playerSpeed;
+    private PlayerCharecter playerInScene;
     
     [Header("Bullet")]
     public float FireRate;
@@ -67,6 +75,7 @@ public class GameManager : Singleton<GameManager>
     {
         puseButton.onClick.AddListener(StopGame);
         resumeButton.onClick.AddListener(ResumeGame);
+        buyHealingButton.onClick.AddListener(BuyHealing);
         //OnReStart += RestartGame;
         scoreManager = ScoreManager.Instance;
         StartGame();
@@ -108,8 +117,8 @@ public class GameManager : Singleton<GameManager>
 
     private void SpawnPlayer()
     {
-        Instantiate(player, new Vector3(0, 1, 0), Quaternion.identity);
-        player.Init(playerHp, playerSpeed);
+        playerInScene= Instantiate(player, new Vector3(0, 1, 0), Quaternion.identity);
+        playerInScene.Init(playerHp, playerSpeed);
         //OnReStart += player.IsDie;
     }
 
@@ -121,9 +130,9 @@ public class GameManager : Singleton<GameManager>
             xPosition = UnityEngine.Random.Range(-12, 13);
             zPosition = UnityEngine.Random.Range(-11, 13);
 
-            print(timeForEnemySpawn);
+            //print(timeForEnemySpawn);
             timeForEnemySpawn -= Time.deltaTime;
-            print(timeForEnemySpawn);
+            //print(timeForEnemySpawn);
 
             if (timeForEnemySpawn >= 0) return;
             
@@ -174,11 +183,12 @@ public class GameManager : Singleton<GameManager>
        
         timeCount -= Time.deltaTime;
         buyPanel.gameObject.SetActive(true);
+        
         print(timeCount);
         if (timeCount > 0) return;
         //Buy Panel SetActive(false)
         buyPanel.gameObject.SetActive(false);
-
+        
         timeForEnemySpawn = 1;
         wave = Wave.ENEMY;
         RoundSetting(1);
@@ -193,6 +203,7 @@ public class GameManager : Singleton<GameManager>
         round = 1;
         roundText.text = $"Round:{this.round}";
     }
+
     private void StopGame()
     {
         gamePanel.gameObject.SetActive(true);
@@ -202,6 +213,15 @@ public class GameManager : Singleton<GameManager>
     {
         gamePanel.gameObject.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    //Buy Function
+    private void BuyHealing()
+    {
+        if (scoreManager.Score < healingPrice) return;
+        scoreManager.MinusScore(healingPrice);
+        playerInScene.Healing(playerHp);
+        
     }
     private void GameReset()
     {

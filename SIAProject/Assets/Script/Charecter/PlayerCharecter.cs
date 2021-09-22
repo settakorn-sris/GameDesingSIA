@@ -30,6 +30,16 @@ public class PlayerCharecter : Charecter
     {
         //For Change Bullet in pool
     }
+<<<<<<< HEAD
+   
+=======
+
+    public void Healing(int hp)
+    {
+        Hp = hp;
+        print(Hp);
+    }
+>>>>>>> ProgrammingPlzNoConfig
     public override void IsDie()
     {
         
