@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class EnemyCharecter : Charecter
 {
-    private int damage = 10;
-    [SerializeField]private ParticleSystem dieParticle;
+    public int Damage;
     private GameManager gM;
+    [SerializeField] private int scoreInFirstRound = 1;
+    [SerializeField] protected ParticleSystem dieParticle;
+
     private void Awake()
     {
         gM = GameManager.Instance;
@@ -15,18 +17,22 @@ public class EnemyCharecter : Charecter
     public void Init(int hp, float speed,int damage)
     {
         base.Init(hp, speed);
-        this.damage = damage;
+        Damage = damage;
 
     }
     private void OnCollisionEnter(Collision collision)
     {
-        var player = collision.gameObject.GetComponent<ITakeDamage>();
-        player?.TakeDamage(damage);
+        if (collision.gameObject.tag == "Player")
+        {
+            var player = collision.gameObject.GetComponent<ITakeDamage>();
+            player?.TakeDamage(Damage);
+        }
+     
     }
     public override void IsDie()
     {
         Instantiate(dieParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        ScoreManager.Instance.AddScore(1);
+        ScoreManager.Instance.AddScore(scoreInFirstRound);
     }
 }
