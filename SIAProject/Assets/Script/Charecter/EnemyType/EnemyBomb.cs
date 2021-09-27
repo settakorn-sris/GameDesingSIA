@@ -5,10 +5,15 @@ using UnityEngine;
 public class EnemyBomb : EnemyCharecter
 {
     
+
+    protected override void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision);
+        IsDie();
+    }
     public override void IsDie()
     {
         //For implement Bomb
-        Hp = 0;
         base.IsDie();
     }
 }

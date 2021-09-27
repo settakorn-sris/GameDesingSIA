@@ -20,7 +20,7 @@ public class EnemyCharecter : Charecter
         Damage = damage;
 
     }
-    private void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
