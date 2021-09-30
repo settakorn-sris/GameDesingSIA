@@ -1,104 +1,166 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.9f1 (108be757e447) revision 1084391'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home Single Language; OS build 19042.1165; Version 2009; 64bit' Language: 'en' Physical Memory: 7999 MB
+OS: 'Windows 10 Home Single Language; OS build 19043.1237; Version 2009; 64bit' Language: 'en' Physical Memory: 16303 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Unity.exe
+D:\Unity\2020.3.9f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-F:/GameDesingPro/GameDesingSIA/SIAProject
+D:/Job/ปี3-เทอม1/GI344 - Game Design/ProjectPlzNoConfig/SIAProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-9692
-Successfully changed project path to: F:/GameDesingPro/GameDesingSIA/SIAProject
-F:/GameDesingPro/GameDesingSIA/SIAProject
+60037
+Successfully changed project path to: D:/Job/ปี3-เทอม1/GI344 - Game Design/ProjectPlzNoConfig/SIAProject
+D:/Job/ปี3-เทอม1/GI344 - Game Design/ProjectPlzNoConfig/SIAProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 48.70 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 25.59 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.9f1 (108be757e447)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path F:/GameDesingPro/GameDesingSIA/SIAProject/Assets
+[Subsystems] Discovering subsystems at path D:/Unity/2020.3.9f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Job/ปี3-เทอม1/GI344 - Game Design/ProjectPlzNoConfig/SIAProject/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f91)
     Vendor:   
-    VRAM:     5991 MB
-    Driver:   27.21.14.5763
+    VRAM:     3962 MB
+    Driver:   30.0.14.7212
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56488
+Mono path[0] = 'D:/Unity/2020.3.9f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/2020.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity/2020.3.9f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56524
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005774 seconds.
+Register platform support module: D:/Unity/2020.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.000997 seconds.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 36.63 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 44.70 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+Unable to find bridge dll in registry for Microsoft Visual Studio Tools for Unity for C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/devenv.exe
 Mono: successfully reloaded assembly
-- Completed reload, in  2.404 seconds
+- Completed reload, in  1.582 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002209 seconds.
+Registered in 0.000519 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 39.75 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 25.17 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.317 seconds
+- Completed reload, in  0.870 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.16 seconds
-Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.24 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1455 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 71.0 MB.
-System memory in use after: 71.1 MB.
+System memory in use before: 71.5 MB.
+System memory in use after: 71.5 MB.
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 1902.
-Total: 4.662200 ms (FindLiveObjects: 0.510500 ms CreateObjectMapping: 0.187000 ms MarkObjects: 3.659300 ms  DeleteObjects: 0.301500 ms)
+Total: 1.891900 ms (FindLiveObjects: 0.144000 ms CreateObjectMapping: 0.041300 ms MarkObjects: 1.633900 ms  DeleteObjects: 0.071800 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Script/Charecter/EnemyType/EnemyMelee.cs
-  artifactKey: Guid(14d5ee3d403e7e440855536cbfbec06c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Script/Charecter/EnemyType/EnemyMelee.cs using Guid(14d5ee3d403e7e440855536cbfbec06c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bf88f05fe195cf71196a4bd0a92142f') in 0.097299 seconds
-  Import took 0.100743 seconds .
+  path: Assets/PlayerInput.inputactions
+  artifactKey: Guid(b1c757cc228189e4ea0a2a49ce8f4125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PlayerInput.inputactions using Guid(b1c757cc228189e4ea0a2a49ce8f4125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1075d9632103226397de6f2c65a3be8') in 0.055593 seconds
+  Import took 0.057653 seconds .
 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001664 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.169 seconds
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1440 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 69.6 MB.
-System memory in use after: 69.6 MB.
+Received Import Request.
+  Time since last request: 7.689585 seconds.
+  path: Assets/UI_Img
+  artifactKey: Guid(6c6f2b1994c187d4fb50a5bb8d9bad9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI_Img using Guid(6c6f2b1994c187d4fb50a5bb8d9bad9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05660eb824690cd12e1663242d2f3f12') in 0.011687 seconds
+  Import took 0.013957 seconds .
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1905.
-Total: 2.251700 ms (FindLiveObjects: 0.222900 ms CreateObjectMapping: 0.042700 ms MarkObjects: 1.917800 ms  DeleteObjects: 0.066500 ms)
+========================================================================
+Received Import Request.
+  Time since last request: 0.005460 seconds.
+  path: Assets/UI_Img
+  artifactKey: Guid(6c6f2b1994c187d4fb50a5bb8d9bad9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI_Img using Guid(6c6f2b1994c187d4fb50a5bb8d9bad9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05660eb824690cd12e1663242d2f3f12') in 0.002998 seconds
+  Import took 0.005720 seconds .
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 0.796073 seconds.
+  path: Assets/UI_Img/Control
+  artifactKey: Guid(4303f71291b4a574797c21a949e14cdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI_Img/Control using Guid(4303f71291b4a574797c21a949e14cdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1454f1088856faa3b50723be9e490d0') in 0.009985 seconds
+  Import took 0.012200 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.046969 seconds.
+  path: Assets/UI_Img/Control/Shoot_Ctrl.png
+  artifactKey: Guid(f5b8d495de1ea164794e303ef6b27512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI_Img/Control/Shoot_Ctrl.png using Guid(f5b8d495de1ea164794e303ef6b27512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c891bc4d3b1915490f36dc08ff9184a') in 0.086973 seconds
+  Import took 0.089178 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/UI_Img/Control/Walk_Ctrl.png
+  artifactKey: Guid(aeea4cc66ab04434ca16dfa9b6f4b59a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI_Img/Control/Walk_Ctrl.png using Guid(aeea4cc66ab04434ca16dfa9b6f4b59a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b125b0e493333758741960604ec6f94') in 0.022223 seconds
+  Import took 0.024215 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.021730 seconds.
+  path: Assets/UI_Img/Upgrade
+  artifactKey: Guid(3fc46cf9fdaa245419b0e96dfd0afb70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI_Img/Upgrade using Guid(3fc46cf9fdaa245419b0e96dfd0afb70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '816145b96224adb7b560ed6602b95c70') in 0.005391 seconds
+  Import took 0.007585 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000389 seconds.
+  path: Assets/UI_Img/Upgrade
+  artifactKey: Guid(3fc46cf9fdaa245419b0e96dfd0afb70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI_Img/Upgrade using Guid(3fc46cf9fdaa245419b0e96dfd0afb70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '816145b96224adb7b560ed6602b95c70') in 0.001675 seconds
+  Import took 0.003883 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.048280 seconds.
+  path: Assets/UI_Img/Upgrade/HealthUpgrade.png
+  artifactKey: Guid(e58fa10c9369e3a40a139a1885272642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI_Img/Upgrade/HealthUpgrade.png using Guid(e58fa10c9369e3a40a139a1885272642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9da79d5879ac216391d69af405c8a4f6') in 0.026496 seconds
+  Import took 0.028657 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/UI_Img/Upgrade/SpellUpgrade_Life.png
+  artifactKey: Guid(c9d3f71698a7c7d4eac225cef5470386) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI_Img/Upgrade/SpellUpgrade_Life.png using Guid(c9d3f71698a7c7d4eac225cef5470386) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3689d6b3a19141af6e2b9351a6413f9c') in 0.027906 seconds
+  Import took 0.029886 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/UI_Img/Upgrade/SpellUpgrade.png
+  artifactKey: Guid(bfa634dfc1d255c4a8c23201c6e0bd0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI_Img/Upgrade/SpellUpgrade.png using Guid(bfa634dfc1d255c4a8c23201c6e0bd0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c11263958adf35a269587657b54064d') in 0.014635 seconds
+  Import took 0.016682 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001427 seconds.
+  path: Assets/UI_Img/Upgrade/SpellUpgrade.png
+  artifactKey: Guid(bfa634dfc1d255c4a8c23201c6e0bd0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI_Img/Upgrade/SpellUpgrade.png using Guid(bfa634dfc1d255c4a8c23201c6e0bd0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c11263958adf35a269587657b54064d') in 0.011698 seconds
+  Import took 0.014341 seconds .
+
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
