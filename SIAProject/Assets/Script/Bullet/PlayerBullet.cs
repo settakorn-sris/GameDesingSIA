@@ -17,10 +17,12 @@ public class PlayerBullet : MonoBehaviour
     {
         return speed = bulletSpeed;
     }
-    private void OnTriggerEnter(Collider other)
+ 
+    private void OnCollisionEnter(Collision other)
     {
         var enemy = other.gameObject.GetComponent<ITakeDamage>();
         enemy?.TakeDamage(damage);
         gameObject.SetActive(false);
     }
 }
+

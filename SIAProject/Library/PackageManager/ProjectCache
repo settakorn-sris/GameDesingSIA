@@ -445,6 +445,7 @@ m_PackageAssets:
         - 1.1.0-preview.1
         - 1.1.0-preview.2
         - 1.1.0-preview.3
+        - 1.1.1
         compatible:
         - 0.1.2-preview
         - 0.2.0-preview
@@ -475,6 +476,7 @@ m_PackageAssets:
         - 1.1.0-preview.1
         - 1.1.0-preview.2
         - 1.1.0-preview.3
+        - 1.1.1
         verified: 1.0.2
       dependencies: []
       resolvedDependencies: []
