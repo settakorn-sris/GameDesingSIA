@@ -32,6 +32,7 @@ public class PoolingOBJ : MonoBehaviour
         for (var i = 0; i < poolAmount; i++)
         {
             bulletInPool[i] = Instantiate(bullet, transform.position, Quaternion.identity);
+            bulletInPool[i].transform.parent = transform;
             bulletInPool[i].gameObject.SetActive(false);
         }
     }

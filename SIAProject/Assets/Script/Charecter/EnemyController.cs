@@ -34,4 +34,9 @@ public class EnemyController : MonoBehaviour
     {
         agent.isStopped = true;
     }
+
+    private void Stop()
+    {
+        StopGoToPlayer();
+    }
 }

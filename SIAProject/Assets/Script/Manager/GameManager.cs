@@ -20,7 +20,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private Button resumeButton;
 
     [SerializeField] private TextMeshProUGUI roundText;
-    [SerializeField] private EnemyCharecter enemy;
+    [SerializeField] private EnemyCharecter[] enemy;
     [SerializeField] private EnemyCharecter boss;
 
     [SerializeField] private int enemyInThisRound = 5;
@@ -31,6 +31,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private GameObject buyPanel;
     [SerializeField] private float timeToBuy;
     [SerializeField] private Button buyHealingButton;
+    [SerializeField] private TextMeshProUGUI healthPrice;
     [SerializeField] private ScoreManager scoreManager;
 
     [SerializeField] private int healingPrice = 3;
@@ -39,12 +40,14 @@ public class GameManager : Singleton<GameManager>
     private int countEnemySpawnInround = 0;
     private float xPosition;
     private float zPosition;
+    private int indexForRandomEnemy;
    
 
     [Header("Player")]
     [SerializeField] private PlayerCharecter player;
     [SerializeField] private int playerHp;
     [SerializeField] private float playerSpeed;
+    [SerializeField] private Skill[] playerSkill; 
     private PlayerCharecter playerInScene;
     
     [Header("Bullet")]
@@ -90,6 +93,7 @@ public class GameManager : Singleton<GameManager>
         SpawnPlayer();
         wave = Wave.ENEMY;
         timeForEnemySpawn = 1;
+        healthPrice.text = $": {healingPrice}";
     }
   
     private void GameLoop()
@@ -114,7 +118,7 @@ public class GameManager : Singleton<GameManager>
     private void SpawnPlayer()
     {
         playerInScene= Instantiate(player, new Vector3(0, 1, 0), Quaternion.identity);
-        playerInScene.Init(playerHp, playerSpeed);
+        playerInScene.Init(playerHp, playerSpeed,playerSkill[0]);
         //OnReStart += player.IsDie;
     }
 
@@ -125,7 +129,8 @@ public class GameManager : Singleton<GameManager>
         {
             xPosition = UnityEngine.Random.Range(-12, 13);
             zPosition = UnityEngine.Random.Range(-11, 13);
-
+            indexForRandomEnemy = UnityEngine.Random.Range(0, enemy.Length);
+            print(indexForRandomEnemy);
             //print(timeForEnemySpawn);
             timeForEnemySpawn -= Time.deltaTime;
             //print(timeForEnemySpawn);
@@ -133,8 +138,9 @@ public class GameManager : Singleton<GameManager>
             if (timeForEnemySpawn >= 0) return;
             
             Debug.Log("Enemy round");
-            enemy.Init(enemyHp, enemySpeed, enemyDamage);
-            Instantiate(enemy, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
+            
+            enemy[indexForRandomEnemy].Init(enemyHp, enemySpeed, enemyDamage);
+            Instantiate(enemy[indexForRandomEnemy], new Vector3(xPosition, 0, zPosition), Quaternion.identity);
             timeForEnemySpawn = UnityEngine.Random.Range(1,3);
             countEnemySpawnInround++;
             
@@ -173,6 +179,7 @@ public class GameManager : Singleton<GameManager>
         speed += increaseSpeed;
 
     }
+
     private void UpgradeItem()
     {
         //Buy Panel SetActive(true)
@@ -192,12 +199,12 @@ public class GameManager : Singleton<GameManager>
     private void RoundSetting(int round)
     {
         this.round += round;
-        roundText.text = $"Round:{this.round}";
+        roundText.text = $"ROUND:{this.round}";
     }
     private void RoundReset()
     {
         round = 1;
-        roundText.text = $"Round:{this.round}";
+        roundText.text = $"ROUND:{this.round}";
     }
     private void StopGame()
     {
@@ -217,6 +224,11 @@ public class GameManager : Singleton<GameManager>
         scoreManager.MinusScore(healingPrice);
         playerInScene.Healing(playerHp);
         
+    }
+
+    private void BuySkill(Skill skill)
+    {
+        player.Skill = skill;
     }
     private void GameReset()
     {

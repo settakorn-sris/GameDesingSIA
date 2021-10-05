@@ -6,6 +6,7 @@ public class EnemyCharecter : Charecter
 {
     public int Damage;
     private GameManager gM;
+    [SerializeField] private float knockBack;
     [SerializeField] private int scoreInFirstRound = 1;
     [SerializeField] protected ParticleSystem dieParticle;
 
@@ -22,8 +23,14 @@ public class EnemyCharecter : Charecter
     }
     protected virtual void OnCollisionEnter(Collision collision)
     {
+        
         if (collision.gameObject.tag == "Player")
         {
+            Rigidbody rb = collision.collider.GetComponent<Rigidbody>();
+            Vector3 direction =collision.transform.position - transform.position;
+            direction.y = 0;
+            rb.AddForce(direction.normalized * knockBack, ForceMode.Impulse);
+
             var player = collision.gameObject.GetComponent<ITakeDamage>();
             player?.TakeDamage(Damage);
         }

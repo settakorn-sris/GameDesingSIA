@@ -15,8 +15,9 @@ public abstract class Charecter : MonoBehaviour,ITakeDamage
         healthBar.SetMaxHealth(Hp);
         OnDie += IsDie;
     }
-    private void Update()
+    protected virtual void Update()
     {
+        Debug.Log(Hp);
         healthBar.SetHealth(Hp);
     }
     protected void Init(int hp, float speed)
