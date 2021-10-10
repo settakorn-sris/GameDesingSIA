@@ -2358,7 +2358,7 @@ MonoBehaviour:
   playerHp: 100
   playerSpeed: 8
   playerSkill:
-  - {fileID: 1629563310}
+  - {fileID: 1221858826}
   FireRate: 1
   BulletDamage: 20
   BulletSpeed: 10
