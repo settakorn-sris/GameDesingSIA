@@ -15,7 +15,6 @@ public class SpeedSkill : Skill
 
     private IEnumerator Speed(PlayerCharecter player)
     {
-        print("speed");
         oldSpeed = player.Speed;
         player.Speed = addSpeed;
         print("speed");

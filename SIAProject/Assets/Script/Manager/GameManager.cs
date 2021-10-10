@@ -25,6 +25,7 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] private int enemyInThisRound = 5;
     private float timeForEnemySpawn;
+    [SerializeField] private GameObject[] map;
 
     //BuY
     [Header("Buy")]
@@ -34,7 +35,10 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private TextMeshProUGUI healthPrice;
     [SerializeField] private ScoreManager scoreManager;
 
+    //[SerializeField] private int skillPrice = 3;
+    private int randomSkillIndex = 0;
     [SerializeField] private int healingPrice = 3;
+
     private float timeCount;
     private int round = 1;
     private int countEnemySpawnInround = 0;
@@ -64,10 +68,16 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int bossHp;
     [SerializeField] private float bossSpeed;
     [SerializeField] private int bossDamage;
-  
+
+    [Header("For Skill")]
+    public GameObject CheckSkillCollision;  
     //Wave
     private Wave wave;
+   
 
+    public delegate void SlowSkillActive(float speed);
+    public event SlowSkillActive OnSlow;
+    
     //public event Action OnReStart;
 
     private void Awake()
@@ -141,6 +151,7 @@ public class GameManager : Singleton<GameManager>
             
             enemy[indexForRandomEnemy].Init(enemyHp, enemySpeed, enemyDamage);
             Instantiate(enemy[indexForRandomEnemy], new Vector3(xPosition, 0, zPosition), Quaternion.identity);
+            
             timeForEnemySpawn = UnityEngine.Random.Range(1,3);
             countEnemySpawnInround++;
             
@@ -183,8 +194,10 @@ public class GameManager : Singleton<GameManager>
     private void UpgradeItem()
     {
         //Buy Panel SetActive(true)
-       
+        randomSkillIndex = UnityEngine.Random.Range(0, playerSkill.Length); // For random skill
+        
         timeCount -= Time.deltaTime;
+        
         buyPanel.gameObject.SetActive(true);
         
         print(timeCount);
@@ -223,17 +236,64 @@ public class GameManager : Singleton<GameManager>
         if (scoreManager.Score < healingPrice) return;
         scoreManager.MinusScore(healingPrice);
         playerInScene.Healing(playerHp);
+       // buyPanel.SetActive(false);
         
     }
 
-    private void BuySkill(Skill skill)
+    private void BuySkill()
     {
-        player.Skill = skill;
+        if (scoreManager.Score < playerSkill[randomSkillIndex].SkillPrice) return;
+        scoreManager.MinusScore(playerSkill[randomSkillIndex].SkillPrice);
+        player.Skill = playerSkill[randomSkillIndex];
+        // buyPanel.SetActive(false);
     }
+
+    #region "For Skill"
+
+    public void TimeSlow(float speed)
+    {
+        OnSlow(speed);
+    }
+
+
+    #endregion
+
+
+
     private void GameReset()
     {
         SceneManager.LoadScene("Game");
     }
+
+    private void RandomMap()
+    {
+        //must have setActive false of old map before use this method
+        int randomMap = UnityEngine.Random.Range(0,map.Length);
+        map[randomMap].gameObject.SetActive(true);
+        map[randomMap].transform.position = new Vector3(0, 0, 0);
+
+    }
+
+    public float ReturnEnemySpeed(float speed)
+    {
+        return speed = enemySpeed;
+    }
+    public float GetEnemySpeed
+    {
+        get
+        {
+            return enemySpeed;
+        }
+    }
+
+    //private void CreatMap()
+    //{
+    //    int i = 0;
+    //    while(i<=map.Length)
+    //    {
+
+    //    }
+    //}
 
     //For Mockup
     //private void RestartGame()

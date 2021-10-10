@@ -235,8 +235,12 @@ MonoBehaviour:
   healthBar: {fileID: 466570768}
   Hp: 0
   Speed: 5
+  Skill: {fileID: 0}
   bulletType: {fileID: 8997183031183548279, guid: 533ca9c49d3b0d44987682d3aa0d461a, type: 3}
   bullet: {fileID: 520891883}
+  CanGetDamage: 1
+  CheckCollisionForSkill: {fileID: 0}
+  GM: {fileID: 0}
 --- !u!114 &237672591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,7 +803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1061247256059098503, guid: 09bc94f66cb90db4fab2db53061a8c71, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.87
+      value: 0.54
       objectReference: {fileID: 0}
     - target: {fileID: 1061247256059098503, guid: 09bc94f66cb90db4fab2db53061a8c71, type: 3}
       propertyPath: m_LocalPosition.y

@@ -149,6 +149,9 @@ MonoBehaviour:
   Skill: {fileID: 0}
   bulletType: {fileID: 8997183031183548279, guid: 533ca9c49d3b0d44987682d3aa0d461a, type: 3}
   bullet: {fileID: 6491609178442698509}
+  CanGetDamage: 1
+  CheckCollisionForSkill: {fileID: 0}
+  GM: {fileID: 0}
 --- !u!1 &7502358063932207375
 GameObject:
   m_ObjectHideFlags: 0

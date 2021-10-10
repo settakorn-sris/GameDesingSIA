@@ -7,6 +7,7 @@ public abstract class Skill : MonoBehaviour
     public string Name;
     public float CoolDownSkill = 0;
     public float timeOfSkill;
+    public int SkillPrice;
     //protected float timeCount = 0;
     // [SerializeField] protected ParticleSystem Particle;
 

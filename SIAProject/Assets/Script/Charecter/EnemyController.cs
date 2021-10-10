@@ -10,10 +10,11 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.speed = enemy.Speed;
+        
     }
     void Update()
     {
+        agent.speed = enemy.Speed;
         float dis = Vector3.Distance(transform.position, player.position);
         if (dis <= distanceStopEnemy)
         {
@@ -35,8 +36,4 @@ public class EnemyController : MonoBehaviour
         agent.isStopped = true;
     }
 
-    private void Stop()
-    {
-        StopGoToPlayer();
-    }
 }

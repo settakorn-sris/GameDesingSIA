@@ -26,7 +26,7 @@ public abstract class Charecter : MonoBehaviour,ITakeDamage
         this.Speed = speed;
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         Hp -= damage;
         if (Hp > 0) return;

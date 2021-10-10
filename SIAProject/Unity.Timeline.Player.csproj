@@ -90,8 +90,8 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Runtime\Scripting\PlayableTrack.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Runtime\Animation\ICurvesOwner.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Runtime\Audio\AudioClipProperties.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Runtime\Playables\BasicScriptPlayable.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Runtime\AssetUpgrade\TrackUpgrade.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Runtime\Playables\BasicScriptPlayable.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Runtime\Animation\AnimationTrack.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Runtime\Extensions\TrackExtensions.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Runtime\Audio\AudioPlayableAsset.cs" />

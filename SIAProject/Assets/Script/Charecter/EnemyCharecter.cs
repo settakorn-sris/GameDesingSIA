@@ -9,10 +9,13 @@ public class EnemyCharecter : Charecter
     [SerializeField] private float knockBack;
     [SerializeField] private int scoreInFirstRound = 1;
     [SerializeField] protected ParticleSystem dieParticle;
+  
+
 
     private void Awake()
     {
         gM = GameManager.Instance;
+        gM.OnSlow += SlowEnemyAndExit;
     }
 
     public void Init(int hp, float speed,int damage)
@@ -21,6 +24,24 @@ public class EnemyCharecter : Charecter
         Damage = damage;
 
     }
+    public void OnStunt()
+    {
+        Speed = 0;
+  
+    }
+    public void ExitStunt(float speed)
+    {
+        Speed = speed;
+       
+    }
+
+    private void SlowEnemyAndExit(float speed)
+    {
+        Speed = speed;
+        //Slow and Exit Slow Animation
+        //Slow and Exitr Slow Atk
+    }
+
     protected virtual void OnCollisionEnter(Collision collision)
     {
         
@@ -36,6 +57,7 @@ public class EnemyCharecter : Charecter
         }
      
     }
+
     public override void IsDie()
     {
         Instantiate(dieParticle, transform.position, Quaternion.identity);

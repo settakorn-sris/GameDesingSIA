@@ -9,9 +9,11 @@ public class PlayerCharecter : Charecter
     [SerializeField] private PlayerBullet bulletType;
     [SerializeField] private PoolingOBJ bullet;
     //private Animator animator;
-    public bool CanUseSkill { get; private set; }
+    private bool CanUseSkill;
+    public bool CanGetDamage = true;
+    public GameObject CheckCollisionForSkill;
    
-    private GameManager GM;
+    public GameManager GM;
     //public void GetBullet(PoolingOBJ bullet)
     //{
     //    this.bullet = bullet;
@@ -21,7 +23,7 @@ public class PlayerCharecter : Charecter
         base.Init(hp, speed);
         Skill = skill;
     }
-    private void Awake()
+    private void Awake()    
     {
         GM = GameManager.Instance;
         bullet.GetBulletType(bulletType);
@@ -75,13 +77,18 @@ public class PlayerCharecter : Charecter
             timeCountSkill -= Time.deltaTime;
             if (timeCountSkill <= 0)
             {
-                print("Complaste");
+                print("Completed");
                 CanUseSkill = true;
             }
         } 
         
     }
-   
+    public override void TakeDamage(int damage)
+    {
+        if (!CanGetDamage) return;
+        base.TakeDamage(damage);
+    }
+
     public override void IsDie()
     {
 

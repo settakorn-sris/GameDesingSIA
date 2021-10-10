@@ -218,6 +218,115 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218820414}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &251369875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 251369880}
+  - component: {fileID: 251369879}
+  - component: {fileID: 251369878}
+  - component: {fileID: 251369877}
+  - component: {fileID: 251369876}
+  m_Layer: 0
+  m_Name: CheckSkillCollision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &251369876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251369875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9f7db0c08cb03499374c22cb5cf505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunt: {fileID: 1030780413}
+--- !u!65 &251369877
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251369875}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &251369878
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251369875}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &251369879
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251369875}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &251369880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251369875}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.96, z: 0}
+  m_LocalScale: {x: 6.1868596, y: 1.7530178, z: 4.4770527}
+  m_Children: []
+  m_Father: {fileID: 950208656}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &252560640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,6 +1896,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907466030}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &912039785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912039787}
+  - component: {fileID: 912039786}
+  m_Layer: 0
+  m_Name: StuntSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &912039786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912039785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d4e7012648aa344a7f95d6c5c20d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Stunt
+  CoolDownSkill: 2
+  timeOfSkill: 0
+  SkillPrice: 0
+--- !u!4 &912039787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912039785}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3584318, y: 5.1397305, z: -1.671411}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919060935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2167,6 +2323,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 798746470}
+  - {fileID: 251369880}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2188,9 +2345,9 @@ MonoBehaviour:
   roundText: {fileID: 1284543252}
   enemy:
   - {fileID: 8712992932231092171, guid: 9c011b53696e32049b241f32695f6d98, type: 3}
-  - {fileID: 1071079978937696068, guid: bad8dfc61d938864db3d7ba0b5780caf, type: 3}
   boss: {fileID: 1071079978937696068, guid: bad8dfc61d938864db3d7ba0b5780caf, type: 3}
-  enemyInThisRound: 1
+  enemyInThisRound: 10
+  map: []
   buyPanel: {fileID: 1709214145}
   timeToBuy: 5
   buyHealingButton: {fileID: 628710705}
@@ -2201,7 +2358,7 @@ MonoBehaviour:
   playerHp: 100
   playerSpeed: 8
   playerSkill:
-  - {fileID: 994715579}
+  - {fileID: 1629563310}
   FireRate: 1
   BulletDamage: 20
   BulletSpeed: 10
@@ -2211,6 +2368,7 @@ MonoBehaviour:
   bossHp: 50
   bossSpeed: 1
   bossDamage: 30
+  CheckSkillCollision: {fileID: 251369875}
 --- !u!114 &950208658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,8 +2526,8 @@ MonoBehaviour:
   Name: Speed
   CoolDownSkill: 10
   timeOfSkill: 5
-  addSpeed: 45
-  IsUseSkill: 1
+  SkillPrice: 0
+  addSpeed: 30
 --- !u!4 &994715580
 Transform:
   m_ObjectHideFlags: 0
@@ -2384,6 +2542,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030780413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1225512974758528929, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+  m_PrefabInstance: {fileID: 1415741591}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d4e7012648aa344a7f95d6c5c20d31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1089285468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,6 +2743,54 @@ Transform:
   m_Father: {fileID: 1558119062}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1221858825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221858827}
+  - component: {fileID: 1221858826}
+  m_Layer: 0
+  m_Name: TimeSlowSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1221858826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221858825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532d2a3aa9a41c148af0a5f28e1a67a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: SlowTime
+  CoolDownSkill: 2
+  timeOfSkill: 5
+  SkillPrice: 0
+  forSlowSpeed: 0.25
+--- !u!4 &1221858827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221858825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1272956214
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,6 +2967,53 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1276777074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1276777076}
+  - component: {fileID: 1276777075}
+  m_Layer: 0
+  m_Name: Immortal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1276777075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276777074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8363013329d185e47aa78d33bd0650e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Immortal
+  CoolDownSkill: 20
+  timeOfSkill: 5
+  SkillPrice: 0
+--- !u!4 &1276777076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276777074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.2, y: 1, z: 13.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280339348
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,6 +3532,79 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374116243}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1415741591
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.56427
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.3584318
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.1397305
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.671411
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528928, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528929, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: timeOfSkill
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528930, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_Name
+      value: StuntSkill (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8701907746795881537, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
 --- !u!1 &1507161726
 GameObject:
   m_ObjectHideFlags: 0
@@ -3660,6 +3997,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626744559}
   m_CullTransparentMesh: 1
+--- !u!1 &1629563309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1629563311}
+  - component: {fileID: 1629563310}
+  m_Layer: 0
+  m_Name: AddDamage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1629563310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629563309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add79d85df29ede4884c44e97380939c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: AddDamage
+  CoolDownSkill: 20
+  timeOfSkill: 5
+  SkillPrice: 0
+  damgeForAdd: 100
+--- !u!4 &1629563311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629563309}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.3584318, y: 5.1397305, z: -1.671411}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1640911065
 GameObject:
   m_ObjectHideFlags: 0
