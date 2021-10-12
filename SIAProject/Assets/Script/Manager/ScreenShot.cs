@@ -8,9 +8,9 @@ using UnityEngine.Events;
 
 public class ScreenShot : MonoBehaviour
 {
-    public int CaptureHeigh = Screen.height;
-    public int CaptureWidth = (Screen.height / 16) * 9;
-
+    public int CaptureHeigh;
+    public int CaptureWidth;
+    [SerializeField] private Button closeButton;
     public enum Format { RAW,JPG,PNG,PPM}
     public Format format = Format.JPG;
 
@@ -36,6 +36,12 @@ public class ScreenShot : MonoBehaviour
             Directory.CreateDirectory(outputFolder);
             Debug.Log(outputFolder);
         }
+    }
+    private void Awake()
+    {
+        closeButton.onClick.AddListener(CloseButtonActive);
+        CaptureWidth = (Screen.height / 16) * 9;
+        CaptureHeigh = Screen.height;
     }
 
     // Update is called once per frame
@@ -136,6 +142,13 @@ public class ScreenShot : MonoBehaviour
         ShowImage.material.mainTexture = texture;
 
         OnShowImage?.Invoke();
+        Time.timeScale = 0;
+    }
+
+    private void CloseButtonActive()
+    {
+        Time.timeScale += 1;
+        
     }
 
 }
