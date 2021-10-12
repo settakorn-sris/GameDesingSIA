@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemyCharecter : Charecter
 {
     public int Damage;
-    private GameManager gM;
+    protected GameManager gM;
     [SerializeField] private float knockBack;
     [SerializeField] private int scoreInFirstRound = 1;
     [SerializeField] protected ParticleSystem dieParticle;
   
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         gM = GameManager.Instance;
         gM.OnSlow += SlowEnemyAndExit;
