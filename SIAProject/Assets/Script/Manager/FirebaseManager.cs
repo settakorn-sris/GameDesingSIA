@@ -22,13 +22,16 @@ public class FirebaseManager : MonoBehaviour
     private string databaseURL = "https://sia-firebase-125eb-default-rtdb.asia-southeast1.firebasedatabase.app/user";
     private string apikey = "AIzaSyA9rERnZuGm9k4gNXePzvFh_NJ4TdCFmHU";
     private string idToken = "9ddqSj28nVB0nUOf09Qe4ArqRrTbhRruDA2ALMRd";
-    private string localId;
+    public static fsSerializer serializer = new fsSerializer();
+    public static string localId;
+    private string getLocalId;
 
     [Header("User Info")]
     public int rank = 0;
     public string username;
     public int score = 0;
-    UserInfo userInfo;
+
+    private UserInfo userInfo;
     public void SignUpButton()
     {
         SignUp(emailSignup.text, passwordSignup.text);
@@ -100,5 +103,41 @@ public class FirebaseManager : MonoBehaviour
         {
             Debug.Log("Signin Error");
         });
+    }
+    private void GetUserName()
+    {
+        RestClient.Get<UserInfo>($"{databaseURL}/{localId}.json?auth={idToken}").Then(response =>
+        {
+            username = response.username;
+        }).Catch(error =>
+        {
+            Debug.Log("Error Get User Name");
+        });
+    }
+    private void GetLocalID()
+    {
+        RestClient.Get($"{databaseURL}.json?auth={idToken}").Then(response =>
+        {
+            var username = emailSignin.text;
+            Debug.Log("Check GetLocalID");
+            fsData userData = fsJsonParser.Parse(response.Text);
+            Dictionary<string, UserInfo> users = null;
+            serializer.TryDeserialize(userData, ref users);
+
+            foreach (var user in users.Values)
+            {
+                if (user.username == username)
+                {
+                    getLocalId = user.localId;
+                    RetrieveFromDatabase();
+                    Debug.Log("GetLocalID Complete");
+                    break;
+                }
+            }
+        }).Catch(error =>
+        {
+            Debug.Log("GetLocalID Error");
+        });
+
     }
 }
