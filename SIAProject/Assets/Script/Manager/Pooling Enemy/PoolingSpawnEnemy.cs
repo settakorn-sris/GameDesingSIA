@@ -54,12 +54,12 @@ public class PoolingSpawnEnemy : MonoBehaviour
 
    
     //return Enemy
-    private void SentEnemy(float x,float z,int hp,int damage,float speed)
+    private void SentEnemy(float x,float z,int hp,int damage,int scoreInRound,float speed)
     {
         if(enemyQueue.Count>0)
         {
             var enemy = enemyQueue.Dequeue();
-            enemy.Init(hp, speed, damage);
+            enemy.Init(hp, speed, damage,scoreInRound);
             enemy.transform.position = new Vector3(x, 0, z);
             enemy.gameObject.SetActive(true);
         }
@@ -67,7 +67,7 @@ public class PoolingSpawnEnemy : MonoBehaviour
         {
             int i = Random.Range(0, typeEnemyCount);
             var enemySurplus = Instantiate(enemy[0], new Vector3(x, 0, z), Quaternion.identity);
-            enemySurplus.Init(hp, speed, damage);
+            enemySurplus.Init(hp, speed, damage,scoreInRound);
 
         }
 

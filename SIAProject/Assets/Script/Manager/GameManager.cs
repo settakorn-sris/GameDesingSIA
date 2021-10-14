@@ -64,9 +64,18 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int enemyHp;
     [SerializeField] private float enemySpeed;
     [SerializeField] private int enemyDamage;
+    [SerializeField] private int scoreInRound;
+   
 
     #region For get Base Enemy 
 
+    public int GetScoreInRound
+    {
+        get
+        {
+            return scoreInRound;
+        }
+    }
     public EnemyCharecter[] Enemy
     {
         get
@@ -119,6 +128,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int bossHp;
     [SerializeField] private float bossSpeed;
     [SerializeField] private int bossDamage;
+    [SerializeField] private int scoreBossInRound;
     public int HpForBossHealing;
     public int minianAmount;
    // public EnemyCharecter MinianOfBoss;
@@ -191,8 +201,8 @@ public class GameManager : Singleton<GameManager>
 
         while (countEnemySpawnInround < enemyInThisRound)
         {
-            xPosition = UnityEngine.Random.Range(-12, 13);
-            zPosition = UnityEngine.Random.Range(-11, 13);
+            xPosition = UnityEngine.Random.Range(-10, 10);
+            zPosition = UnityEngine.Random.Range(-5, 12);
             indexForRandomEnemy = UnityEngine.Random.Range(0, enemy.Length);
             print(indexForRandomEnemy);
             //print(timeForEnemySpawn);
@@ -203,7 +213,7 @@ public class GameManager : Singleton<GameManager>
             
             Debug.Log("Enemy round");
             
-            enemy[indexForRandomEnemy].Init(enemyHp, enemySpeed, enemyDamage);
+            enemy[indexForRandomEnemy].Init(enemyHp, enemySpeed, enemyDamage,scoreInRound);
             Instantiate(enemy[indexForRandomEnemy], new Vector3(xPosition, 0, zPosition), Quaternion.identity);
             
             timeForEnemySpawn = UnityEngine.Random.Range(1,3);
@@ -227,7 +237,7 @@ public class GameManager : Singleton<GameManager>
         var bossCheck = GameObject.FindGameObjectsWithTag("Boss");
         if(bossCheck.Length ==0)
         {
-            boss.Init(bossHp,bossSpeed,bossDamage);
+            boss.Init(bossHp,bossSpeed,bossDamage,scoreBossInRound);
             Instantiate(boss, new Vector3(-8, 0, 13), Quaternion.identity);
         }
         //UpgradeItem() //if Boss Is Die

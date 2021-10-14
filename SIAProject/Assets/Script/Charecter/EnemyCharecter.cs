@@ -18,11 +18,11 @@ public class EnemyCharecter : Charecter
         gM.OnSlow += SlowEnemyAndExit;
     }
 
-    public void Init(int hp, float speed,int damage)
+    public void Init(int hp, float speed,int damage,int scoreEnemyInRound)
     {
         base.Init(hp, speed);
         Damage = damage;
-
+        scoreInFirstRound = scoreEnemyInRound;
     }
     public void OnStunt()
     {
