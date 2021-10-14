@@ -27,6 +27,7 @@ public class GameManager : Singleton<GameManager>
     private float timeForEnemySpawn;
     [SerializeField] private GameObject[] map;
 
+
     //BuY
     [Header("Buy")]
     [SerializeField] private GameObject buyPanel;
@@ -59,11 +60,60 @@ public class GameManager : Singleton<GameManager>
     public int BulletDamage;
     public int BulletSpeed;
 
-    [Header("Enemy")]
+    [Header("Enemy Base")]
     [SerializeField] private int enemyHp;
     [SerializeField] private float enemySpeed;
     [SerializeField] private int enemyDamage;
-   
+
+    #region For get Base Enemy 
+
+    public EnemyCharecter[] Enemy
+    {
+        get
+        {
+            return enemy;
+        }
+    }
+
+    public int Hp
+    {
+        get
+        {
+            return enemyHp;
+        }
+    }
+
+    public float Speed
+    {
+        get
+        {
+            return enemySpeed;
+        }
+    }
+
+    public int Damage
+    {
+        get
+        {
+            return enemyDamage;
+        }
+    }
+    #endregion
+
+    [Header("Enemy bomb")]
+    [SerializeField] private int bombDamage;
+
+    #region For get Enemy bomb property
+
+    public int GetBombDamage
+    {
+        get
+        {
+            return bombDamage;
+        }
+    }
+
+    #endregion
 
     [Header("Boss")]
     [SerializeField] private int bossHp;
@@ -240,8 +290,9 @@ public class GameManager : Singleton<GameManager>
         if (scoreManager.Score < healingPrice) return;
         scoreManager.MinusScore(healingPrice);
         playerInScene.Healing(playerHp);
-       // buyPanel.SetActive(false);
-        
+        buyPanel.SetActive(false);
+        timeCount = 0;
+
     }
 
     private void BuySkill()

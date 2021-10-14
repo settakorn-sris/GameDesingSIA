@@ -8,7 +8,9 @@ public class PlayerCharecter : Charecter
     private float timeCountSkill = 0;
     [SerializeField] private PlayerBullet bulletType;
     [SerializeField] private PoolingOBJ bullet;
-    //private Animator animator;
+
+    private Animator animator;
+
     private bool CanUseSkill;
     public bool CanGetDamage = true;
     public GameObject CheckCollisionForSkill;
@@ -27,7 +29,9 @@ public class PlayerCharecter : Charecter
     {
         GM = GameManager.Instance;
         bullet.GetBulletType(bulletType);
-        //animator = GetComponent<Animator>();
+
+        animator = GetComponent<Animator>();
+
         CanUseSkill = true;
     }
 
