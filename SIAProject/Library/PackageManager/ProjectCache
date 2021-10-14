@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637667946173484344
+      ticks: 637698045681654669
     m_Hash: 2988988130
   m_LockFileStatus:
     m_FilePath: "D:/Job/\u0E1B\u0E353-\u0E40\u0E17\u0E2D\u0E211/GI344 - Game Design/ProjectPlzNoConfig/SIAProject/Packages/packages-lock.json"
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637667946173484344
+      ticks: 637698045681654669
     m_Hash: 4092248973
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -68,6 +68,8 @@ m_PackageAssets:
         - 1.9.0
         - 1.10.2
         - 1.11.2
+        - 1.12.5
+        - 1.13.5
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
@@ -85,6 +87,7 @@ m_PackageAssets:
         - 1.6.0
         - 1.8.0
         - 1.10.2
+        - 1.12.5
         - 2.0.0-preview.6
         - 2.0.0-preview.8
         - 2.0.0-preview.15
