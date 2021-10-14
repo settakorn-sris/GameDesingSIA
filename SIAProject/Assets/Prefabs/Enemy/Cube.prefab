@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c40cd28ff27a1bb41b9a3ae2317cac19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -139,11 +139,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 4959684741629441998}
   damagePopUp: {fileID: 8508749476267495382, guid: ecf9fdc9c48104144bd808246c352ec9, type: 3}
-  Hp: 35
+  Hp: 20
   Speed: 3
-  Damage: 20
+  Damage: 10
   knockBack: 5
-  scoreInFirstRound: 1
+  scoreInFirstRound: 0
   dieParticle: {fileID: 8894045807073587843, guid: d2685fc7db8a0864f8e48f5c36cab38f, type: 3}
 --- !u!65 &2080413478132898426
 BoxCollider:
