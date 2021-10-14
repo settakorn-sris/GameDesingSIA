@@ -22,9 +22,9 @@ public class FirebaseManager : MonoBehaviour
     private string databaseURL = "https://sia-firebase-125eb-default-rtdb.asia-southeast1.firebasedatabase.app/user";
     private string apikey = "AIzaSyA9rERnZuGm9k4gNXePzvFh_NJ4TdCFmHU";
     private string idToken = "9ddqSj28nVB0nUOf09Qe4ArqRrTbhRruDA2ALMRd";
+    private string getLocalId;
     public static fsSerializer serializer = new fsSerializer();
     public static string localId;
-    private string getLocalId;
 
     [Header("User Info")]
     public int rank = 0;
@@ -32,6 +32,7 @@ public class FirebaseManager : MonoBehaviour
     public int score = 0;
 
     private UserInfo userInfo;
+    
     public void SignUpButton()
     {
         SignUp(emailSignup.text, passwordSignup.text);
