@@ -49,7 +49,7 @@ public class Player : MonoBehaviour, IPlayerControlActions
     {
         Vector2 direction = ctx.ReadValue<Vector2>();
         playerDiraction = new Vector3(direction.x, 0, direction.y);
-        //Animation(direction.x, direction.y);
+        Animation(direction.x, direction.y);
     }
     public void OnPlayerLook(InputAction.CallbackContext ctx)
     {
@@ -77,7 +77,7 @@ public class Player : MonoBehaviour, IPlayerControlActions
     {
         player.Attack();
         //get from pooling class
-        //animator.SetBool("ATK", true);
+        animator.SetBool("ATK", true);
     }
 
     private void Animation(float x,float z)

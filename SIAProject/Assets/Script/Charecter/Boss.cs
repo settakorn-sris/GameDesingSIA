@@ -41,7 +41,7 @@ public class Boss : EnemyCharecter
         }
         
         base.TakeDamage(damage);
-
+        
     }
     public override void IsDie()
     {
@@ -53,8 +53,8 @@ public class Boss : EnemyCharecter
         while (minianAmount > 0)
         {
 
-            var xPosition = Random.Range(-12, 13);
-            var zPosition = Random.Range(-11, 13);
+            var xPosition = Random.Range(gM.MinSpawnEnemyForRandomX, gM.MaxSpawnEnemyForRandomX);
+            var zPosition = Random.Range(gM.MinSpawnEnemyForRandomZ, gM.MaxSpawnEnemyForRandomZ);
 
             Instantiate(minian, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
             minianAmount--;
