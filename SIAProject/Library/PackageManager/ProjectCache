@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637694832530966902
+      ticks: 637698159784923649
     m_Hash: 114243852
   m_LockFileStatus:
     m_FilePath: F:/GameDesingPro/GameDesingSIA/SIAProject/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637694832530986974
+      ticks: 637698159784953660
     m_Hash: 681931447
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -3320,6 +3320,7 @@ m_PackageAssets:
         - 4.3.2
         - 4.6.0-preview
         - 4.7.0-preview
+        - 4.9.1
         compatible:
         - 4.0.0-preview
         - 4.0.0
@@ -3335,6 +3336,7 @@ m_PackageAssets:
         - 4.3.2
         - 4.6.0-preview
         - 4.7.0-preview
+        - 4.9.1
         verified: 4.3.2
       dependencies: []
       resolvedDependencies: []
