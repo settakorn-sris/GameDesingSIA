@@ -233,7 +233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 466570768}
-  Hp: 0
+  damagePopUp: {fileID: 0}
+  Hp: 100
   Speed: 5
   Skill: {fileID: 0}
   bulletType: {fileID: 8997183031183548279, guid: 533ca9c49d3b0d44987682d3aa0d461a, type: 3}
