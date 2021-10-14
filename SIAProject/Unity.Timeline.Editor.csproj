@@ -83,8 +83,8 @@
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\State\SequenceState.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Items\ClipItem.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\TimelineSelection.cs" />
-    <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\treeview\Drawers\Layers\ItemsLayer.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Undo\UndoExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\treeview\Drawers\Layers\ItemsLayer.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Window\Modes\TimelineActiveMode.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Manipulators\Cursors\TimelineCursors.cs" />
     <Compile Include="Library\PackageCache\com.unity.timeline@1.4.8\Editor\Signals\SignalUtility.cs" />
@@ -552,9 +552,6 @@
     <Reference Include="UnityEditor.iOS.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.AppleTV.Extensions">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.AppleTV.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
@@ -566,9 +563,6 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
