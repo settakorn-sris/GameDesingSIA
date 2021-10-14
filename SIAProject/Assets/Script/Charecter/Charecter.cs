@@ -6,6 +6,8 @@ using System;
 public abstract class Charecter : MonoBehaviour,ITakeDamage
 {
     [SerializeField] private HealthBar healthBar;
+    [SerializeField] private TakeDamagePopUp damagePopUp;
+
     public int Hp;
 
     public float Speed;
@@ -29,10 +31,13 @@ public abstract class Charecter : MonoBehaviour,ITakeDamage
     public virtual void TakeDamage(int damage)
     {
         Hp -= damage;
+        var damagePop = Instantiate(damagePopUp, transform.position, Quaternion.identity);
+        damagePop.PopupActive(damage);
         if (Hp > 0) return;
         OnDie();
     }
 
+    
     public abstract void IsDie();
     
     

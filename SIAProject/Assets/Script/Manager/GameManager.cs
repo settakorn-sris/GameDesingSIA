@@ -63,11 +63,15 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int enemyHp;
     [SerializeField] private float enemySpeed;
     [SerializeField] private int enemyDamage;
+   
 
     [Header("Boss")]
     [SerializeField] private int bossHp;
     [SerializeField] private float bossSpeed;
     [SerializeField] private int bossDamage;
+    public int HpForBossHealing;
+    public int minianAmount;
+   // public EnemyCharecter MinianOfBoss;
 
     [Header("For Skill")]
     public GameObject CheckSkillCollision;  
@@ -119,7 +123,7 @@ public class GameManager : Singleton<GameManager>
         {
             SpawnBoss();
         }
-        else if(wave==Wave.BUY && bossCheck.Length==0)
+        else if(wave==Wave.BUY && bossCheck.Length==0 && enemyCheck.Length == 0) //wave==Wave.BUY && bossCheck.Length==0
         {
             UpgradeItem();
         }
@@ -283,6 +287,13 @@ public class GameManager : Singleton<GameManager>
         get
         {
             return enemySpeed;
+        }
+    }
+    public int GetBossHp
+    {
+        get
+        {
+            return bossHp;
         }
     }
 
