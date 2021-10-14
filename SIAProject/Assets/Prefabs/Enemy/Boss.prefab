@@ -169,10 +169,10 @@ MonoBehaviour:
   healthBar: {fileID: 4959684741629441998}
   damagePopUp: {fileID: 8508749476267495382, guid: ecf9fdc9c48104144bd808246c352ec9, type: 3}
   Hp: 100
-  Speed: 5
+  Speed: 3.5
   Damage: 30
   knockBack: 5
-  scoreInFirstRound: 1
+  scoreInFirstRound: 10
   dieParticle: {fileID: 8894045807073587843, guid: d2685fc7db8a0864f8e48f5c36cab38f, type: 3}
   minian: {fileID: 8712992932231092171, guid: 9c011b53696e32049b241f32695f6d98, type: 3}
 --- !u!1001 &7483064982468350362
