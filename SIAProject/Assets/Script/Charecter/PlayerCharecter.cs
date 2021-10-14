@@ -9,6 +9,7 @@ public class PlayerCharecter : Charecter
     [SerializeField] private PlayerBullet bulletType;
     [SerializeField] private PoolingOBJ bullet;
 
+
     private Animator animator;
 
     private bool CanUseSkill;
@@ -45,11 +46,12 @@ public class PlayerCharecter : Charecter
         {
             UseSkill();
         }
+        
     }
     public void Attack()
     {
         bullet.GetPool();
-        //animator.SetTrigger("ATK");
+        animator.SetTrigger("ATK");
         //Instantiate(bulletType, bullet.transform.position, Quaternion.identity);
     }
     public void ChangeBullet()
@@ -97,7 +99,7 @@ public class PlayerCharecter : Charecter
     {
 
         Debug.Log("Die");
-        //animator.SetTrigger("Dying");
+        animator.SetTrigger("Dying");
     }
 
 }

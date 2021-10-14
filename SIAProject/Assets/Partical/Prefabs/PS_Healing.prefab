@@ -4815,6 +4815,7 @@ GameObject:
   - component: {fileID: 3545797749814015960}
   - component: {fileID: 3954100028215827335}
   - component: {fileID: 4333883763790596601}
+  - component: {fileID: 4332889873611719397}
   m_Layer: 0
   m_Name: PS_Healing
   m_TagString: Untagged
@@ -9611,6 +9612,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &4332889873611719397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4583068427219397625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c620e87e51d85a40b4287d5378c88a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  follow: {fileID: 0}
+  time: 5
 --- !u!1 &7167316825212235133
 GameObject:
   m_ObjectHideFlags: 0

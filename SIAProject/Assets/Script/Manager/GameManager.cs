@@ -131,7 +131,47 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int scoreBossInRound;
     public int HpForBossHealing;
     public int minianAmount;
-   // public EnemyCharecter MinianOfBoss;
+    // public EnemyCharecter MinianOfBoss;
+    [Header("Position for Spawn Enemy")]
+    [SerializeField] private float maxSpawnEnemyForRandomX = -10f;
+    [SerializeField] private float minSpawnEnemyForRandomX = 10f;
+    [SerializeField] private float maxSpawnEnemyForRandomZ = -5f;
+    [SerializeField] private float minSpawnEnemyForRandomZ = -3.9f;
+
+    #region Get SpawnEnemPoint
+    public float MaxSpawnEnemyForRandomX
+    {
+        get
+        {
+            return maxSpawnEnemyForRandomX;
+        }
+    }
+
+    public float MinSpawnEnemyForRandomX
+    {
+        get
+        {
+            return minSpawnEnemyForRandomX;
+        }
+    }
+
+    public float MaxSpawnEnemyForRandomZ
+    {
+        get
+        {
+            return maxSpawnEnemyForRandomZ;
+        }
+    }
+
+    public float MinSpawnEnemyForRandomZ
+    {
+        get
+        {
+            return minSpawnEnemyForRandomZ;
+        }
+    }
+
+    #endregion
 
     [Header("For Skill")]
     public GameObject CheckSkillCollision;  
@@ -141,6 +181,8 @@ public class GameManager : Singleton<GameManager>
 
     public delegate void SlowSkillActive(float speed);
     public event SlowSkillActive OnSlow;
+
+    [SerializeField]private ParticalFollowPlayer HealingPartical;
     
     //public event Action OnReStart;
 
@@ -201,8 +243,8 @@ public class GameManager : Singleton<GameManager>
 
         while (countEnemySpawnInround < enemyInThisRound)
         {
-            xPosition = UnityEngine.Random.Range(-10, 10);
-            zPosition = UnityEngine.Random.Range(-5, 12);
+            xPosition = UnityEngine.Random.Range(minSpawnEnemyForRandomX, maxSpawnEnemyForRandomX);
+            zPosition = UnityEngine.Random.Range(minSpawnEnemyForRandomZ, MaxSpawnEnemyForRandomZ);
             indexForRandomEnemy = UnityEngine.Random.Range(0, enemy.Length);
             print(indexForRandomEnemy);
             //print(timeForEnemySpawn);
@@ -299,8 +341,13 @@ public class GameManager : Singleton<GameManager>
     {
         if (scoreManager.Score < healingPrice) return;
         scoreManager.MinusScore(healingPrice);
-        playerInScene.Healing(playerHp);
         buyPanel.SetActive(false);
+        playerInScene.Healing(playerHp);
+    
+        HealingPartical.GetPlayer(playerInScene);
+        var partical = Instantiate(HealingPartical,new Vector3(playerInScene.transform.position.x,0, playerInScene.transform.position.z), Quaternion.identity);
+       
+       
         timeCount = 0;
 
     }

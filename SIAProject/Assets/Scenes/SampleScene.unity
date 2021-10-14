@@ -3069,6 +3069,7 @@ MonoBehaviour:
   roundText: {fileID: 1284543252}
   enemy:
   - {fileID: 4106314541971699619, guid: 49ce524a3672deb409e0d59854db9d26, type: 3}
+  - {fileID: 8712992932231092171, guid: 9c011b53696e32049b241f32695f6d98, type: 3}
   boss: {fileID: 574462849694165234, guid: bad8dfc61d938864db3d7ba0b5780caf, type: 3}
   enemyInThisRound: 1
   map: []
@@ -3078,7 +3079,7 @@ MonoBehaviour:
   healthPrice: {fileID: 355253229}
   scoreManager: {fileID: 798746469}
   healingPrice: 3
-  player: {fileID: 5954075894018821184, guid: 3580cc075b8c89f438ce925fcfe9000b, type: 3}
+  player: {fileID: 237672590, guid: aefce2d96e6bd7a47975d2366371a2ad, type: 3}
   playerHp: 100
   playerSpeed: 8
   playerSkill:
@@ -3097,7 +3098,12 @@ MonoBehaviour:
   scoreBossInRound: 10
   HpForBossHealing: 30
   minianAmount: 3
+  maxSpawnEnemyForRandomX: -10
+  minSpawnEnemyForRandomX: 10
+  maxSpawnEnemyForRandomZ: -5
+  minSpawnEnemyForRandomZ: -3.9
   CheckSkillCollision: {fileID: 251369875}
+  HealingPartical: {fileID: 4332889873611719397, guid: 4ba4f5c2426b02c4c9722a59e5963f2a, type: 3}
 --- !u!114 &950208658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5524,7 +5530,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939538816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.1, y: 1, z: -5.6}
+  m_LocalPosition: {x: -2.8, y: 1, z: -1.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

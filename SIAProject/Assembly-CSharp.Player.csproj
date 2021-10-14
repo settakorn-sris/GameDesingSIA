@@ -169,6 +169,7 @@
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Helpers\Extensions.cs" />
     <Compile Include="Assets\FullSerializer\Source\fsMemberSerialization.cs" />
     <Compile Include="Assets\RestClient\DemoScene\Scripts\Model\Photo.cs" />
+    <Compile Include="Assets\Script\ParticalFollowPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
