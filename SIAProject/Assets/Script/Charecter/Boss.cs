@@ -19,7 +19,7 @@ public class Boss : EnemyCharecter
         minianAmount = gM.minianAmount;
        
         //minian = gM.MinianOfBoss;
-        minian.Init(20,3,10);
+        minian.Init(20,3,10,0);
     }
     protected override void OnCollisionEnter(Collision collision)
     {
