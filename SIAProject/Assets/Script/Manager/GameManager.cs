@@ -64,9 +64,18 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int enemyHp;
     [SerializeField] private float enemySpeed;
     [SerializeField] private int enemyDamage;
+    [SerializeField] private int scoreInRound;
+   
 
     #region For get Base Enemy 
 
+    public int GetScoreInRound
+    {
+        get
+        {
+            return scoreInRound;
+        }
+    }
     public EnemyCharecter[] Enemy
     {
         get
@@ -119,9 +128,50 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int bossHp;
     [SerializeField] private float bossSpeed;
     [SerializeField] private int bossDamage;
+    [SerializeField] private int scoreBossInRound;
     public int HpForBossHealing;
     public int minianAmount;
-   // public EnemyCharecter MinianOfBoss;
+    // public EnemyCharecter MinianOfBoss;
+    [Header("Position for Spawn Enemy")]
+    [SerializeField] private float maxSpawnEnemyForRandomX = -10f;
+    [SerializeField] private float minSpawnEnemyForRandomX = 10f;
+    [SerializeField] private float maxSpawnEnemyForRandomZ = -5f;
+    [SerializeField] private float minSpawnEnemyForRandomZ = -3.9f;
+
+    #region Get SpawnEnemPoint
+    public float MaxSpawnEnemyForRandomX
+    {
+        get
+        {
+            return maxSpawnEnemyForRandomX;
+        }
+    }
+
+    public float MinSpawnEnemyForRandomX
+    {
+        get
+        {
+            return minSpawnEnemyForRandomX;
+        }
+    }
+
+    public float MaxSpawnEnemyForRandomZ
+    {
+        get
+        {
+            return maxSpawnEnemyForRandomZ;
+        }
+    }
+
+    public float MinSpawnEnemyForRandomZ
+    {
+        get
+        {
+            return minSpawnEnemyForRandomZ;
+        }
+    }
+
+    #endregion
 
     [Header("For Skill")]
     public GameObject CheckSkillCollision;  
@@ -131,6 +181,8 @@ public class GameManager : Singleton<GameManager>
 
     public delegate void SlowSkillActive(float speed);
     public event SlowSkillActive OnSlow;
+
+    [SerializeField]private ParticalFollowPlayer HealingPartical;
     
     //public event Action OnReStart;
 
@@ -191,8 +243,8 @@ public class GameManager : Singleton<GameManager>
 
         while (countEnemySpawnInround < enemyInThisRound)
         {
-            xPosition = UnityEngine.Random.Range(-12, 13);
-            zPosition = UnityEngine.Random.Range(-11, 13);
+            xPosition = UnityEngine.Random.Range(minSpawnEnemyForRandomX, maxSpawnEnemyForRandomX);
+            zPosition = UnityEngine.Random.Range(minSpawnEnemyForRandomZ, MaxSpawnEnemyForRandomZ);
             indexForRandomEnemy = UnityEngine.Random.Range(0, enemy.Length);
             print(indexForRandomEnemy);
             //print(timeForEnemySpawn);
@@ -203,7 +255,7 @@ public class GameManager : Singleton<GameManager>
             
             Debug.Log("Enemy round");
             
-            enemy[indexForRandomEnemy].Init(enemyHp, enemySpeed, enemyDamage);
+            enemy[indexForRandomEnemy].Init(enemyHp, enemySpeed, enemyDamage,scoreInRound);
             Instantiate(enemy[indexForRandomEnemy], new Vector3(xPosition, 0, zPosition), Quaternion.identity);
             
             timeForEnemySpawn = UnityEngine.Random.Range(1,3);
@@ -227,7 +279,7 @@ public class GameManager : Singleton<GameManager>
         var bossCheck = GameObject.FindGameObjectsWithTag("Boss");
         if(bossCheck.Length ==0)
         {
-            boss.Init(bossHp,bossSpeed,bossDamage);
+            boss.Init(bossHp,bossSpeed,bossDamage,scoreBossInRound);
             Instantiate(boss, new Vector3(-8, 0, 13), Quaternion.identity);
         }
         //UpgradeItem() //if Boss Is Die
@@ -289,8 +341,13 @@ public class GameManager : Singleton<GameManager>
     {
         if (scoreManager.Score < healingPrice) return;
         scoreManager.MinusScore(healingPrice);
-        playerInScene.Healing(playerHp);
         buyPanel.SetActive(false);
+        playerInScene.Healing(playerHp);
+    
+        HealingPartical.GetPlayer(playerInScene);
+        var partical = Instantiate(HealingPartical,new Vector3(playerInScene.transform.position.x,0, playerInScene.transform.position.z), Quaternion.identity);
+       
+       
         timeCount = 0;
 
     }
