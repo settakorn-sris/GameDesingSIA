@@ -4,15 +4,17 @@ using UnityEngine;
 using Proyecto26;
 using FullSerializer;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FirebaseManager : MonoBehaviour
 {
     [Header("Sign IN")]
     public TMP_InputField emailSignin;
     public TMP_InputField passwordSignin;
-    public TMP_Text warningSininText;
+    public TMP_Text warningSigninText;
 
     [Header("Sign UP")]
+    public TMP_InputField usernameSignup;
     public TMP_InputField emailSignup;
     public TMP_InputField passwordSignup;
     public TMP_InputField confirmPasswordSinup;
@@ -31,18 +33,81 @@ public class FirebaseManager : MonoBehaviour
     public string username;
     public int score = 0;
 
+    [Header("Turn On/Off Scene")]
+    public GameObject signInUI;
+    public GameObject signUpUI;
+
     private UserInfo userInfo;
     
     public void SignUpButton()
     {
-        SignUp(emailSignup.text, passwordSignup.text);
+        SignUp(usernameSignup.text,emailSignup.text, passwordSignup.text);
     }
     public void SignInButton()
     {
         SignIn(emailSignin.text, passwordSignin.text);
     }
-    private void PosttoDatabase()
+    
+    private void SignUp(string _username,string _email, string _password)
     {
+        if (_username == "")
+        {
+            warningSignupText.text = "Username Missng";
+        }
+        else if(_email == "")
+        {
+            warningSignupText.text = "Email Missing";
+        }
+        else if (passwordSignup.text != confirmPasswordSinup.text)
+        {
+            warningSignupText.text = "Password Doesn't Macth";
+        }
+        else
+        {
+            string userData = "{\"email\":\"" + _email + "\",\"password\":\"" + _password + "\",\"returnSecureToken\":true}";
+            RestClient.Post<SignResponse>($"https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={apikey}", userData).Then(response =>
+            {
+                string emailVeritication = "{\"requestType\":\"VERIFY_EMAIL\",\"idToken\":\"" + response.idtoken + "\"}";
+                RestClient.Post($"https://www.googleapis.com/identitytoolkit/v3/relyingparty/getOobConfirmationCode?key={apikey}", emailVeritication).Catch(error => 
+                {
+                    Debug.Log(response.idtoken);
+                    Debug.Log($"https://www.googleapis.com/identitytoolkit/v3/relyingparty/getOobConfirmationCode?key={apikey}");
+                });
+                localId = response.localId;
+                username = _username;
+                PosttoDatabase(response.idtoken);
+                SignUpScene();
+                Debug.Log("Create User");
+            }).Catch(error =>
+            {
+                Debug.Log("Signup Error");
+            });
+        }
+        
+    }
+    private void SignIn(string _email, string _password)
+    {
+        string userData = "{\"email\":\"" + _email + "\",\"password\":\"" + _password + "\",\"returnSecureToken\":true}";
+        RestClient.Post<SignResponse>($"https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={apikey}", userData).Then(response =>
+        {
+            idToken = response.idtoken;
+            localId = response.localId;
+            warningSigninText.text = "Login Complete";
+            Debug.Log("Signin Complete");
+            GetUserName();
+            StartCoroutine(SignInScene());
+            
+        }).Catch(error =>
+        {
+            Debug.Log("Signin Error");
+        });
+    }
+    private void PosttoDatabase(string idTokenTemp = "")
+    {
+        if(idTokenTemp == "")
+        {
+            idTokenTemp = idToken;
+        }
         UserInfo user = new UserInfo(rank, username, score);
         Debug.Log($"{rank} : {username} : {score}");
         RestClient.Put($"{databaseURL}/{localId}.json", user).Then(response =>
@@ -64,52 +129,13 @@ public class FirebaseManager : MonoBehaviour
             Debug.Log("Error Retrieve From Database");
         });
     }
-    private void SignUp(string _email, string _password)
-    {
-        if(_email == "")
-        {
-            warningSignupText.text = "Email Missing";
-        }
-        else if (passwordSignup.text != confirmPasswordSinup.text)
-        {
-            warningSignupText.text = "Password Doesn't Macth";
-        }
-        else
-        {
-            string userData = "{\"email\":\"" + _email + "\",\"password\":\"" + _password + "\",\"returnSecureToken\":true}";
-            RestClient.Post<SignResponse>($"https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={apikey}", userData).Then(response =>
-            {
-                Debug.Log("Create User");
-                idToken = response.idtoken;
-                localId = response.localId;
-                username = _email;
-                PosttoDatabase();
-            }).Catch(error =>
-            {
-                Debug.Log("Signup Error");
-            });
-        }
-        
-    }
-    private void SignIn(string _email, string _password)
-    {
-        string userData = "{\"email\":\"" + _email + "\",\"password\":\"" + _password + "\",\"returnSecureToken\":true}";
-        RestClient.Post<SignResponse>($"https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={apikey}", userData).Then(response =>
-        {
-            idToken = response.idtoken;
-            localId = response.localId;
-            warningSininText.text = "Login Complete";
-            Debug.Log("Signin Complete");
-        }).Catch(error =>
-        {
-            Debug.Log("Signin Error");
-        });
-    }
     private void GetUserName()
     {
-        RestClient.Get<UserInfo>($"{databaseURL}/{localId}.json?auth={idToken}").Then(response =>
+        RestClient.Get<UserInfo>($"{databaseURL}/{localId}.json").Then(response =>
         {
             username = response.username;
+            Debug.Log(username);
+            UserSelf.Instance.getUsername = username;
         }).Catch(error =>
         {
             Debug.Log("Error Get User Name");
@@ -140,5 +166,15 @@ public class FirebaseManager : MonoBehaviour
             Debug.Log("GetLocalID Error");
         });
 
+    }
+    public IEnumerator SignInScene()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("SampleScene");
+    }
+    public void SignUpScene()
+    {
+        signUpUI.SetActive(false);
+        signInUI.SetActive(true);
     }
 }
