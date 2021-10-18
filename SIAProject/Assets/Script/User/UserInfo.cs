@@ -8,6 +8,7 @@ public class UserInfo
     public string username;
     public int score;
     public string localId;
+
     public UserInfo(int rank, string username, int score)
     {
         this.rank = rank;

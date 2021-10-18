@@ -4,5 +4,5 @@ using UnityEngine;
 [System.Serializable]
 public class EmailConfirm 
 {
-    public UserInfo user;
+    public UserVerify[] users;
 }
