@@ -7007,7 +7007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413b6f207524ad74d90f43d0247bda25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getUsername: 
   username: {fileID: 1685119908}
   userInfo: []
 --- !u!4 &1654711600

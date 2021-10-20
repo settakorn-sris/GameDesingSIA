@@ -99,7 +99,7 @@ public class FirebaseManager : MonoBehaviour
                         localId = response.localId;
                         warningSigninText.text = "Login Complete";
                         Debug.Log("Signin Complete");
-                        //GetUserName();
+                        GetUserName();
                         StartCoroutine(SignInScene());
                     }
                     else
@@ -145,8 +145,7 @@ public class FirebaseManager : MonoBehaviour
         RestClient.Get<UserInfo>($"{databaseURL}/{localId}.json?auth={idToken}").Then(response =>
         {
             username = response.username;
-            Debug.Log(username);
-            UserSelf.Instance.getUsername = username;
+            UserSelf.getUsername = username;
         }).Catch(error =>
         {
             Debug.Log("Error Get User Name");
