@@ -4,10 +4,13 @@ using UnityEngine;
 using Proyecto26;
 using FullSerializer;
 using TMPro;
+using SimpleJSON;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
-public class FirebaseManager : MonoBehaviour
+public class FirebaseManager : Singleton<FirebaseManager>
 {
+    
     [Header("Sign IN")]
     public TMP_InputField emailSignin;
     public TMP_InputField passwordSignin;
@@ -21,24 +24,30 @@ public class FirebaseManager : MonoBehaviour
     public TMP_Text warningSignupText;
 
     [Header("Firebase")]
-    private string databaseURL = "https://sia-firebase-125eb-default-rtdb.asia-southeast1.firebasedatabase.app/users";
+    private static string databaseURL = "https://sia-firebase-125eb-default-rtdb.asia-southeast1.firebasedatabase.app/users";
     private string apikey = "AIzaSyA9rERnZuGm9k4gNXePzvFh_NJ4TdCFmHU";
-    private string idToken ;
+    private static string secret = "9ddqSj28nVB0nUOf09Qe4ArqRrTbhRruDA2ALMRd";
+    private static string idToken ;
     private string getLocalId;
     public static fsSerializer serializer = new fsSerializer();
     public static string localId;
 
     [Header("User Info")]
-    public int rank = 0;
     public string username;
-    public int score = 0;
+    public int score;
 
     [Header("Turn On/Off Scene")]
     public GameObject signInUI;
     public GameObject signUpUI;
 
     private UserInfo userInfo;
-    
+    public List<UserScore> userScore;
+    public UnityEvent OnSetRank;
+    private void Awake()
+    {
+        //GetData();
+    }
+
     public void SignUpButton()
     {
         SignUp(usernameSignup.text,emailSignup.text, passwordSignup.text);
@@ -85,7 +94,6 @@ public class FirebaseManager : MonoBehaviour
         string userData = "{\"email\":\"" + _email + "\",\"password\":\"" + _password + "\",\"returnSecureToken\":true}";
         RestClient.Post<SignResponse>($"https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={apikey}", userData).Then(response =>
         {
-            Debug.Log(response.idToken);
             string emailVerification = "{\"idToken\":\"" + response.idToken + "\"}";
             RestClient.Post($"https://www.googleapis.com/identitytoolkit/v3/relyingparty/getAccountInfo?key={apikey}", emailVerification).Then(
                 emailResponse =>
@@ -119,10 +127,14 @@ public class FirebaseManager : MonoBehaviour
         {
             idTokenTemp = idToken;
         }
-        UserInfo user = new UserInfo(rank, username, score);
-        Debug.Log($"{rank} : {username} : {score}");
-        RestClient.Put($"{databaseURL}/{localId}.json?auth={idTokenTemp}", user).Then(response =>
+        UserInfo user = new UserInfo(username, score);
+        Debug.Log($"{username} : {score}");
+        RestClient.Put<UserInfo>($"{databaseURL}/{localId}.json?auth={idTokenTemp}", user).Then(response =>
         {
+            if (ScoreManager.Instance.Score > response.score) 
+            {
+                response.score = ScoreManager.Instance.Score;
+            }
             Debug.Log("Put Database");
         }).Catch(error =>
         {
@@ -176,6 +188,24 @@ public class FirebaseManager : MonoBehaviour
             Debug.Log("GetLocalID Error");
         });
 
+    }
+    public void GetData()
+    {
+        RestClient.Get($"{databaseURL}.json?auth={secret}").Then(response =>
+        {
+            Debug.Log("Get Data");
+            JSONNode jsonNode = JSON.Parse(response.Text);
+
+            for (int i = 0; i < jsonNode.Count; i++)
+            {
+                userScore.Add(new UserScore(jsonNode[i]["username"], jsonNode[i]["score"]));
+            }
+            OnSetRank.Invoke();
+        }).Catch(error => 
+        {
+            Debug.Log("Get Data Error");
+
+        });
     }
     public IEnumerator SignInScene()
     {
