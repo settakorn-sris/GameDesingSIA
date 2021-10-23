@@ -33,6 +33,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
     public static string localId;
 
     [Header("User Info")]
+    public string email;
     public string username;
     public int score;
 
@@ -40,9 +41,10 @@ public class FirebaseManager : Singleton<FirebaseManager>
     public GameObject signInUI;
     public GameObject signUpUI;
 
-    private UserInfo userInfo;
+    public UserInfo userInfo;
     public List<UserScore> userScore;
     public UnityEvent OnSetRank;
+    public UnityEvent OnSetLocalId;
     private void Awake()
     {
         //GetData();
@@ -80,6 +82,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
                 RestClient.Post($"https://www.googleapis.com/identitytoolkit/v3/relyingparty/getOobConfirmationCode?key={apikey}", emailVerification);
                 localId = response.localId;
                 username = _username;
+                email = _email;
                 PosttoDatabase(response.idToken);
 
             }).Catch(error =>
@@ -127,8 +130,8 @@ public class FirebaseManager : Singleton<FirebaseManager>
         {
             idTokenTemp = idToken;
         }
-        UserInfo user = new UserInfo(username, score);
-        Debug.Log($"{username} : {score}");
+        UserInfo user = new UserInfo(email,username, score);
+        Debug.Log($"{email} : {username} : {score}");
         RestClient.Put<UserInfo>($"{databaseURL}/{localId}.json?auth={idTokenTemp}", user).Then(response =>
         {
             if (ScoreManager.Instance.Score > response.score) 
@@ -143,10 +146,12 @@ public class FirebaseManager : Singleton<FirebaseManager>
     }
     private void RetrieveFromDatabase()
     {
-        RestClient.Get<UserInfo>($"{databaseURL}/{localId}.json?auth={idToken}").Then(response =>
+        RestClient.Get<UserInfo>($"{databaseURL}/{getLocalId}.json").Then(response =>
         {
+            userInfo.username = response.username;
+            userInfo.score = response.score;
+            OnSetLocalId.Invoke();
             Debug.Log(" Get Retrieve From Database");
-            userInfo = response;
         }).Catch(error =>
         {
             Debug.Log("Error Retrieve From Database");
@@ -163,21 +168,22 @@ public class FirebaseManager : Singleton<FirebaseManager>
             Debug.Log("Error Get User Name");
         });
     }
-    private void GetLocalID()
+    public void GetLocalID()
     {
-        RestClient.Get($"{databaseURL}.json?auth={idToken}").Then(response =>
+        RestClient.Get($"{databaseURL}.json").Then(response =>
         {
-            var username = emailSignin.text;
+            var email = emailSignin.text;
             Debug.Log("Check GetLocalID");
             fsData userData = fsJsonParser.Parse(response.Text);
-            Dictionary<string, UserInfo> users = null;
-            serializer.TryDeserialize(userData, ref users);
+            Dictionary<string, UserInfo> emails = null;
+            serializer.TryDeserialize(userData, ref emails);
 
-            foreach (var user in users.Values)
+            foreach (var user in emails.Values)
             {
-                if (user.username == username)
+                if (user.email == email)
                 {
                     getLocalId = user.localId;
+                    Debug.Log(getLocalId);
                     RetrieveFromDatabase();
                     Debug.Log("GetLocalID Complete");
                     break;
@@ -200,6 +206,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
             {
                 userScore.Add(new UserScore(jsonNode[i]["username"], jsonNode[i]["score"]));
             }
+            GetLocalID();
             OnSetRank.Invoke();
         }).Catch(error => 
         {
