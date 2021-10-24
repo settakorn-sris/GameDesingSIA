@@ -6,6 +6,7 @@ public class ImmortalSkill : Skill
 {
     public override void AboutSkill(PlayerCharecter player)
     {
+        base.AboutSkill(player);
         StartCoroutine(Immortal(player));
     }
 

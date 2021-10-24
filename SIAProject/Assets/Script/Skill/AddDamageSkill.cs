@@ -6,12 +6,14 @@ public class AddDamageSkill : Skill
 {
     [SerializeField]private int damgeForAdd = 10;
     private int oldDamage;
+  
+
     public override void AboutSkill(PlayerCharecter player)
     {
+        base.AboutSkill(player);
         StartCoroutine(Plus(player));
         Debug.Log(player.GM.BulletDamage);
     }
-
     private IEnumerator Plus(PlayerCharecter player)
     {
         oldDamage = player.GM.BulletDamage;

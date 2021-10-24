@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+
 
 public class PlayerCharecter : Charecter
 {
-    public Skill Skill;
+
+    private Skill skill;
     private float timeCountSkill = 0;
     [SerializeField] private PlayerBullet bulletType;
     [SerializeField] private PoolingOBJ bullet;
 
+    [SerializeField] private ParticalManager partical;
+    
+
 
     private Animator animator;
 
+    private Rigidbody rb;
     private bool CanUseSkill;
     public bool CanGetDamage = true;
     public GameObject CheckCollisionForSkill;
@@ -21,19 +28,28 @@ public class PlayerCharecter : Charecter
     //{
     //    this.bullet = bullet;
     //}
+
+    #region GetPlayer Property
+
+    public event Action playerDie; 
+
+    #endregion
     public void Init(int hp, float speed, Skill skill)
     {
         base.Init(hp, speed);
-        Skill = skill;
+        this.skill = skill;
     }
     private void Awake()    
     {
         GM = GameManager.Instance;
+        partical = ParticalManager.Instance;
+
         bullet.GetBulletType(bulletType);
 
         animator = GetComponent<Animator>();
 
         CanUseSkill = true;
+       
     }
 
     protected override void Update()
@@ -62,17 +78,21 @@ public class PlayerCharecter : Charecter
     public void Healing(int hp)
     {
         Hp = hp;
+        animator.SetBool("IsDie", false);
+        CanGetDamage = true;
         print(Hp);
+        partical.PlayParticle(ParticalManager.PlayerParticle.HEALING);
     }
 
+   // ParticalManager.PlayerParticle a = ParticalManager.PlayerParticle.IMMORTAL;
     private void UseSkill()
     {
         if (!CanUseSkill) return;
         
-        Skill.AboutSkill(this);
+        skill.AboutSkill(this);
         print("Skill");
         CanUseSkill = false;
-        timeCountSkill = Skill.CoolDownSkill;
+        timeCountSkill = skill.CoolDownSkill;
         
     }
 
@@ -98,8 +118,19 @@ public class PlayerCharecter : Charecter
     public override void IsDie()
     {
 
-        Debug.Log("Die");
-        animator.SetTrigger("Dying");
+        //Debug.Log("Die");
+      
+        animator.SetBool("IsDie",true);
+        CanGetDamage = false;
+        //GM.TimeSlow(0);
+
+        playerDie();
     }
 
+    public void GetSkill(Skill skill)
+    {
+        this.skill = skill;
+        print(skill.Name);
+    }
+    
 }

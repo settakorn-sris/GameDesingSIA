@@ -31,14 +31,20 @@ public class GameManager : Singleton<GameManager>
     //BuY
     [Header("Buy")]
     [SerializeField] private GameObject buyPanel;
+    [SerializeField] private Image skillImage;
     [SerializeField] private float timeToBuy;
-    [SerializeField] private Button buyHealingButton;
-    [SerializeField] private TextMeshProUGUI healthPrice;
     [SerializeField] private ScoreManager scoreManager;
 
-    //[SerializeField] private int skillPrice = 3;
-    private int randomSkillIndex = 0;
+
+    [Header("Buy_Button")]
+    [SerializeField] private Button buyHealingButton;
+    [SerializeField] private Button buySkillButton;
+    [SerializeField] private TextMeshProUGUI healthPrice;
     [SerializeField] private int healingPrice = 3;
+
+    [Header("Restart_UI")]
+    public GameObject RestartPanel;
+   
 
     private float timeCount;
     private int round = 1;
@@ -54,7 +60,18 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float playerSpeed;
     [SerializeField] private Skill[] playerSkill; 
     private PlayerCharecter playerInScene;
-    
+
+    #region playerInScene 
+    public Vector3 GetPlayerInSceneTranForm
+    {
+        get
+        {
+            return playerInScene.transform.position;
+        }
+    }
+    #endregion
+
+
     [Header("Bullet")]
     public float FireRate;
     public int BulletDamage;
@@ -65,10 +82,18 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float enemySpeed;
     [SerializeField] private int enemyDamage;
     [SerializeField] private int scoreInRound;
+    [SerializeField] private float knockBack;
+
    
 
     #region For get Base Enemy 
-
+    public float KnockBackForce
+    {
+        get
+        {
+            return knockBack;
+        }
+    }
     public int GetScoreInRound
     {
         get
@@ -91,8 +116,15 @@ public class GameManager : Singleton<GameManager>
             return enemyHp;
         }
     }
+    public int GetBossHp
+    {
+        get
+        {
+            return bossHp;
+        }
+    }
 
-    public float Speed
+    public float GetEnemySpeed
     {
         get
         {
@@ -111,6 +143,11 @@ public class GameManager : Singleton<GameManager>
 
     [Header("Enemy bomb")]
     [SerializeField] private int bombDamage;
+
+    [Header("Enemy bomb")]
+    [SerializeField] private int a;//get pool
+    //DamageSpeed
+    // Distance
 
     #region For get Enemy bomb property
 
@@ -137,7 +174,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float minSpawnEnemyForRandomX = 10f;
     [SerializeField] private float maxSpawnEnemyForRandomZ = -5f;
     [SerializeField] private float minSpawnEnemyForRandomZ = -3.9f;
-
+    
     #region Get SpawnEnemPoint
     public float MaxSpawnEnemyForRandomX
     {
@@ -173,7 +210,13 @@ public class GameManager : Singleton<GameManager>
 
     #endregion
 
+    [SerializeField] private float spawnBossPositionX = -8;
+    [SerializeField] private float spawnBossPositionZ = 13;
+
     [Header("For Skill")]
+    //[SerializeField] private int skillPrice = 3;
+    private int randomSkillIndex = 0;
+
     public GameObject CheckSkillCollision;  
     //Wave
     private Wave wave;
@@ -182,18 +225,16 @@ public class GameManager : Singleton<GameManager>
     public delegate void SlowSkillActive(float speed);
     public event SlowSkillActive OnSlow;
 
-    [SerializeField]private ParticalFollowPlayer HealingPartical;
-    
-    //public event Action OnReStart;
-
     private void Awake()
     {
         puseButton.onClick.AddListener(StopGame);
         resumeButton.onClick.AddListener(ResumeGame);
         buyHealingButton.onClick.AddListener(BuyHealing);
+        buySkillButton.onClick.AddListener(BuySkill);
         //OnReStart += RestartGame;
         scoreManager = ScoreManager.Instance;
         StartGame();
+        
     }
    
     void Update()
@@ -201,6 +242,7 @@ public class GameManager : Singleton<GameManager>
         GameLoop();
        
     }
+
 
     public void StartGame()
     {
@@ -231,11 +273,15 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+
+
     private void SpawnPlayer()
     {
         playerInScene= Instantiate(player, new Vector3(0, 1, 0), Quaternion.identity);
-        playerInScene.Init(playerHp, playerSpeed,playerSkill[0]);
-        //OnReStart += player.IsDie;
+        playerInScene.Init(playerHp, playerSpeed,playerSkill[2]);
+
+        playerInScene.playerDie += ForRestartGame;
+      
     }
 
     private void SpawnEnemy()
@@ -280,11 +326,14 @@ public class GameManager : Singleton<GameManager>
         if(bossCheck.Length ==0)
         {
             boss.Init(bossHp,bossSpeed,bossDamage,scoreBossInRound);
-            Instantiate(boss, new Vector3(-8, 0, 13), Quaternion.identity);
+            Instantiate(boss, new Vector3(spawnBossPositionX, 0, spawnBossPositionZ), Quaternion.identity);
         }
         //UpgradeItem() //if Boss Is Die
+        
         wave = Wave.BUY;
         timeCount = timeToBuy;
+        randomSkillIndex = UnityEngine.Random.Range(0, playerSkill.Length);//// For random skill  // Have bug
+        //print(randomSkillIndex + " Skill");
     }
     private void AddHPAndDamage(int hp,int damage,float speed)
     {
@@ -300,13 +349,15 @@ public class GameManager : Singleton<GameManager>
     private void UpgradeItem()
     {
         //Buy Panel SetActive(true)
-        randomSkillIndex = UnityEngine.Random.Range(0, playerSkill.Length); // For random skill
+
+        //skillImage = playerSkill[randomSkillIndex].SkillImage;
         
+        skillImage.sprite = playerSkill[randomSkillIndex].SkillImage.sprite;//Add Skill Image  
+
         timeCount -= Time.deltaTime;
         
         buyPanel.gameObject.SetActive(true);
         
-        print(timeCount);
         if (timeCount > 0) return;
         //Buy Panel SetActive(false)
         buyPanel.gameObject.SetActive(false);
@@ -344,8 +395,8 @@ public class GameManager : Singleton<GameManager>
         buyPanel.SetActive(false);
         playerInScene.Healing(playerHp);
     
-        HealingPartical.GetPlayer(playerInScene);
-        var partical = Instantiate(HealingPartical,new Vector3(playerInScene.transform.position.x,0, playerInScene.transform.position.z), Quaternion.identity);
+        //HealingPartical.GetPlayer(playerInScene);
+       // var partical = Instantiate(HealingPartical,new Vector3(playerInScene.transform.position.x,0, playerInScene.transform.position.z), Quaternion.identity);
        
        
         timeCount = 0;
@@ -354,10 +405,14 @@ public class GameManager : Singleton<GameManager>
 
     private void BuySkill()
     {
+        print("Button skill On");
+        //Have bug
         if (scoreManager.Score < playerSkill[randomSkillIndex].SkillPrice) return;
         scoreManager.MinusScore(playerSkill[randomSkillIndex].SkillPrice);
-        player.Skill = playerSkill[randomSkillIndex];
-        // buyPanel.SetActive(false);
+
+        playerInScene.GetSkill(playerSkill[randomSkillIndex]);
+      
+        buyPanel.SetActive(false);
     }
 
     #region "For Skill"
@@ -370,13 +425,28 @@ public class GameManager : Singleton<GameManager>
 
     #endregion
 
+    //Is player die
+    #region "Regame"
+    private void ForRestartGame()
+    {
+        //show panel & button & adsButton
+        RestartPanel.SetActive(true);
+        Time.timeScale = 0;
 
-
+    }
     private void GameReset()
     {
         SceneManager.LoadScene("Game");
+        scoreManager.Rescore();
+        
     }
+    
+    private void ReGamePanel()
+    {
 
+        print("Total Score,Round Active");
+    }
+    #endregion
     private void RandomMap()
     {
         //must have setActive false of old map before use this method
@@ -386,25 +456,29 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-    public float ReturnEnemySpeed(float speed)
+  
+
+    #region "Ads"
+    public void HealingWithAds()
     {
-        return speed = enemySpeed;
-    }
-    public float GetEnemySpeed
-    {
-        get
-        {
-            return enemySpeed;
-        }
-    }
-    public int GetBossHp
-    {
-        get
-        {
-            return bossHp;
-        }
+       
+        playerInScene.Healing(playerHp);
+       // HealingPartical.GetPlayer(playerInScene);
+        //var partical = Instantiate(HealingPartical, new Vector3(playerInScene.transform.position.x, 0, playerInScene.transform.position.z), Quaternion.identity);
+
     }
 
+    public void CountrolAdsPanel(bool check)
+    {
+        RestartPanel.SetActive(false);
+        Time.timeScale += 1;
+        if (!check)
+        {
+
+            ReGamePanel();
+        }
+    }
+    #endregion
     //private void CreatMap()
     //{
     //    int i = 0;
