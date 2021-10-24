@@ -173,7 +173,6 @@ public class FirebaseManager : Singleton<FirebaseManager>
         RestClient.Get($"{databaseURL}.json").Then(response =>
         {
             var email = emailSignin.text;
-            Debug.Log("Check GetLocalID");
             fsData userData = fsJsonParser.Parse(response.Text);
             Dictionary<string, UserInfo> emails = null;
             serializer.TryDeserialize(userData, ref emails);
