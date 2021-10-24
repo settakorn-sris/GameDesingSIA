@@ -16,6 +16,7 @@ public class EnemyCharecter : Charecter
     {
         gM = GameManager.Instance;
         gM.OnSlow += SlowEnemyAndExit;
+        knockBack = gM.KnockBackForce;
     }
 
     public void Init(int hp, float speed,int damage,int scoreEnemyInRound)
@@ -44,17 +45,22 @@ public class EnemyCharecter : Charecter
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        
-        if (collision.gameObject.tag == "Player")
-        {
+        if (collision.gameObject.tag != "Player") return;
+        //if (collision.gameObject.tag == "Player")
+        //{
+            
             Rigidbody rb = collision.collider.GetComponent<Rigidbody>();
-            Vector3 direction =collision.transform.position - transform.position;
+            Vector3 direction = collision.transform.position - transform.position;
             direction.y = 0;
             rb.AddForce(direction.normalized * knockBack, ForceMode.Impulse);
 
+            //collision.transform.Translate(direction*knockBack*Time.deltaTime);
+            //rb.transform.Translate(direction);
+
             var player = collision.gameObject.GetComponent<ITakeDamage>();
             player?.TakeDamage(Damage);
-        }
+
+        //}
      
     }
 
@@ -63,5 +69,16 @@ public class EnemyCharecter : Charecter
         Instantiate(dieParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
         ScoreManager.Instance.AddScore(scoreInFirstRound);
+        
     }
+
+
+    //var playerDie = collision.gameObject.GetComponent<PlayerCharecter>();
+    //playerDie.KnockBack(direction);
+
+    ////MockUp
+
+    //{
+    //    Speed = 0;
+    //}
 }

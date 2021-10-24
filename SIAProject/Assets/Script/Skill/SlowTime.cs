@@ -9,6 +9,7 @@ public class SlowTime : Skill
     private float enemySpeed;
     public override void AboutSkill(PlayerCharecter player)
     {
+        base.AboutSkill(player);
         StartCoroutine(Slow(player));
     }
 
