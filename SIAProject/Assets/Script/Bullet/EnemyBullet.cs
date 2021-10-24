@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBullet : MonoBehaviour
+public class EnemyBullet : Bullet
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    protected override void OnCollisionEnter(Collision other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.gameObject.tag == "Enemy"|| other.gameObject.tag == "Boss") return;
+        base.OnCollisionEnter(other);
     }
 }

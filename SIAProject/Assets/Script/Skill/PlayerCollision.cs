@@ -15,8 +15,9 @@ public class PlayerCollision : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag== "Enemy" || other.gameObject.tag == "Boss")
+        if (other.gameObject.tag== "Enemy" || other.gameObject.tag == "Boss")
         {
+            
             var enemy = other.gameObject.GetComponent<EnemyCharecter>();
             getOldSpeed = enemy.Speed;
             enemy.OnStunt();
@@ -33,11 +34,11 @@ public class PlayerCollision : MonoBehaviour
             var enemy = other.gameObject.GetComponent<EnemyCharecter>();
             enemy.Speed = getOldSpeed;
             enemy.ExitStunt(getOldSpeed);
-            
+
         }
     }
-   
 
-    
+
+
 
 }

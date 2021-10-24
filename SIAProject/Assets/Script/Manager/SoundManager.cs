@@ -1,18 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : Singleton<SoundManager>
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource AudioSorceForAction;
+
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private SoundClip[] soundClips;
+
+
+    public enum Sound
     {
-        
+      
+
     }
 
-    // Update is called once per frame
-    void Update()
+    [Serializable]
+    public struct SoundClip
     {
-        
+        public Sound sound;
+        public AudioClip audioClip;
+        [Range(0, 1)] public float soundVolume;
     }
+
+
+
+    public void Play(AudioSource audioSource, Sound sound)
+    {
+
+        var soundClip = GetAudioClip(sound);
+        audioSource.clip = soundClip.audioClip;
+        audioSource.volume = soundClip.soundVolume;
+        audioSource.Play();
+        audioSource.loop = false;
+
+    }
+
+    public void PlayBGM(Sound bgm)
+    {
+        audioSource.loop = true;
+        Play(audioSource, bgm);
+    }
+
+    private SoundClip GetAudioClip(Sound sound)
+    {
+        foreach (var soundClip in soundClips)
+        {
+            if (soundClip.sound == sound)
+            {
+                return soundClip;
+            }
+        }
+
+        return default(SoundClip);
+    }
+
 }

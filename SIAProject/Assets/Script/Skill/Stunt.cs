@@ -7,6 +7,7 @@ public class Stunt : Skill
     //public int StuntTime;
     public override void AboutSkill(PlayerCharecter player)
     {
+        base.AboutSkill(player);
         StartCoroutine(ControlStunt(player));
 
     }
