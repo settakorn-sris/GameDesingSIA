@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
-using Proyecto26;
+using TMPro;
 public class RankManager : MonoBehaviour
 {
+    [Header("Rank LeaderBoard")]
     [SerializeField] private GameObject rankLeaderData;
     [SerializeField] private GameObject rankUserData;
     [SerializeField] private Transform rankPanel;
     [SerializeField] private Transform rankPanelUser;
 
+    [Space]
+    [Header("OBJ LeaderBoard")]
+    [SerializeField] private GameObject leaderBoard;
+
     private UserInfo userInfo;
     private List<UserScore> userScores;
-    
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     public void CreateRankLeader()
     {
         userScores = HightScores().ToList();
@@ -41,7 +49,6 @@ public class RankManager : MonoBehaviour
     {
         userScores = FirebaseManager.Instance.userScore;
         CreateRankLeader();
-        //Debug.Log(userScores.Where(user => user.username == "kasidit").Select(x => x.score).ToList()[1]);
     }
     public void SetUserRank()
     {
@@ -51,6 +58,12 @@ public class RankManager : MonoBehaviour
     public void GetDataToCreate()
     {
         FirebaseManager.Instance.GetData();
+
+    }
+    public void OpenLeaderBoard()
+    {
+        Instantiate(leaderBoard);
+        //leaderBoard.SetActive(true);
     }
     
 }

@@ -7,6 +7,7 @@ using TMPro;
 using SimpleJSON;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using System;
 
 public class FirebaseManager : Singleton<FirebaseManager>
 {
@@ -41,13 +42,31 @@ public class FirebaseManager : Singleton<FirebaseManager>
     public GameObject signInUI;
     public GameObject signUpUI;
 
+    [Space]
+    public RankManager rankManager;
     public UserInfo userInfo;
     public List<UserScore> userScore;
-    public UnityEvent OnSetRank;
+    public Action OnSetRank;
     public UnityEvent OnSetLocalId;
+
+    
     private void Awake()
     {
-        //GetData();
+        //if(OnSetRank == null)
+        //{
+        //    OnSetRank = new UnityEvent();
+        //    OnSetRank.AddListener(rankManager.SetRankLeader);
+        //}
+        if(OnSetLocalId == null)
+        {
+            OnSetLocalId = new UnityEvent();
+            OnSetLocalId.AddListener(rankManager.SetUserRank);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+    private void Update()
+    {
+        
     }
 
     public void SignUpButton()
@@ -146,7 +165,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
     }
     private void RetrieveFromDatabase()
     {
-        RestClient.Get<UserInfo>($"{databaseURL}/{getLocalId}.json").Then(response =>
+        RestClient.Get<UserInfo>($"{databaseURL}/{getLocalId}.json?auth={idToken}").Then(response =>
         {
             userInfo.username = response.username;
             userInfo.score = response.score;
@@ -170,7 +189,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
     }
     public void GetLocalID()
     {
-        RestClient.Get($"{databaseURL}.json").Then(response =>
+        RestClient.Get($"{databaseURL}.json?auth={idToken}").Then(response =>
         {
             var email = emailSignin.text;
             fsData userData = fsJsonParser.Parse(response.Text);
@@ -206,7 +225,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
                 userScore.Add(new UserScore(jsonNode[i]["username"], jsonNode[i]["score"]));
             }
             GetLocalID();
-            OnSetRank.Invoke();
+            OnSetRank?.Invoke();
         }).Catch(error => 
         {
             Debug.Log("Get Data Error");
