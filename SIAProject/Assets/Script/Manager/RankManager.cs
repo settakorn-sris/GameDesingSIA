@@ -12,10 +12,6 @@ public class RankManager : MonoBehaviour
     [SerializeField] private Transform rankPanel;
     [SerializeField] private Transform rankPanelUser;
 
-    [Space]
-    [Header("OBJ LeaderBoard")]
-    [SerializeField] private GameObject leaderBoard;
-
     private UserInfo userInfo;
     private List<UserScore> userScores;
     private void Awake()
@@ -26,6 +22,10 @@ public class RankManager : MonoBehaviour
     {
         userScores = HightScores().ToList();
         Debug.Log($" UserLeght : {userScores.Count}");
+        foreach (GameObject rankdatas in rankPanel)
+        {
+            Destroy(rankdatas);
+        }
         for (int i = 0; i < userScores.Count; i++)
         {
             var row = Instantiate(rankLeaderData, rankPanel).GetComponent<RankData>();
@@ -36,6 +36,10 @@ public class RankManager : MonoBehaviour
     }
     public void CreateUserRank()
     {
+        foreach (GameObject rankdatas in rankPanelUser)
+        {
+            Destroy(rankdatas);
+        }
         var row = Instantiate(rankUserData, rankPanelUser).GetComponent<RankData>();
         row.nameText.text = userInfo.username;
         row.scoreText.text = userInfo.score.ToString();
@@ -59,11 +63,6 @@ public class RankManager : MonoBehaviour
     {
         FirebaseManager.Instance.GetData();
 
-    }
-    public void OpenLeaderBoard()
-    {
-        Instantiate(leaderBoard);
-        //leaderBoard.SetActive(true);
     }
     
 }

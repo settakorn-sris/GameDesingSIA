@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -169,7 +169,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 168, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5597563092514516487
 CanvasRenderer:
@@ -226,8 +226,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -306,7 +306,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 440, y: 50}
+  m_SizeDelta: {x: 388, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5649803260026621239
 MonoBehaviour:
@@ -325,7 +325,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
@@ -346,11 +346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b777342f13129449dd74e3b1235a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userInfo:
-    rank: 0
-    username: 
-    score: 0
-    localId: 
   rankText: {fileID: 499929823579513210}
   nameText: {fileID: 1988557615457622583}
   scoreText: {fileID: 3269974813686992585}
@@ -389,7 +384,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 94.6867, y: 50}
+  m_SizeDelta: {x: 73.9886, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4310868634960802716
 CanvasRenderer:
@@ -446,8 +441,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

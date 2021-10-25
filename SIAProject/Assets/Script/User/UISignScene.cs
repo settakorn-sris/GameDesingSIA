@@ -1,21 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UISignScene : MonoBehaviour
 {
-
-    public GameObject signInUI;
-    public GameObject signUpUI;
-
+    public RectTransform signInUI;
+    public RectTransform signUpUI;
+    public RectTransform mainMenuUI;
+    public void SignInComplete()
+    {
+        signInUI.gameObject.SetActive(false);
+        OpenMenu();
+    }
     public void TurnOffSignIn()
     {
-        signInUI.SetActive(false);
-        signUpUI.SetActive(true);
+        signInUI.gameObject.SetActive(false);
+        signUpUI.gameObject.SetActive(true);
     }
     public void TurnOffSignUp()
     {
-        signInUI.SetActive(true);
-        signUpUI.SetActive(false);
+        signInUI.gameObject.SetActive(true);
+        signUpUI.gameObject.SetActive(false);
+    }
+    public void OpenMenu()
+    {
+        mainMenuUI.gameObject.SetActive(true);
+    }
+    public void Play()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

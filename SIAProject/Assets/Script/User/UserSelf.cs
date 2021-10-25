@@ -6,8 +6,7 @@ public class UserSelf : MonoBehaviour
 {
     public static string getUsername;
     public TMP_Text username;
-    public List<UserInfo> userInfo;
-    private void Awake()
+    private void Update()
     {
         username.text = $"Username: {getUsername}";
     }

@@ -5,7 +5,6 @@ using Proyecto26;
 using FullSerializer;
 using TMPro;
 using SimpleJSON;
-using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 using System;
 
@@ -38,35 +37,20 @@ public class FirebaseManager : Singleton<FirebaseManager>
     public string username;
     public int score;
 
-    [Header("Turn On/Off Scene")]
-    public GameObject signInUI;
-    public GameObject signUpUI;
+    [Space]
+    public UISignScene uISignScene;
 
     [Space]
-    public RankManager rankManager;
     public UserInfo userInfo;
     public List<UserScore> userScore;
-    public Action OnSetRank;
+    public UnityEvent OnSetRank;
     public UnityEvent OnSetLocalId;
 
     
+    
     private void Awake()
     {
-        //if(OnSetRank == null)
-        //{
-        //    OnSetRank = new UnityEvent();
-        //    OnSetRank.AddListener(rankManager.SetRankLeader);
-        //}
-        if(OnSetLocalId == null)
-        {
-            OnSetLocalId = new UnityEvent();
-            OnSetLocalId.AddListener(rankManager.SetUserRank);
-        }
         DontDestroyOnLoad(gameObject);
-    }
-    private void Update()
-    {
-        
     }
 
     public void SignUpButton()
@@ -127,10 +111,10 @@ public class FirebaseManager : Singleton<FirebaseManager>
                     {
                         idToken = response.idToken;
                         localId = response.localId;
-                        warningSigninText.text = "Login Complete";
-                        Debug.Log("Signin Complete");
                         GetUserName();
-                        StartCoroutine(SignInScene());
+                        warningSigninText.text = "Login Complete";
+                        uISignScene.SignInComplete();
+                        Debug.Log("Signin Complete");
                     }
                     else
                     {
@@ -153,10 +137,6 @@ public class FirebaseManager : Singleton<FirebaseManager>
         Debug.Log($"{email} : {username} : {score}");
         RestClient.Put<UserInfo>($"{databaseURL}/{localId}.json?auth={idTokenTemp}", user).Then(response =>
         {
-            if (ScoreManager.Instance.Score > response.score) 
-            {
-                response.score = ScoreManager.Instance.Score;
-            }
             Debug.Log("Put Database");
         }).Catch(error =>
         {
@@ -169,7 +149,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
         {
             userInfo.username = response.username;
             userInfo.score = response.score;
-            OnSetLocalId.Invoke();
+            OnSetLocalId?.Invoke();
             Debug.Log(" Get Retrieve From Database");
         }).Catch(error =>
         {
@@ -181,7 +161,10 @@ public class FirebaseManager : Singleton<FirebaseManager>
         RestClient.Get<UserInfo>($"{databaseURL}/{localId}.json?auth={idToken}").Then(response =>
         {
             username = response.username;
+            email = response.email;
+            score = response.score;
             UserSelf.getUsername = username;
+            Debug.Log("Get Username");
         }).Catch(error =>
         {
             Debug.Log("Error Get User Name");
@@ -201,7 +184,6 @@ public class FirebaseManager : Singleton<FirebaseManager>
                 if (user.email == email)
                 {
                     getLocalId = user.localId;
-                    Debug.Log(getLocalId);
                     RetrieveFromDatabase();
                     Debug.Log("GetLocalID Complete");
                     break;
@@ -219,7 +201,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
         {
             Debug.Log("Get Data");
             JSONNode jsonNode = JSON.Parse(response.Text);
-
+            userScore = new List<UserScore>();
             for (int i = 0; i < jsonNode.Count; i++)
             {
                 userScore.Add(new UserScore(jsonNode[i]["username"], jsonNode[i]["score"]));
@@ -231,15 +213,5 @@ public class FirebaseManager : Singleton<FirebaseManager>
             Debug.Log("Get Data Error");
 
         });
-    }
-    public IEnumerator SignInScene()
-    {
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("SampleScene");
-    }
-    public void SignUpScene()
-    {
-        signUpUI.SetActive(false);
-        signInUI.SetActive(true);
     }
 }
