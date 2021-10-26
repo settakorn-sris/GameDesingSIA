@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
-using TMPro;
-public class RankManager : MonoBehaviour
+using System;
+public class RankManager : Singleton<RankManager>
 {
     [Header("Rank LeaderBoard")]
     [SerializeField] private GameObject rankLeaderData;
@@ -16,16 +16,21 @@ public class RankManager : MonoBehaviour
     private List<UserScore> userScores;
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        StarMainMenu();
+    }
+    public void StarMainMenu()
+    {
+        GetDataToCreate();
     }
     public void CreateRankLeader()
     {
         userScores = HightScores().ToList();
         Debug.Log($" UserLeght : {userScores.Count}");
-        foreach (GameObject rankdatas in rankPanel)
+        for (int i = rankPanel.childCount - 1; i >= 0; i--) 
         {
-            Destroy(rankdatas);
+            Destroy(rankPanel.GetChild(i).gameObject);
         }
+
         for (int i = 0; i < userScores.Count; i++)
         {
             var row = Instantiate(rankLeaderData, rankPanel).GetComponent<RankData>();
@@ -36,10 +41,11 @@ public class RankManager : MonoBehaviour
     }
     public void CreateUserRank()
     {
-        foreach (GameObject rankdatas in rankPanelUser)
+        for (int i = rankPanelUser.childCount - 1; i >= 0; i--)
         {
-            Destroy(rankdatas);
+            Destroy(rankPanelUser.GetChild(i).gameObject);
         }
+
         var row = Instantiate(rankUserData, rankPanelUser).GetComponent<RankData>();
         row.nameText.text = userInfo.username;
         row.scoreText.text = userInfo.score.ToString();
@@ -48,7 +54,6 @@ public class RankManager : MonoBehaviour
     {
         return userScores.OrderByDescending(x => x.score);
     }
-
     public void SetRankLeader()
     {
         userScores = FirebaseManager.Instance.userScore;
@@ -62,7 +67,6 @@ public class RankManager : MonoBehaviour
     public void GetDataToCreate()
     {
         FirebaseManager.Instance.GetData();
-
     }
     
 }

@@ -39,17 +39,15 @@ public class FirebaseManager : Singleton<FirebaseManager>
 
     [Space]
     public UISignScene uISignScene;
+    public event Action OnSetUserRank;
 
     [Space]
     public UserInfo userInfo;
     public List<UserScore> userScore;
-    public UnityEvent OnSetRank;
-    public UnityEvent OnSetLocalId;
-
-    
     
     private void Awake()
     {
+
         DontDestroyOnLoad(gameObject);
     }
 
@@ -149,7 +147,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
         {
             userInfo.username = response.username;
             userInfo.score = response.score;
-            OnSetLocalId?.Invoke();
+            RankManager.Instance.Invoke("SetUserRank", 0);
             Debug.Log(" Get Retrieve From Database");
         }).Catch(error =>
         {
@@ -199,15 +197,18 @@ public class FirebaseManager : Singleton<FirebaseManager>
     {
         RestClient.Get($"{databaseURL}.json?auth={secret}").Then(response =>
         {
-            Debug.Log("Get Data");
             JSONNode jsonNode = JSON.Parse(response.Text);
+
             userScore = new List<UserScore>();
+
             for (int i = 0; i < jsonNode.Count; i++)
             {
                 userScore.Add(new UserScore(jsonNode[i]["username"], jsonNode[i]["score"]));
             }
+
             GetLocalID();
-            OnSetRank?.Invoke();
+            RankManager.Instance.SetRankLeader();
+            Debug.Log("Get Data");
         }).Catch(error => 
         {
             Debug.Log("Get Data Error");

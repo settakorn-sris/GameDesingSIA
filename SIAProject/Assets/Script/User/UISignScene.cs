@@ -5,30 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class UISignScene : MonoBehaviour
 {
-    public RectTransform signInUI;
-    public RectTransform signUpUI;
-    public RectTransform mainMenuUI;
+    [SerializeField] private RectTransform signInUI;
+    [SerializeField] private RectTransform signUpUI;
     public void SignInComplete()
     {
-        signInUI.gameObject.SetActive(false);
-        OpenMenu();
+        StartCoroutine(OpenScene());
     }
-    public void TurnOffSignIn()
+    public void OnTurnOffSignIn()
     {
         signInUI.gameObject.SetActive(false);
         signUpUI.gameObject.SetActive(true);
     }
-    public void TurnOffSignUp()
+    public void OnTurnOffSignUp()
     {
         signInUI.gameObject.SetActive(true);
         signUpUI.gameObject.SetActive(false);
     }
-    public void OpenMenu()
-    {
-        mainMenuUI.gameObject.SetActive(true);
-    }
-    public void Play()
+    public void OnPlay()
     {
         SceneManager.LoadScene("SampleScene");
+    }
+    IEnumerator OpenScene()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("MainMenu");
+
     }
 }
