@@ -8,7 +8,7 @@ public class SpeedSkill : Skill
     private float oldSpeed ;
     public override void AboutSkill(PlayerCharecter player)
     {
-      
+        base.AboutSkill(player);
         StartCoroutine(Speed(player));
         
     }

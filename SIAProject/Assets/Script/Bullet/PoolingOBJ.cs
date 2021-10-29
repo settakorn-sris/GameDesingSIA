@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PoolingOBJ : MonoBehaviour
 {
-     private PlayerBullet bullet;
-    [SerializeField] private PlayerBullet[] bulletInPool;
+     private Bullet bullet;
+    [SerializeField] private Bullet[] bulletInPool;
     [SerializeField] private int poolAmount = 0;
-    [SerializeField] private float fireRate = 1f;//Player => GM => Pool (If we want to manage fireRate in plyer)
+    [SerializeField] private float fireRate = 1f;//Player => GM => Pool (If we want to manage fireRate in plyer)  f
     [SerializeField] private float timeCountForFire = 0;
 
     private int ControlPool = 0;
@@ -20,7 +20,7 @@ public class PoolingOBJ : MonoBehaviour
     }
     void Start()
     {
-        bulletInPool = new PlayerBullet[poolAmount];
+        bulletInPool = new Bullet[poolAmount];
         Pooling();
     }
     private void Update()
@@ -57,7 +57,7 @@ public class PoolingOBJ : MonoBehaviour
        
     }
 
-    public void GetBulletType(PlayerBullet bulletType)
+    public void GetBulletType(Bullet bulletType)
     {
         bullet = bulletType;
     }
