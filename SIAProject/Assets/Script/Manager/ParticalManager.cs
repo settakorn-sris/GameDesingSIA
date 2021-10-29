@@ -19,8 +19,9 @@ public class ParticalManager : Singleton<ParticalManager>
     [Serializable]
     public struct UseParticle
     {
-        public ParticleSystem partical;
         public PlayerParticle playerPartical;
+        public ParticleSystem partical;
+       
     }
 
 

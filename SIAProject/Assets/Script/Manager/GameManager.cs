@@ -52,9 +52,10 @@ public class GameManager : Singleton<GameManager>
     private float xPosition;
     private float zPosition;
     private int indexForRandomEnemy;
-   
+
 
     [Header("Player")]
+    [SerializeField] private CameraControl playerCamera;
     [SerializeField] private PlayerCharecter player;
     [SerializeField] private int playerHp;
     [SerializeField] private float playerSpeed;
@@ -144,8 +145,10 @@ public class GameManager : Singleton<GameManager>
     [Header("Enemy bomb")]
     [SerializeField] private int bombDamage;
 
-    [Header("Enemy bomb")]
-    [SerializeField] private int a;//get pool
+    [Header("Enemy Range")]
+    public EnemyBulletPooling PoolingEnemyBullet;//get pool
+    public Bullet EnemyBullet;
+    public float EnemyFireRate;
     //DamageSpeed
     // Distance
 
@@ -265,6 +268,7 @@ public class GameManager : Singleton<GameManager>
         }
         else if(wave==Wave.BOSS && bossCheck.Length==0 && enemyCheck.Length == 0)
         {
+            playerCamera.SetShake= true;
             SpawnBoss();
         }
         else if(wave==Wave.BUY && bossCheck.Length==0 && enemyCheck.Length == 0) //wave==Wave.BUY && bossCheck.Length==0
@@ -277,8 +281,8 @@ public class GameManager : Singleton<GameManager>
 
     private void SpawnPlayer()
     {
-        playerInScene= Instantiate(player, new Vector3(0, 1, 0), Quaternion.identity);
-        playerInScene.Init(playerHp, playerSpeed,playerSkill[2]);
+        playerInScene= Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
+        playerInScene.Init(playerHp, playerSpeed,playerSkill[1]);
 
         playerInScene.playerDie += ForRestartGame;
       
