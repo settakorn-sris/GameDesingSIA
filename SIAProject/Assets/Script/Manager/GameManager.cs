@@ -149,6 +149,7 @@ public class GameManager : Singleton<GameManager>
     public EnemyBulletPooling PoolingEnemyBullet;//get pool
     public Bullet EnemyBullet;
     public float EnemyFireRate;
+    public int EnemyBulletDamage;
     //DamageSpeed
     // Distance
 
@@ -264,6 +265,7 @@ public class GameManager : Singleton<GameManager>
 
         if (wave==Wave.ENEMY)
         {
+            EnemyBulletDamage = enemyDamage;
             SpawnEnemy();
         }
         else if(wave==Wave.BOSS && bossCheck.Length==0 && enemyCheck.Length == 0)

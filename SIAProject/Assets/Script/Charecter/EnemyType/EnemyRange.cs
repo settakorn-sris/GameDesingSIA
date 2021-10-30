@@ -16,6 +16,7 @@ public class EnemyRange : EnemyCharecter
     {
         base.Awake();
         enemyBulletPooling = EnemyBulletPooling.Instance;
+        
         fireRate = gM.EnemyFireRate;
     }
     protected override void Update()
@@ -27,7 +28,7 @@ public class EnemyRange : EnemyCharecter
             UseBullet();
             countFireRate = 0;
         }
-        countFireRate++;
+        countFireRate += Time.deltaTime;
     }
    
     private void UseBullet()

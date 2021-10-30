@@ -22,9 +22,8 @@ public class Bullet : MonoBehaviour
 
     protected virtual void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player") return;
         var enemy = other.gameObject.GetComponent<ITakeDamage>();
         enemy?.TakeDamage(damage);
-        gameObject.SetActive(false);
+        
     }
 }

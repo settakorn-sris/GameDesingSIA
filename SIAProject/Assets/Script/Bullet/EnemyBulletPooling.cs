@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyBulletPooling : Singleton<EnemyBulletPooling>
 {
-    [SerializeField] Bullet enemyBullet;
-    private int bulletAmount;
+    private Bullet enemyBullet;
+   [SerializeField] private int bulletAmount;
     private Queue<Bullet> enemyBulletQueue = new Queue<Bullet>();
     private GameManager gM;
 
@@ -14,11 +14,12 @@ public class EnemyBulletPooling : Singleton<EnemyBulletPooling>
     {
         gM = GameManager.Instance;
         enemyBullet = gM.EnemyBullet;
+        SpawnBullet();
     }
 
     private void SpawnBullet()
     {
-        for(var i =0; i>=bulletAmount;i--)
+        for(var i =0; i<bulletAmount;i++)
         {
             var bullet = Instantiate(enemyBullet, transform.position, Quaternion.identity);
             enemyBulletQueue.Enqueue(bullet);
@@ -28,23 +29,27 @@ public class EnemyBulletPooling : Singleton<EnemyBulletPooling>
 
     public void GetBullet(GameObject firePosition)
     {
-        if(enemyBulletQueue.Count>0)
+        if (enemyBulletQueue.Count > 0)
         {
-            var enemyBullet = enemyBulletQueue.Dequeue();
 
+            var enemyBullet = enemyBulletQueue.Dequeue();
+            enemyBullet.gameObject.SetActive(true);
+            enemyBullet.GetDamage(gM.EnemyBulletDamage);
             enemyBullet.transform.position = firePosition.transform.position;               //get bullet Speed From Gm 
             enemyBullet.Rb.velocity = firePosition.transform.forward * enemyBullet.GetSpeed(gM.BulletSpeed);
         }
         else
         {
-            var bullet = Instantiate(enemyBullet,firePosition.transform.position, Quaternion.identity);
+            var bullet = Instantiate(enemyBullet, firePosition.transform.position, Quaternion.identity);
         }
 
     }
 
     public void GetToPool(Bullet bullet)
     {
+        print("Get TO Pool");
         enemyBulletQueue.Enqueue(bullet);
+        
         bullet.gameObject.SetActive(false);
     }
   
