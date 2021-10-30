@@ -115,12 +115,14 @@
     <Compile Include="Assets\RestClient\Packages\RSG.Promise\Tuple.cs" />
     <Compile Include="Assets\Script\Charecter\EnemyCharecter.cs" />
     <Compile Include="Assets\FullSerializer\Source\fsResult.cs" />
+    <Compile Include="Assets\Script\Charecter\EnemyType\EnemyRange.cs" />
     <Compile Include="Assets\FullSerializer\Source\fsContext.cs" />
     <Compile Include="Assets\FullSerializer\Source\Converters\fsKeyValuePairConverter.cs" />
     <Compile Include="Assets\Script\User\UserInfo.cs" />
     <Compile Include="Assets\RestClient\DemoScene\Scripts\Model\User.cs" />
     <Compile Include="Assets\Script\Skill\PlayerCollision.cs" />
     <Compile Include="Assets\FullSerializer\Source\Aot\fsAotVersionInfo.cs" />
+    <Compile Include="Assets\Script\Charecter\Boss\EnemyMaleeBoss.cs" />
     <Compile Include="Assets\FullSerializer\Source\Converters\fsIEnumerableConverter.cs" />
     <Compile Include="Assets\FullSerializer\Source\Converters\Unity\UnityEvent_Converter.cs" />
     <Compile Include="Assets\RestClient\DemoScene\Scripts\Model\Todo.cs" />
@@ -149,6 +151,7 @@
     <Compile Include="Assets\FullSerializer\Source\Internal\fsTypeExtensions.cs" />
     <Compile Include="Assets\Script\Skill\AddDamageSkill.cs" />
     <Compile Include="Assets\Script\User\UISignScene.cs" />
+    <Compile Include="Assets\Script\Bullet\EnemyBulletPooling.cs" />
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\RestClientPromise.cs" />
     <Compile Include="Assets\Script\Bullet\EnemyBullet.cs" />
     <Compile Include="Assets\FullSerializer\Source\Converters\fsPrimitiveConverter.cs" />
@@ -184,9 +187,6 @@
     <Compile Include="Assets\FullSerializer\Source\Converters\Unity\GUIStyleState_DirectConverter.cs" />
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Helpers\Extensions.cs" />
     <Compile Include="Assets\RestClient\DemoScene\Scripts\Model\Photo.cs" />
-    <Compile Include="Assets\Script\Charecter\Boss\EnemyMaleeBoss.cs" />
-    <Compile Include="Assets\Script\Charecter\EnemyType\EnemyRange.cs" />
-    <Compile Include="Assets\Script\Bullet\EnemyBulletPooling.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
