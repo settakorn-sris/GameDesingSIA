@@ -13,6 +13,7 @@ public class PlayerBullet : Bullet
             return;
         }
         base.OnCollisionEnter(other);
+       
         gameObject.SetActive(false);
     }
 }

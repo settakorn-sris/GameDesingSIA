@@ -85,7 +85,7 @@ public class PlayerCharecter : Charecter
     }
 
    // ParticalManager.PlayerParticle a = ParticalManager.PlayerParticle.IMMORTAL;
-    private void UseSkill()
+    public void UseSkill()
     {
         if (!CanUseSkill) return;
         

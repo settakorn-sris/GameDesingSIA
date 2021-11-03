@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public abstract class Skill : MonoBehaviour
 {
+    [Header("Property")]
     public string Name;
     public Image SkillImage;
+    public Image SkillButtonImg;
+
+    [Header("About Skill")]
     public float CoolDownSkill = 0;
     public float timeOfSkill;
     public int SkillPrice;

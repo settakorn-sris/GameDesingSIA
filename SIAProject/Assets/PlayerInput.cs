@@ -41,6 +41,14 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press(pressPoint=0.5)""
+                },
+                {
+                    ""name"": ""UseSkill"",
+                    ""type"": ""Button"",
+                    ""id"": ""dc6b3728-803e-4200-9337-8ce8543ab0ad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(pressPoint=0.5)""
                 }
             ],
             ""bindings"": [
@@ -131,6 +139,17 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""382c72dd-f399-4987-9121-e21cb47999fd"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseSkill"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -142,6 +161,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         m_PlayerControl_Movement = m_PlayerControl.FindAction("Movement", throwIfNotFound: true);
         m_PlayerControl_PlayerLook = m_PlayerControl.FindAction("PlayerLook", throwIfNotFound: true);
         m_PlayerControl_Fire = m_PlayerControl.FindAction("Fire", throwIfNotFound: true);
+        m_PlayerControl_UseSkill = m_PlayerControl.FindAction("UseSkill", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -194,6 +214,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerControl_Movement;
     private readonly InputAction m_PlayerControl_PlayerLook;
     private readonly InputAction m_PlayerControl_Fire;
+    private readonly InputAction m_PlayerControl_UseSkill;
     public struct PlayerControlActions
     {
         private @PlayerInput m_Wrapper;
@@ -201,6 +222,7 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         public InputAction @Movement => m_Wrapper.m_PlayerControl_Movement;
         public InputAction @PlayerLook => m_Wrapper.m_PlayerControl_PlayerLook;
         public InputAction @Fire => m_Wrapper.m_PlayerControl_Fire;
+        public InputAction @UseSkill => m_Wrapper.m_PlayerControl_UseSkill;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -219,6 +241,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Fire.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnFire;
+                @UseSkill.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnUseSkill;
+                @UseSkill.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnUseSkill;
+                @UseSkill.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnUseSkill;
             }
             m_Wrapper.m_PlayerControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -232,6 +257,9 @@ public class @PlayerInput : IInputActionCollection, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @UseSkill.started += instance.OnUseSkill;
+                @UseSkill.performed += instance.OnUseSkill;
+                @UseSkill.canceled += instance.OnUseSkill;
             }
         }
     }
@@ -241,5 +269,6 @@ public class @PlayerInput : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnPlayerLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnUseSkill(InputAction.CallbackContext context);
     }
 }
