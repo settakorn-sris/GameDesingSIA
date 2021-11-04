@@ -221,7 +221,7 @@ public class GameManager : Singleton<GameManager>
     [Header("For Skill")]
     //[SerializeField] private int skillPrice = 3;
     
-    [SerializeField] private Image playerSkillImg;
+    public Image playerSkillImg;
     private int randomSkillIndex = 0;
     public GameObject CheckSkillCollision;  
     //Wave
@@ -287,7 +287,7 @@ public class GameManager : Singleton<GameManager>
     {
         playerInScene= Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
         playerInScene.Init(playerHp, playerSpeed,playerSkill[1]);
-
+        playerSkillImg.sprite = playerSkill[1].SkillButtonImg.sprite;
         playerInScene.playerDie += ForRestartGame;
       
     }
@@ -419,7 +419,7 @@ public class GameManager : Singleton<GameManager>
         scoreManager.MinusScore(playerSkill[randomSkillIndex].SkillPrice);
 
         playerInScene.GetSkill(playerSkill[randomSkillIndex]);                                      //
-        playerSkillImg.sprite = playerSkill[randomSkillIndex].SkillImage.sprite;
+        playerSkillImg.sprite = playerSkill[randomSkillIndex].SkillButtonImg.sprite;
         buyPanel.SetActive(false);
     }
 
@@ -464,7 +464,8 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-  
+    //Control fill
+   
 
     #region "Ads"
     public void HealingWithAds()

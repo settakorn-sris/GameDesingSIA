@@ -100,14 +100,17 @@ public class PlayerCharecter : Charecter
     {
         if (!CanUseSkill)
         {
+            GM.playerSkillImg.fillAmount -= 1 / skill.CoolDownSkill * Time.deltaTime; //Control fill
             timeCountSkill -= Time.deltaTime;
             if (timeCountSkill <= 0)
             {
+                GM.playerSkillImg.fillAmount = 0; 
                 print("Completed");
                 CanUseSkill = true;
             }
-        } 
-        
+        }
+     
+
     }
     public override void TakeDamage(int damage)
     {

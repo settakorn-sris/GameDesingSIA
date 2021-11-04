@@ -18,14 +18,17 @@ public abstract class Skill : MonoBehaviour
     private ParticalManager particleManager;
     [SerializeField]private ParticalManager.PlayerParticle SkillParticle;
 
+    private bool isCoolDown = false;
     private void Awake()
     {
         particleManager = ParticalManager.Instance;
+        
     }
     //protected float timeCount = 0;
     // [SerializeField] protected ParticleSystem Particle;
 
-   
+  
+
     public virtual void AboutSkill(PlayerCharecter player)
     {
         UseParticle(SkillParticle);
@@ -36,6 +39,7 @@ public abstract class Skill : MonoBehaviour
     {
         particleManager.PlayParticle(particle);
     }
+
 
     protected abstract void EndSkill(PlayerCharecter player);
 
