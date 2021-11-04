@@ -44,6 +44,9 @@ public class GameManager : Singleton<GameManager>
 
     [Header("Restart_UI")]
     public GameObject RestartPanel;
+    [SerializeField]private Button goToMainMenuButton;
+    [SerializeField] private TextMeshProUGUI finalScore;
+    [SerializeField]private TextMeshProUGUI lastRound;
    
 
     private float timeCount;
@@ -237,6 +240,7 @@ public class GameManager : Singleton<GameManager>
         resumeButton.onClick.AddListener(ResumeGame);
         buyHealingButton.onClick.AddListener(BuyHealing);
         buySkillButton.onClick.AddListener(BuySkill);
+        goToMainMenuButton.onClick.AddListener(GoTOMainMenu);
         //OnReStart += RestartGame;
         scoreManager = ScoreManager.Instance;
         StartGame();
@@ -439,8 +443,20 @@ public class GameManager : Singleton<GameManager>
     {
         //show panel & button & adsButton
         RestartPanel.SetActive(true);
+        //Get score UI
+        finalScore.text = "You Score :"+scoreManager.GetScoreText.text;
+        //Get Round  UI
+        lastRound.text = "You Round :" + roundText.text;
+        
+
         Time.timeScale = 0;
 
+    }
+
+    //MainManu
+    private void GoTOMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     private void GameReset()
     {

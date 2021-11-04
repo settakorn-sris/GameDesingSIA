@@ -98,6 +98,7 @@ public class PlayerCharecter : Charecter
 
     private void CoolDown()
     {
+       
         if (!CanUseSkill)
         {
             GM.playerSkillImg.fillAmount -= 1 / skill.CoolDownSkill * Time.deltaTime; //Control fill
@@ -109,7 +110,8 @@ public class PlayerCharecter : Charecter
                 CanUseSkill = true;
             }
         }
-     
+        else GM.playerSkillImg.fillAmount = 1;
+
 
     }
     public override void TakeDamage(int damage)
