@@ -144,7 +144,6 @@
     <Compile Include="Assets\Script\Charecter\Boss.cs" />
     <Compile Include="Assets\FullSerializer\Source\fsData.cs" />
     <Compile Include="Assets\FullSerializer\Source\Converters\Unity\Gradient_DirectConverter.cs" />
-    <Compile Include="Assets\Script\User\ChangeInput.cs" />
     <Compile Include="Assets\FullSerializer\Source\Converters\Unity\GUIStyle_DirectConverter.cs" />
     <Compile Include="Assets\Script\Singleton.cs" />
     <Compile Include="Assets\FullSerializer\Source\Internal\fsVersionManager.cs" />
@@ -424,6 +423,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
