@@ -27,22 +27,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.027785912
-  m_Height: 0.100315675
+  m_Height: 0.09714301
   m_Direction: 1
-  m_Center: {x: 0.0015527166, y: 0.050892282, z: 0.002005287}
---- !u!65 &237672593
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2033231958386645070}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.041367143, y: 0.09594928, z: 0.022466991}
-  m_Center: {x: -0.0007591112, y: 0.050578896, z: 0.0012260935}
+  m_Center: {x: 0.0015527166, y: 0.052478626, z: 0.002005287}
 --- !u!95 &237672589
 Animator:
   serializedVersion: 3
@@ -78,9 +65,9 @@ MonoBehaviour:
   damagePopUp: {fileID: 8508749476267495382, guid: ecf9fdc9c48104144bd808246c352ec9, type: 3}
   Hp: 100
   Speed: 5
-  Skill: {fileID: 0}
   bulletType: {fileID: 8997183031183548279, guid: 533ca9c49d3b0d44987682d3aa0d461a, type: 3}
   bullet: {fileID: 4966071945884899450}
+  partical: {fileID: 0}
   CanGetDamage: 1
   CheckCollisionForSkill: {fileID: 0}
   GM: {fileID: 0}
@@ -266,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4913700036210751225, guid: 2ecaf8694c999ef4aa548ab3662c3691, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.037
+      value: 0.0483
       objectReference: {fileID: 0}
     - target: {fileID: 4913700036210751225, guid: 2ecaf8694c999ef4aa548ab3662c3691, type: 3}
       propertyPath: m_LocalRotation.w

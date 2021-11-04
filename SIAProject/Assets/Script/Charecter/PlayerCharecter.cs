@@ -85,7 +85,7 @@ public class PlayerCharecter : Charecter
     }
 
    // ParticalManager.PlayerParticle a = ParticalManager.PlayerParticle.IMMORTAL;
-    private void UseSkill()
+    public void UseSkill()
     {
         if (!CanUseSkill) return;
         
@@ -98,16 +98,21 @@ public class PlayerCharecter : Charecter
 
     private void CoolDown()
     {
+       
         if (!CanUseSkill)
         {
+            GM.playerSkillImg.fillAmount -= 1 / skill.CoolDownSkill * Time.deltaTime; //Control fill
             timeCountSkill -= Time.deltaTime;
             if (timeCountSkill <= 0)
             {
+                GM.playerSkillImg.fillAmount = 0; 
                 print("Completed");
                 CanUseSkill = true;
             }
-        } 
-        
+        }
+        else GM.playerSkillImg.fillAmount = 1;
+
+
     }
     public override void TakeDamage(int damage)
     {

@@ -17,7 +17,8 @@ public class Boss : EnemyCharecter
         base.Awake();
         hpForHeal = gM.HpForBossHealing;
         minianAmount = gM.minianAmount;
-       
+
+        count = 0;
         //minian = gM.MinianOfBoss;
         minian.Init(20,3,10,0);
     }

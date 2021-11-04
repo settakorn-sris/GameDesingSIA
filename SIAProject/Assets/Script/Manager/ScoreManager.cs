@@ -6,6 +6,15 @@ using TMPro;
 public class ScoreManager : Singleton<ScoreManager>
 {
     [SerializeField]private TextMeshProUGUI scoreText;
+
+    public TextMeshProUGUI GetScoreText
+    {
+        get
+        {
+            return scoreText;
+        }
+    }
+
     public int Score { get; private set; }
     void Awake()
     {
