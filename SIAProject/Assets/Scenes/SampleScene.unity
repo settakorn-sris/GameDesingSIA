@@ -5364,7 +5364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Stunt
   SkillImage: {fileID: 0}
-  SkillButtonImg: {fileID: 0}
+  SkillButtonImg: {fileID: 5486420757667496826, guid: d3d9271b60d258549880951ea5e6bfa6, type: 3}
   CoolDownSkill: 2
   timeOfSkill: 0
   SkillPrice: 0
@@ -6140,7 +6140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Speed
   SkillImage: {fileID: 9204093532923486953, guid: 801df6e05dc7bbd45bb766919d4affc1, type: 3}
-  SkillButtonImg: {fileID: 9204093532923486953, guid: 801df6e05dc7bbd45bb766919d4affc1, type: 3}
+  SkillButtonImg: {fileID: 967565683868227267, guid: 5db95d0c4b1302e40b8f0d784b006ab6, type: 3}
   CoolDownSkill: 10
   timeOfSkill: 5
   SkillPrice: 0
@@ -6797,7 +6797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: SlowTime
   SkillImage: {fileID: 7023645523363144034, guid: f7cd0760adb3d5642b248710c8fb5133, type: 3}
-  SkillButtonImg: {fileID: 0}
+  SkillButtonImg: {fileID: 7721093291568012699, guid: 327cec3b329f6f242835e4daf5596374, type: 3}
   CoolDownSkill: 2
   timeOfSkill: 5
   SkillPrice: 0
@@ -7177,7 +7177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Immortal
   SkillImage: {fileID: 5415896800234577750, guid: d7a13bfc5bcd6014f9f88bafa10ca0dd, type: 3}
-  SkillButtonImg: {fileID: 0}
+  SkillButtonImg: {fileID: 8202862227151819921, guid: 9f576be05b2f3ad4c9c90d587275418d, type: 3}
   CoolDownSkill: 20
   timeOfSkill: 5
   SkillPrice: 0
@@ -8778,7 +8778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: AddDamage
   SkillImage: {fileID: 1303927645106326498, guid: 8a26bc3df6f337b488367cc05b12cc74, type: 3}
-  SkillButtonImg: {fileID: 0}
+  SkillButtonImg: {fileID: 3488875209026913742, guid: b3c1f469cddb8db44b63d30824627778, type: 3}
   CoolDownSkill: 20
   timeOfSkill: 5
   SkillPrice: 0
