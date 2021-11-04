@@ -279,6 +279,7 @@ GameObject:
   - component: {fileID: 8381830536220698769}
   - component: {fileID: 5649803260026621239}
   - component: {fileID: -4385080822034963826}
+  - component: {fileID: 4220168318932930382}
   m_Layer: 5
   m_Name: RankData
   m_TagString: Untagged
@@ -349,6 +350,14 @@ MonoBehaviour:
   rankText: {fileID: 499929823579513210}
   nameText: {fileID: 1988557615457622583}
   scoreText: {fileID: 3269974813686992585}
+--- !u!222 &4220168318932930382
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090977838927595388}
+  m_CullTransparentMesh: 1
 --- !u!1 &7637879947978534550
 GameObject:
   m_ObjectHideFlags: 0

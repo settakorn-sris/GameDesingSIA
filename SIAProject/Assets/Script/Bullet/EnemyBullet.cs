@@ -12,9 +12,13 @@ public class EnemyBullet : Bullet
     }
     protected override void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Enemy"|| other.gameObject.tag == "Boss") return;
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Boss")
+        {
+            enemyBulletPool.GetToPool(this);
+            return;
+        }
         base.OnCollisionEnter(other);
-
+        print("Enter");
         enemyBulletPool.GetToPool(this);
     }
 }

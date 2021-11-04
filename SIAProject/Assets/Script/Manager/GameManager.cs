@@ -44,6 +44,9 @@ public class GameManager : Singleton<GameManager>
 
     [Header("Restart_UI")]
     public GameObject RestartPanel;
+    [SerializeField]private Button goToMainMenuButton;
+    [SerializeField] private TextMeshProUGUI finalScore;
+    [SerializeField]private TextMeshProUGUI lastRound;
    
 
     private float timeCount;
@@ -61,6 +64,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float playerSpeed;
     [SerializeField] private Skill[] playerSkill; 
     private PlayerCharecter playerInScene;
+    private Button playerSkillButton;
 
     #region playerInScene 
     public Vector3 GetPlayerInSceneTranForm
@@ -149,6 +153,7 @@ public class GameManager : Singleton<GameManager>
     public EnemyBulletPooling PoolingEnemyBullet;//get pool
     public Bullet EnemyBullet;
     public float EnemyFireRate;
+    public int EnemyBulletDamage;
     //DamageSpeed
     // Distance
 
@@ -218,8 +223,9 @@ public class GameManager : Singleton<GameManager>
 
     [Header("For Skill")]
     //[SerializeField] private int skillPrice = 3;
+    
+    public Image playerSkillImg;
     private int randomSkillIndex = 0;
-
     public GameObject CheckSkillCollision;  
     //Wave
     private Wave wave;
@@ -234,6 +240,7 @@ public class GameManager : Singleton<GameManager>
         resumeButton.onClick.AddListener(ResumeGame);
         buyHealingButton.onClick.AddListener(BuyHealing);
         buySkillButton.onClick.AddListener(BuySkill);
+        goToMainMenuButton.onClick.AddListener(GoTOMainMenu);
         //OnReStart += RestartGame;
         scoreManager = ScoreManager.Instance;
         StartGame();
@@ -264,6 +271,7 @@ public class GameManager : Singleton<GameManager>
 
         if (wave==Wave.ENEMY)
         {
+            EnemyBulletDamage = enemyDamage;
             SpawnEnemy();
         }
         else if(wave==Wave.BOSS && bossCheck.Length==0 && enemyCheck.Length == 0)
@@ -283,7 +291,7 @@ public class GameManager : Singleton<GameManager>
     {
         playerInScene= Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
         playerInScene.Init(playerHp, playerSpeed,playerSkill[1]);
-
+        playerSkillImg.sprite = playerSkill[1].SkillButtonImg.sprite;
         playerInScene.playerDie += ForRestartGame;
       
     }
@@ -414,8 +422,8 @@ public class GameManager : Singleton<GameManager>
         if (scoreManager.Score < playerSkill[randomSkillIndex].SkillPrice) return;
         scoreManager.MinusScore(playerSkill[randomSkillIndex].SkillPrice);
 
-        playerInScene.GetSkill(playerSkill[randomSkillIndex]);
-      
+        playerInScene.GetSkill(playerSkill[randomSkillIndex]);                                      //
+        playerSkillImg.sprite = playerSkill[randomSkillIndex].SkillButtonImg.sprite;
         buyPanel.SetActive(false);
     }
 
@@ -435,8 +443,20 @@ public class GameManager : Singleton<GameManager>
     {
         //show panel & button & adsButton
         RestartPanel.SetActive(true);
+        //Get score UI
+        finalScore.text = "You Score :"+scoreManager.GetScoreText.text;
+        //Get Round  UI
+        lastRound.text = "You Round :" + roundText.text;
+        
+
         Time.timeScale = 0;
 
+    }
+
+    //MainManu
+    private void GoTOMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     private void GameReset()
     {
@@ -460,7 +480,8 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-  
+    //Control fill
+   
 
     #region "Ads"
     public void HealingWithAds()
