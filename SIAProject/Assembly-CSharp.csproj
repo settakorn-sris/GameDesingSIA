@@ -144,6 +144,7 @@
     <Compile Include="Assets\Script\Charecter\Boss.cs" />
     <Compile Include="Assets\FullSerializer\Source\fsData.cs" />
     <Compile Include="Assets\FullSerializer\Source\Converters\Unity\Gradient_DirectConverter.cs" />
+    <Compile Include="Assets\Script\User\ChangeInput.cs" />
     <Compile Include="Assets\FullSerializer\Source\Converters\Unity\GUIStyle_DirectConverter.cs" />
     <Compile Include="Assets\Script\Singleton.cs" />
     <Compile Include="Assets\FullSerializer\Source\Internal\fsVersionManager.cs" />
