@@ -85,7 +85,8 @@ public class FirebaseManager : Singleton<FirebaseManager>
                 username = _username;
                 email = _email;
                 PosttoDatabase(response.idToken);
-
+                uISignScene._wronging.text = "Plase Checking Your Email";
+                uISignScene.OnWrongingOpen();
             }).Catch(error =>
             {
                 Debug.Log(error);
@@ -112,11 +113,11 @@ public class FirebaseManager : Singleton<FirebaseManager>
                         GetUserName();
                         warningSigninText.text = "Login Complete";
                         uISignScene.SignInComplete();
-                        Debug.Log("Signin Complete");
                     }
                     else
                     {
-                        Debug.Log("You are stupid, you need to verify your email dumb");
+                        uISignScene._wronging.text = "Plase Verify Your Email";
+                        uISignScene.OnWrongingOpen();
                     }
                 });
 
