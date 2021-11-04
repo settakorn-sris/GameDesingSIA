@@ -5624,7 +5624,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -81.864975, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6140,7 +6140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Speed
   SkillImage: {fileID: 9204093532923486953, guid: 801df6e05dc7bbd45bb766919d4affc1, type: 3}
-  SkillButtonImg: {fileID: 0}
+  SkillButtonImg: {fileID: 9204093532923486953, guid: 801df6e05dc7bbd45bb766919d4affc1, type: 3}
   CoolDownSkill: 10
   timeOfSkill: 5
   SkillPrice: 0
@@ -7824,6 +7824,10 @@ PrefabInstance:
       propertyPath: timeOfSkill
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1225512974758528929, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
+      propertyPath: SkillButtonImg
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1225512974758528930, guid: c49e38f7e3693844487fbe3bd48bfab7, type: 3}
       propertyPath: m_Name
       value: StuntSkill (1)
@@ -8520,13 +8524,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1582054529
