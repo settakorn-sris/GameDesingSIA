@@ -7,8 +7,14 @@ public class PlayerBullet : Bullet
 
     protected override void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player") return;
+        if (other.gameObject.tag == "Player")
+        {
+            gameObject.SetActive(false);
+            return;
+        }
         base.OnCollisionEnter(other);
+       
+        gameObject.SetActive(false);
     }
 }
 

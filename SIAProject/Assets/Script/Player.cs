@@ -59,12 +59,14 @@ public class Player : MonoBehaviour, IPlayerControlActions
 
     }
 
+
     // For Mouse Look
     private void PlayerRotateMouseControll()
     {
         Vector3 lookAtPosition = transform.position + playerLookPosition;
         transform.LookAt(lookAtPosition); 
     }
+
 
     private Vector3 Positon()
     {
@@ -80,6 +82,13 @@ public class Player : MonoBehaviour, IPlayerControlActions
         animator.SetBool("ATK", true);
     }
 
+    public void OnUseSkill(InputAction.CallbackContext context)
+    {
+        //Add Animation
+        player.UseSkill();
+       
+    }
+
     private void Animation(float x,float z)
     {
         if(x != 0 || z != 0)
@@ -92,5 +101,6 @@ public class Player : MonoBehaviour, IPlayerControlActions
         }
     }
 
+  
 }
 

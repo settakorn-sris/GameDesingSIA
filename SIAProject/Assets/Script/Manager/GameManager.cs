@@ -61,6 +61,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float playerSpeed;
     [SerializeField] private Skill[] playerSkill; 
     private PlayerCharecter playerInScene;
+    private Button playerSkillButton;
 
     #region playerInScene 
     public Vector3 GetPlayerInSceneTranForm
@@ -149,6 +150,7 @@ public class GameManager : Singleton<GameManager>
     public EnemyBulletPooling PoolingEnemyBullet;//get pool
     public Bullet EnemyBullet;
     public float EnemyFireRate;
+    public int EnemyBulletDamage;
     //DamageSpeed
     // Distance
 
@@ -218,8 +220,9 @@ public class GameManager : Singleton<GameManager>
 
     [Header("For Skill")]
     //[SerializeField] private int skillPrice = 3;
+    
+    [SerializeField] private Image playerSkillImg;
     private int randomSkillIndex = 0;
-
     public GameObject CheckSkillCollision;  
     //Wave
     private Wave wave;
@@ -264,6 +267,7 @@ public class GameManager : Singleton<GameManager>
 
         if (wave==Wave.ENEMY)
         {
+            EnemyBulletDamage = enemyDamage;
             SpawnEnemy();
         }
         else if(wave==Wave.BOSS && bossCheck.Length==0 && enemyCheck.Length == 0)
@@ -414,8 +418,8 @@ public class GameManager : Singleton<GameManager>
         if (scoreManager.Score < playerSkill[randomSkillIndex].SkillPrice) return;
         scoreManager.MinusScore(playerSkill[randomSkillIndex].SkillPrice);
 
-        playerInScene.GetSkill(playerSkill[randomSkillIndex]);
-      
+        playerInScene.GetSkill(playerSkill[randomSkillIndex]);                                      //
+        playerSkillImg.sprite = playerSkill[randomSkillIndex].SkillImage.sprite;
         buyPanel.SetActive(false);
     }
 
