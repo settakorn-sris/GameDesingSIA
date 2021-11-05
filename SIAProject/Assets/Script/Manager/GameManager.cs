@@ -448,7 +448,11 @@ public class GameManager : Singleton<GameManager>
         //Get Round  UI
         lastRound.text = "You Round :" + roundText.text;
         
-
+        if(scoreManager.Score >= FirebaseManager.Instance.score)
+        {
+            FirebaseManager.Instance.score = scoreManager.Score;
+            FirebaseManager.Instance.PosttoDatabase(FirebaseManager.Instance.idToken);
+        }
         Time.timeScale = 0;
 
     }

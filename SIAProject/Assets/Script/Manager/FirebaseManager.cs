@@ -27,10 +27,12 @@ public class FirebaseManager : Singleton<FirebaseManager>
     private static string databaseURL = "https://sia-firebase-125eb-default-rtdb.asia-southeast1.firebasedatabase.app/users";
     private string apikey = "AIzaSyA9rERnZuGm9k4gNXePzvFh_NJ4TdCFmHU";
     private static string secret = "9ddqSj28nVB0nUOf09Qe4ArqRrTbhRruDA2ALMRd";
-    private static string idToken ;
+    private static string _idToken ;
     private string getLocalId;
     public static fsSerializer serializer = new fsSerializer();
     public static string localId;
+
+    public string idToken { get { return _idToken; } }
 
     [Header("User Info")]
     public string email;
@@ -108,7 +110,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
                     serializer.TryDeserialize(emailVerificationData, ref emailConfirmationInfo).AssertSuccessWithoutWarnings();
                     if (emailConfirmationInfo.users[0].emailVerified)
                     {
-                        idToken = response.idToken;
+                        _idToken = response.idToken;
                         localId = response.localId;
                         GetUserName();
                         warningSigninText.text = "Login Complete";
@@ -126,11 +128,11 @@ public class FirebaseManager : Singleton<FirebaseManager>
             Debug.Log("Signin Error");
         });
     }
-    private void PosttoDatabase(string idTokenTemp = "")
+    public void PosttoDatabase(string idTokenTemp = "")
     {
         if(idTokenTemp == "")
         {
-            idTokenTemp = idToken;
+            idTokenTemp = _idToken;
         }
         UserInfo user = new UserInfo(email,username, score);
         Debug.Log($"{email} : {username} : {score}");
@@ -144,7 +146,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
     }
     private void RetrieveFromDatabase()
     {
-        RestClient.Get<UserInfo>($"{databaseURL}/{getLocalId}.json?auth={idToken}").Then(response =>
+        RestClient.Get<UserInfo>($"{databaseURL}/{getLocalId}.json?auth={_idToken}").Then(response =>
         {
             userInfo.username = response.username;
             userInfo.score = response.score;
@@ -157,7 +159,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
     }
     private void GetUserName()
     {
-        RestClient.Get<UserInfo>($"{databaseURL}/{localId}.json?auth={idToken}").Then(response =>
+        RestClient.Get<UserInfo>($"{databaseURL}/{localId}.json?auth={_idToken}").Then(response =>
         {
             username = response.username;
             email = response.email;
@@ -171,7 +173,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
     }
     public void GetLocalID()
     {
-        RestClient.Get($"{databaseURL}.json?auth={idToken}").Then(response =>
+        RestClient.Get($"{databaseURL}.json?auth={_idToken}").Then(response =>
         {
             var email = emailSignin.text;
             fsData userData = fsJsonParser.Parse(response.Text);
