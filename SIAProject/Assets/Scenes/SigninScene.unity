@@ -2900,7 +2900,7 @@ MonoBehaviour:
   warningSignupText: {fileID: 1150115005}
   email: 
   username: 
-  score: 10
+  score: 0
   uISignScene: {fileID: 1828907231}
   userInfo:
     email: 
