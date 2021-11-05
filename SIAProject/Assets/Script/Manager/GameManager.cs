@@ -7,6 +7,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 public enum Wave{
+    MENU,
     ENEMY,
     BOSS,
     BUY,
@@ -26,6 +27,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int enemyInThisRound = 5;
     private float timeForEnemySpawn;
     [SerializeField] private GameObject[] map;
+
+    private SoundManager soundManager;
 
 
     //BuY
@@ -236,6 +239,10 @@ public class GameManager : Singleton<GameManager>
 
     private void Awake()
     {
+        //Sound
+        //soundManager = SoundManager.Instance;
+        //soundManager.PlayBGM(SoundManager.Sound.BGM);
+
         puseButton.onClick.AddListener(StopGame);
         resumeButton.onClick.AddListener(ResumeGame);
         buyHealingButton.onClick.AddListener(BuyHealing);
@@ -250,7 +257,6 @@ public class GameManager : Singleton<GameManager>
     void Update()
     {
         GameLoop();
-       
     }
 
 
@@ -447,6 +453,7 @@ public class GameManager : Singleton<GameManager>
         finalScore.text = "You Score :"+scoreManager.GetScoreText.text;
         //Get Round  UI
         lastRound.text = "You Round :" + roundText.text;
+
         
 
         Time.timeScale = 0;
