@@ -310,6 +310,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signInUI: {fileID: 0}
   signUpUI: {fileID: 0}
+  wronging: {fileID: 0}
+  wrongPopup: {fileID: 0}
 --- !u!114 &157460202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,6 +1535,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signInUI: {fileID: 0}
   signUpUI: {fileID: 0}
+  wronging: {fileID: 0}
+  wrongPopup: {fileID: 0}
 --- !u!1 &1066332549
 GameObject:
   m_ObjectHideFlags: 0
