@@ -6,4 +6,5 @@ using UnityEngine;
 public class UserVerify 
 {
     public bool emailVerified;
+    public string displayName;
 }
