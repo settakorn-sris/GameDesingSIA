@@ -170,6 +170,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
             username = response.username;
             email = response.email;
             score = response.score;
+            round = response.round;
             UserSelf.getUsername = username;
             Debug.Log("Get Username");
         }).Catch(error =>
