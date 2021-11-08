@@ -62,7 +62,7 @@
     <Compile Include="Assets\FullSerializer\Source\Converters\fsNullableConverter.cs" />
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Helpers\ResponseHelper.cs" />
     <Compile Include="Assets\FullSerializer\Source\fsISerializationCallbacks.cs" />
-    <Compile Include="Assets\Script\Charecter\EnemyController.cs" />
+    <Compile Include="Assets\Script\Control\EnemyController.cs" />
     <Compile Include="Assets\FullSerializer\Source\Aot\fsAotConfiguration.cs" />
     <Compile Include="Assets\FullSerializer\Source\Converters\Unity\Rect_DirectConverter.cs" />
     <Compile Include="Assets\RestClient\Packages\RSG.Promise\EnumerableExt.cs" />
@@ -109,7 +109,7 @@
     <Compile Include="Assets\Script\Manager\RankManager.cs" />
     <Compile Include="Assets\Script\Manager\AdsManager.cs" />
     <Compile Include="Assets\Script\Skill\ImmortalSkill.cs" />
-    <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\Script\Control\Player.cs" />
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Helpers\RequestHelper.cs" />
     <Compile Include="Assets\FullSerializer\Source\Converters\fsEnumConverter.cs" />
     <Compile Include="Assets\FullSerializer\Source\fsConfig.cs" />
@@ -189,6 +189,7 @@
     <Compile Include="Assets\FullSerializer\Source\Converters\Unity\GUIStyleState_DirectConverter.cs" />
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Helpers\Extensions.cs" />
     <Compile Include="Assets\RestClient\DemoScene\Scripts\Model\Photo.cs" />
+    <Compile Include="Assets\Script\SafeAreaSetter.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -436,6 +437,9 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.DeviceSimulator.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
