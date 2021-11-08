@@ -19,6 +19,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private RawImage gamePanel;
     [SerializeField] private Button puseButton;
     [SerializeField] private Button resumeButton;
+    [SerializeField] private Button mainMenuButton;
 
     [SerializeField] private TextMeshProUGUI roundText;
     [SerializeField] private EnemyCharecter[] enemy;
@@ -42,6 +43,7 @@ public class GameManager : Singleton<GameManager>
     [Header("Buy_Button")]
     [SerializeField] private Button buyHealingButton;
     [SerializeField] private Button buySkillButton;
+    [SerializeField] private Button buyUpPlayerDamageButton;
     [SerializeField] private TextMeshProUGUI healthPrice;
     [SerializeField] private int healingPrice = 3;
 
@@ -239,26 +241,34 @@ public class GameManager : Singleton<GameManager>
 
     private void Awake()
     {
+       
+        ButtonListener();
+        scoreManager = ScoreManager.Instance;
+        StartGame();
+
         //Sound
         //soundManager = SoundManager.Instance;
         //soundManager.PlayBGM(SoundManager.Sound.BGM);
-
-        puseButton.onClick.AddListener(StopGame);
-        resumeButton.onClick.AddListener(ResumeGame);
-        buyHealingButton.onClick.AddListener(BuyHealing);
-        buySkillButton.onClick.AddListener(BuySkill);
-        goToMainMenuButton.onClick.AddListener(GoTOMainMenu);
         //OnReStart += RestartGame;
-        scoreManager = ScoreManager.Instance;
-        StartGame();
-        
+
     }
-   
+
     void Update()
     {
         GameLoop();
     }
 
+    private void ButtonListener()
+    {
+        puseButton.onClick.AddListener(StopGame);
+        resumeButton.onClick.AddListener(ResumeGame);
+        buyHealingButton.onClick.AddListener(BuyHealing);
+        buySkillButton.onClick.AddListener(BuySkill);
+        goToMainMenuButton.onClick.AddListener(GoTOMainMenu);
+        buyUpPlayerDamageButton.onClick.AddListener(UpDamage);
+        mainMenuButton.onClick.AddListener(GotoMainMenu);
+       
+    }
 
     public void StartGame()
     {
@@ -404,13 +414,16 @@ public class GameManager : Singleton<GameManager>
         gamePanel.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
+    private void GotoMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
     //Buy Function
     private void BuyHealing()
     {
         if (scoreManager.Score < healingPrice) return;
         scoreManager.MinusScore(healingPrice);
-        buyPanel.SetActive(false);
         playerInScene.Healing(playerHp);
     
         //HealingPartical.GetPlayer(playerInScene);
@@ -423,14 +436,21 @@ public class GameManager : Singleton<GameManager>
 
     private void BuySkill()
     {
+       
         print("Button skill On");
-        //Have bug
+        
         if (scoreManager.Score < playerSkill[randomSkillIndex].SkillPrice) return;
+      
         scoreManager.MinusScore(playerSkill[randomSkillIndex].SkillPrice);
-
+        buyPanel.SetActive(false);
         playerInScene.GetSkill(playerSkill[randomSkillIndex]);                                      //
         playerSkillImg.sprite = playerSkill[randomSkillIndex].SkillButtonImg.sprite;
-        buyPanel.SetActive(false);
+        timeCount = 0;
+    }
+    private void UpDamage()
+    {
+        BulletDamage += 2;
+        timeCount = 0;
     }
 
     #region "For Skill"
