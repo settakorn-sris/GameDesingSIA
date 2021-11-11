@@ -26,6 +26,7 @@ public class SpeedSkill : Skill
 
     protected override void EndSkill(PlayerCharecter player)
     {
+        base.EndSkill(player);
         player.Speed = oldSpeed;
     }
 

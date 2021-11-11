@@ -24,6 +24,7 @@ public class AddDamageSkill : Skill
     }
     protected override void EndSkill(PlayerCharecter player)
     {
+        base.EndSkill(player);
         player.GM.BulletDamage = oldDamage;
     }
 

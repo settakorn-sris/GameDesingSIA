@@ -15,6 +15,7 @@ public class SlowTime : Skill
 
     protected override void EndSkill(PlayerCharecter player)
     {
+        base.EndSkill(player);
         player.GM.TimeSlow(enemySpeed);
     }
     
