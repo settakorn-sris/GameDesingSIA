@@ -483,7 +483,7 @@ public class GameManager : Singleton<GameManager>
         if(round >= FirebaseManager.Instance.round)
         {
             FirebaseManager.Instance.round = round;
-
+            Debug.Log($"{round >= FirebaseManager.Instance.round} ?");
             FirebaseManager.Instance.PosttoDatabase(FirebaseManager.Instance.idToken);
         }
         Time.timeScale = 0;
