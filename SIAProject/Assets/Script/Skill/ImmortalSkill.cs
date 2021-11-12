@@ -18,6 +18,7 @@ public class ImmortalSkill : Skill
     }
     protected override void EndSkill(PlayerCharecter player)
     {
+        base.EndSkill(player);
         player.CanGetDamage = true;
     }
 

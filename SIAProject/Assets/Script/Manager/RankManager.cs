@@ -12,10 +12,13 @@ public class RankManager : Singleton<RankManager>
     [SerializeField] private Transform rankPanel;
     [SerializeField] private Transform rankPanelUser;
 
-    private UserInfo userInfo;
-    private List<UserScore> userScores;
+    [SerializeField] private UserInfo userInfo;
+    [SerializeField] private List<UserScore> userScores;
+
     private void Awake()
     {
+        FirebaseManager.Instance.OnSetUserRank += SetUserRank;
+        FirebaseManager.Instance.OnSetRank += SetRankLeader;
         StarMainMenu();
     }
     public void StarMainMenu()
@@ -37,6 +40,7 @@ public class RankManager : Singleton<RankManager>
             row.rankText.text = (i + 1).ToString();
             row.nameText.text = userScores[i].username;
             row.scoreText.text = userScores[i].score.ToString();
+            row.roundText.text = userScores[i].round.ToString();
         }
     }
     public void CreateUserRank()
@@ -49,6 +53,7 @@ public class RankManager : Singleton<RankManager>
         var row = Instantiate(rankUserData, rankPanelUser).GetComponent<RankData>();
         row.nameText.text = userInfo.username;
         row.scoreText.text = userInfo.score.ToString();
+        row.roundText.text = userInfo.round.ToString();
     }
     public IEnumerable<UserScore> HightScores()
     {
@@ -57,11 +62,13 @@ public class RankManager : Singleton<RankManager>
     public void SetRankLeader()
     {
         userScores = FirebaseManager.Instance.userScore;
+        FirebaseManager.Instance.OnSetRank -= SetRankLeader;
         CreateRankLeader();
     }
     public void SetUserRank()
     {
         userInfo = FirebaseManager.Instance.userInfo;
+        FirebaseManager.Instance.OnSetUserRank -= SetUserRank;
         CreateUserRank();
     }
     public void GetDataToCreate()

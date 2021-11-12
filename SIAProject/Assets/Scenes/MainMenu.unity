@@ -310,6 +310,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signInUI: {fileID: 0}
   signUpUI: {fileID: 0}
+  wronging: {fileID: 0}
+  wrongPopup: {fileID: 0}
 --- !u!114 &157460202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,6 +1535,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   signInUI: {fileID: 0}
   signUpUI: {fileID: 0}
+  wronging: {fileID: 0}
+  wrongPopup: {fileID: 0}
 --- !u!1 &1066332549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,6 +2236,12 @@ MonoBehaviour:
   rankUserData: {fileID: 280366236499889201, guid: a5e780dd5e8781a4a9724335d85ff5a2, type: 3}
   rankPanel: {fileID: 1947744707}
   rankPanelUser: {fileID: 311815829}
+  userInfo:
+    email: 
+    username: 
+    score: 0
+    localId: 
+  userScores: []
 --- !u!4 &1682754376
 Transform:
   m_ObjectHideFlags: 0

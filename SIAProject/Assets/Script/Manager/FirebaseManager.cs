@@ -26,28 +26,33 @@ public class FirebaseManager : Singleton<FirebaseManager>
     [Header("Firebase")]
     private static string databaseURL = "https://sia-firebase-125eb-default-rtdb.asia-southeast1.firebasedatabase.app/users";
     private string apikey = "AIzaSyA9rERnZuGm9k4gNXePzvFh_NJ4TdCFmHU";
-    private static string secret = "9ddqSj28nVB0nUOf09Qe4ArqRrTbhRruDA2ALMRd";
-    private static string idToken ;
+    //private static string secret = "9ddqSj28nVB0nUOf09Qe4ArqRrTbhRruDA2ALMRd";
+    private static string _idToken ;
     private string getLocalId;
     public static fsSerializer serializer = new fsSerializer();
     public static string localId;
+
+    public string idToken { get { return _idToken; } }
 
     [Header("User Info")]
     public string email;
     public string username;
     public int score;
+    public int round;
 
     [Space]
     public UISignScene uISignScene;
-    public event Action OnSetUserRank;
 
     [Space]
     public UserInfo userInfo;
     public List<UserScore> userScore;
-    
+
+    public event Action OnSetRank;
+    public event Action OnSetUserRank;
+    public event Action OnGetLocalID;
+
     private void Awake()
     {
-
         DontDestroyOnLoad(gameObject);
     }
 
@@ -84,9 +89,10 @@ public class FirebaseManager : Singleton<FirebaseManager>
                 localId = response.localId;
                 username = _username;
                 email = _email;
-                PosttoDatabase(response.idToken);
                 uISignScene._wronging.text = "Plase Checking Your Email";
                 uISignScene.OnWrongingOpen();
+                PosttoDatabase(response.idToken);
+
             }).Catch(error =>
             {
                 Debug.Log(error);
@@ -104,11 +110,12 @@ public class FirebaseManager : Singleton<FirebaseManager>
                 emailResponse =>
                 {
                     fsData emailVerificationData = fsJsonParser.Parse(emailResponse.Text);
+                    Debug.Log(fsJsonParser.Parse(emailResponse.Text));
                     EmailConfirm emailConfirmationInfo = new EmailConfirm();
                     serializer.TryDeserialize(emailVerificationData, ref emailConfirmationInfo).AssertSuccessWithoutWarnings();
                     if (emailConfirmationInfo.users[0].emailVerified)
                     {
-                        idToken = response.idToken;
+                        _idToken = response.idToken;
                         localId = response.localId;
                         GetUserName();
                         warningSigninText.text = "Login Complete";
@@ -126,14 +133,14 @@ public class FirebaseManager : Singleton<FirebaseManager>
             Debug.Log("Signin Error");
         });
     }
-    private void PosttoDatabase(string idTokenTemp = "")
+    public void PosttoDatabase(string idTokenTemp = "")
     {
         if(idTokenTemp == "")
         {
-            idTokenTemp = idToken;
+            idTokenTemp = _idToken;
         }
-        UserInfo user = new UserInfo(email,username, score);
-        Debug.Log($"{email} : {username} : {score}");
+        UserInfo user = new UserInfo(email,username, score , round);
+        Debug.Log($"{email} : {username} : {score} : {round}");
         RestClient.Put<UserInfo>($"{databaseURL}/{localId}.json?auth={idTokenTemp}", user).Then(response =>
         {
             Debug.Log("Put Database");
@@ -144,11 +151,12 @@ public class FirebaseManager : Singleton<FirebaseManager>
     }
     private void RetrieveFromDatabase()
     {
-        RestClient.Get<UserInfo>($"{databaseURL}/{getLocalId}.json?auth={idToken}").Then(response =>
+        RestClient.Get<UserInfo>($"{databaseURL}/{getLocalId}.json?auth={_idToken}").Then(response =>
         {
             userInfo.username = response.username;
             userInfo.score = response.score;
-            RankManager.Instance.Invoke("SetUserRank", 0);
+            userInfo.round = response.round;
+            OnSetUserRank.Invoke();
             Debug.Log(" Get Retrieve From Database");
         }).Catch(error =>
         {
@@ -157,7 +165,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
     }
     private void GetUserName()
     {
-        RestClient.Get<UserInfo>($"{databaseURL}/{localId}.json?auth={idToken}").Then(response =>
+        RestClient.Get<UserInfo>($"{databaseURL}/{localId}.json?auth={_idToken}").Then(response =>
         {
             username = response.username;
             email = response.email;
@@ -171,16 +179,15 @@ public class FirebaseManager : Singleton<FirebaseManager>
     }
     public void GetLocalID()
     {
-        RestClient.Get($"{databaseURL}.json?auth={idToken}").Then(response =>
+        RestClient.Get($"{databaseURL}.json?auth={_idToken}").Then(response =>
         {
-            var email = emailSignin.text;
+            var emailID = email;
             fsData userData = fsJsonParser.Parse(response.Text);
             Dictionary<string, UserInfo> emails = null;
             serializer.TryDeserialize(userData, ref emails);
-
             foreach (var user in emails.Values)
             {
-                if (user.email == email)
+                if (user.email == emailID)
                 {
                     getLocalId = user.localId;
                     RetrieveFromDatabase();
@@ -196,7 +203,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
     }
     public void GetData()
     {
-        RestClient.Get($"{databaseURL}.json?auth={secret}").Then(response =>
+        RestClient.Get($"{databaseURL}.json?auth={_idToken}").Then(response =>
         {
             JSONNode jsonNode = JSON.Parse(response.Text);
 
@@ -204,11 +211,10 @@ public class FirebaseManager : Singleton<FirebaseManager>
 
             for (int i = 0; i < jsonNode.Count; i++)
             {
-                userScore.Add(new UserScore(jsonNode[i]["username"], jsonNode[i]["score"]));
+                userScore.Add(new UserScore(jsonNode[i]["username"], jsonNode[i]["score"] , jsonNode[i]["round"]));
             }
-
             GetLocalID();
-            RankManager.Instance.SetRankLeader();
+            OnSetRank.Invoke();
             Debug.Log("Get Data");
         }).Catch(error => 
         {

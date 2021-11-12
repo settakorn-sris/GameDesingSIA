@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class Skill : MonoBehaviour
+public class Skill : MonoBehaviour
 {
     [Header("Property")]
     public string Name;
@@ -40,8 +40,15 @@ public abstract class Skill : MonoBehaviour
         particleManager.PlayParticle(particle);
     }
 
+    private void StopPartical(ParticalManager.PlayerParticle particle)
+    {
+        particleManager.StopPartical(particle);
+    }
 
-    protected abstract void EndSkill(PlayerCharecter player);
+    protected virtual void EndSkill(PlayerCharecter player)
+    {
+        StopPartical(SkillParticle);
+    }
 
     //protected virtual void CoolDown(float time)
     //{

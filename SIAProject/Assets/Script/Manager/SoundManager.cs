@@ -13,16 +13,29 @@ public class SoundManager : Singleton<SoundManager>
 
     public enum Sound
     {
+      BGM,
+      PUSH_BUTTON,
+      FIRE,
+      SKILL_SPEED,
+      SKILL_IMMORTAL,
       
 
     }
 
+
+  
     [Serializable]
     public struct SoundClip
     {
         public Sound sound;
         public AudioClip audioClip;
         [Range(0, 1)] public float soundVolume;
+    }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+        PlayBGM(Sound.BGM);
     }
 
 
