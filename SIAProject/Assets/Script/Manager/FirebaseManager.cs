@@ -1,16 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Proyecto26;
 using FullSerializer;
 using TMPro;
 using SimpleJSON;
-using UnityEngine.Events;
 using System;
+using System.Text.RegularExpressions;
 
 public class FirebaseManager : Singleton<FirebaseManager>
 {
-    
+
     [Header("Sign IN")]
     public TMP_InputField emailSignin;
     public TMP_InputField passwordSignin;
@@ -21,12 +20,16 @@ public class FirebaseManager : Singleton<FirebaseManager>
     public TMP_InputField emailSignup;
     public TMP_InputField passwordSignup;
     public TMP_InputField confirmPasswordSinup;
-    public TMP_Text warningSignupText;
+
+    [Header("Warning")]
+    public TMP_Text warningUsername;
+    public TMP_Text warningValidEmail;
+    public TMP_Text warningPassword;
+    public TMP_Text warningConfirmPassword;
 
     [Header("Firebase")]
     private static string databaseURL = "https://sia-firebase-125eb-default-rtdb.asia-southeast1.firebasedatabase.app/users";
     private string apikey = "AIzaSyA9rERnZuGm9k4gNXePzvFh_NJ4TdCFmHU";
-    //private static string secret = "9ddqSj28nVB0nUOf09Qe4ArqRrTbhRruDA2ALMRd";
     private static string _idToken ;
     private string getLocalId;
     public static fsSerializer serializer = new fsSerializer();
@@ -64,20 +67,35 @@ public class FirebaseManager : Singleton<FirebaseManager>
     {
         SignIn(emailSignin.text, passwordSignin.text);
     }
-    
+    public bool ValidateEmail(string email)
+    {
+        bool isValid = false;
+        Regex r = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        if (r.IsMatch(email))
+        {
+            isValid = true;
+        }
+        Debug.Log(isValid);
+        return isValid;
+    }
     private void SignUp(string _username,string _email, string _password)
     {
+        if (_email != null)
+        {
+            ValidateEmail(_email);
+        }
         if (_username == "")
         {
-            warningSignupText.text = "Username Missng";
+            warningUsername.text = "!Username Missng";
         }
         else if(_email == "")
         {
-            warningSignupText.text = "Email Missing";
+            warningValidEmail.text = "!Email Missing";
         }
         else if (passwordSignup.text != confirmPasswordSinup.text)
         {
-            warningSignupText.text = "Password Doesn't Macth";
+            warningPassword.text = "!Password dosn't Match";
+            warningConfirmPassword.text = "!Password dosn't Match";
         }
         else
         {
@@ -92,6 +110,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
                 uISignScene._wronging.text = "Plase Checking Your Email";
                 uISignScene.OnWrongingOpen();
                 PosttoDatabase(response.idToken);
+                warningValidEmail.text = string.Empty;
 
             }).Catch(error =>
             {
@@ -170,6 +189,7 @@ public class FirebaseManager : Singleton<FirebaseManager>
             username = response.username;
             email = response.email;
             score = response.score;
+            round = response.round;
             UserSelf.getUsername = username;
             Debug.Log("Get Username");
         }).Catch(error =>
