@@ -67,23 +67,10 @@ public class FirebaseManager : Singleton<FirebaseManager>
     {
         SignIn(emailSignin.text, passwordSignin.text);
     }
-    public bool ValidateEmail(string email)
-    {
-        bool isValid = false;
-        Regex r = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-        if (r.IsMatch(email))
-        {
-            isValid = true;
-        }
-        Debug.Log(isValid);
-        return isValid;
-    }
+    
     private void SignUp(string _username,string _email, string _password)
     {
-        if (_email != null)
-        {
-            ValidateEmail(_email);
-        }
+        
         if (_username == "")
         {
             warningUsername.text = "!Username Missng";
