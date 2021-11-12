@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637722289087590657
+      ticks: 637723248843142953
     m_Hash: 2397258999
   m_LockFileStatus:
     m_FilePath: D:/Project/SIAProject/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637722289087590657
+      ticks: 637723248843142953
     m_Hash: 3608045884
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -318,6 +318,7 @@ m_PackageAssets:
         - 3.0.0-preview
         - 3.0.1-preview
         - 3.0.2-preview
+        - 3.0.3-preview
         compatible:
         - 1.0.0-preview
         - 1.1.0-preview
@@ -334,6 +335,7 @@ m_PackageAssets:
         - 3.0.0-preview
         - 3.0.1-preview
         - 3.0.2-preview
+        - 3.0.3-preview
         verified: 
       dependencies: []
       resolvedDependencies: []
