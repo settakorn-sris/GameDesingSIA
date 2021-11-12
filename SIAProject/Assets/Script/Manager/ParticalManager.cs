@@ -43,7 +43,6 @@ public class ParticalManager : Singleton<ParticalManager>
         var particleToPlay = GetPartical(particalName);
         particle = particleToPlay.partical;
         particle.Play();
-
     }
 
 
@@ -58,6 +57,13 @@ public class ParticalManager : Singleton<ParticalManager>
             
         }
         return default(UseParticle);
+    }
+
+    public void StopPartical(PlayerParticle particalName)
+    {
+        var particleToPlay = GetPartical(particalName);
+        particle = particleToPlay.partical;
+        particle.Stop();
     }
 
 }

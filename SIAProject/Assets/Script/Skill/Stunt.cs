@@ -14,6 +14,7 @@ public class Stunt : Skill
 
     protected override void EndSkill(PlayerCharecter player)
     {
+        base.EndSkill(player);
         player.GM.CheckSkillCollision.gameObject.SetActive(false);
     }
 
