@@ -27,7 +27,7 @@ public class CameraControl : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         CameraOffset = transform.position - player.transform.position;
-    
+        transform.position = CameraOffset;
     }
     private void Update()
     {

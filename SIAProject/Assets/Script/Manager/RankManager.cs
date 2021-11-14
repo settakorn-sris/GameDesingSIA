@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using System.Linq;
-using System;
 public class RankManager : Singleton<RankManager>
 {
     [Header("Rank LeaderBoard")]
