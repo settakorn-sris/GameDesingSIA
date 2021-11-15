@@ -64,7 +64,7 @@ public class Boss : EnemyCharecter,IBossState
     {
         base.IsDie();
     }
-    private void SpawnMinian()
+    protected void SpawnMinian()
     {
 
         while (minianAmount > 0)
