@@ -5,7 +5,6 @@ using FullSerializer;
 using TMPro;
 using SimpleJSON;
 using System;
-using System.Text.RegularExpressions;
 
 public class FirebaseManager : Singleton<FirebaseManager>
 {
@@ -70,14 +69,18 @@ public class FirebaseManager : Singleton<FirebaseManager>
     
     private void SignUp(string _username,string _email, string _password)
     {
-        
         if (_username == "")
         {
             warningUsername.text = "!Username Missng";
         }
-        else if(_email == "")
+        else if (_email == "")
         {
             warningValidEmail.text = "!Email Missing";
+        }
+        else if(!(_email.Contains("@gmail.com") || _email.Contains("@hotmail.com") || _email.Contains("@bumail.net")))
+        {
+            Debug.Log("Check Email");
+            warningValidEmail.text = "!Wrong Email";
         }
         else if (passwordSignup.text != confirmPasswordSinup.text)
         {
