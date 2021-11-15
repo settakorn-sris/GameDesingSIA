@@ -115,7 +115,6 @@ public class FirebaseManager : Singleton<FirebaseManager>
                 emailResponse =>
                 {
                     fsData emailVerificationData = fsJsonParser.Parse(emailResponse.Text);
-                    Debug.Log(fsJsonParser.Parse(emailResponse.Text));
                     EmailConfirm emailConfirmationInfo = new EmailConfirm();
                     serializer.TryDeserialize(emailVerificationData, ref emailConfirmationInfo).AssertSuccessWithoutWarnings();
                     if (emailConfirmationInfo.users[0].emailVerified)
