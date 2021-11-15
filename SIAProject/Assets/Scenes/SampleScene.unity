@@ -3738,14 +3738,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89cf0cf61dcbf44aa2cfa63360da789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamePanel: {fileID: 0}
+  gamePanel: {fileID: 2004668653}
   puseButton: {fileID: 857100865}
   resumeButton: {fileID: 1650742004}
   mainMenuButton: {fileID: 951042004}
   roundText: {fileID: 1284543252}
   enemy:
-  - {fileID: 8712992932231092171, guid: 9c011b53696e32049b241f32695f6d98, type: 3}
-  boss: {fileID: 591315230914783776, guid: d638ebbcc395b544ea286f883ff4b78e, type: 3}
+  - {fileID: 7505099306350265404, guid: 68aa6b9adff615548bab32a9e45dcb52, type: 3}
+  - {fileID: 515642301285169554, guid: 9dc86f5aac9e081419fc54dbee76611d, type: 3}
+  - {fileID: 4148465862400526694, guid: 02136c1376ef5104ba3360a13eb2e62c, type: 3}
+  boss:
+  - {fileID: 574462849694165234, guid: bad8dfc61d938864db3d7ba0b5780caf, type: 3}
+  - {fileID: 2580149051494765736, guid: 597ec53eddfa6334b9a4afd5f76bddd1, type: 3}
+  - {fileID: 4537139614473397318, guid: 62eb60f0688b0e648816e53a19e39af1, type: 3}
   enemyInThisRound: 1
   map: []
   buyPanel: {fileID: 1709214145}
@@ -3783,11 +3788,11 @@ MonoBehaviour:
   PoolingEnemyBullet: {fileID: 5606967}
   EnemyBullet: {fileID: 4407666816173470241, guid: 1d10dfe73e0de9a4db6e8574da45d5f8, type: 3}
   EnemyFireRate: 1.5
-  EnemyBulletDamage: 10
   bossHp: 100
   bossSpeed: 4
   bossDamage: 30
   scoreBossInRound: 10
+  bossBulletDamage: 0
   HpForBossHealing: 30
   minianAmount: 1
   maxSpawnEnemyForRandomX: -10
