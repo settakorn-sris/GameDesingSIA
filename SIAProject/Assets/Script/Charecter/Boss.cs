@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : EnemyCharecter
+public class Boss : EnemyCharecter,IBossState
 {
+    enum StateBoss
+    {
+        NORMALSTATE,
+        STATETWO,
+    }
+
     [SerializeField] private EnemyCharecter minian;
     
     private int count = 0;
     private int minianAmount;
     private int hpForHeal;
-   
-    
+    float numForChangeState;
+    StateBoss stateBoss;
 
     protected override void Awake()
     {
@@ -21,6 +27,22 @@ public class Boss : EnemyCharecter
         count = 0;
         //minian = gM.MinianOfBoss;
         minian.Init(20,3,10,0);
+        stateBoss = StateBoss.NORMALSTATE;
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if(stateBoss == StateBoss.NORMALSTATE)
+        {
+            NormalState();
+        }
+        else if(stateBoss == StateBoss.STATETWO)
+        {
+            StateTwo();
+        }
+        
     }
     protected override void OnCollisionEnter(Collision collision)
     {
@@ -34,13 +56,7 @@ public class Boss : EnemyCharecter
     }
     public override void TakeDamage(int damage)
     {
-        if (Hp <= (gM.GetBossHp/2))
-        {
-            Debug.Log("Spawn");
-            SpawnMinian();
-
-        }
-        
+        LowHp();
         base.TakeDamage(damage);
         
     }
@@ -60,5 +76,30 @@ public class Boss : EnemyCharecter
             Instantiate(minian, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
             minianAmount--;
         }
+    }
+
+    
+
+    public virtual void LowHp()
+    {
+        if (Hp <= (gM.GetBossHp / 2))
+        {
+            Debug.Log("Spawn");
+            SpawnMinian();
+
+        }
+    }
+    public virtual void NormalState()
+    {
+        numForChangeState += Time.deltaTime;
+        if (numForChangeState <= 15) return;
+        stateBoss = StateBoss.STATETWO;
+    }
+
+    public virtual void StateTwo()
+    {
+        numForChangeState -= Time.deltaTime;
+        if (numForChangeState >= 0) return;
+        stateBoss = StateBoss.NORMALSTATE;
     }
 }
