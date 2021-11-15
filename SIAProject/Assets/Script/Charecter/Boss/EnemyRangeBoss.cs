@@ -40,6 +40,8 @@ public class EnemyRangeBoss : Boss
         // transform.rotation = Quaternion.Euler(new Vector3(0, 5, 0));
         //rb.AddRelativeTorque(0, 50, 0);
         // transform.Rotate(rotation*rotateSpeed * Time.deltaTime);
+        //Speed = 0;
+        //transform.Rotate(0, 1, 0);
         Hp = gM.GetBossHp;
         base.NormalState();
     }

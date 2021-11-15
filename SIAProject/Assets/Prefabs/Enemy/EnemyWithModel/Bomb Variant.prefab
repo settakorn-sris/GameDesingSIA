@@ -146,6 +146,19 @@ MonoBehaviour:
   scoreInFirstRound: 1
   dieParticle: {fileID: 8894045807073587843, guid: d2685fc7db8a0864f8e48f5c36cab38f, type: 3}
   bombDamage: 0
+--- !u!65 &9170149231275657928
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150367552246763643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019525152, y: 0.02646777, z: 0.01952515}
+  m_Center: {x: 0, y: -0.0059686475, z: 0.00014072795}
 --- !u!1001 &6958791876122687614
 PrefabInstance:
   m_ObjectHideFlags: 0

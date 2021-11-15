@@ -2369,7 +2369,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9339623, g: 0.9110538, b: 0.9110538, a: 1}
+  m_Color: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   m_Intensity: 1
   m_Range: 17.62
   m_SpotAngle: 30
@@ -2428,7 +2428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.5058887, y: -0.06550343, z: -0.023268947, w: 0.8597933}
-  m_LocalPosition: {x: 0, y: 9, z: 1.2}
+  m_LocalPosition: {x: 0, y: 35.5, z: 1.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3767,7 +3767,7 @@ MonoBehaviour:
   finalScore: {fileID: 1029293808}
   lastRound: {fileID: 1603313908}
   playerCamera: {fileID: 963194229}
-  player: {fileID: 237672590, guid: aefce2d96e6bd7a47975d2366371a2ad, type: 3}
+  player: {fileID: 1484278955, guid: 125b67d12531b504681240d6cea9cb29, type: 3}
   playerHp: 100
   playerSpeed: 8
   playerSkill:
@@ -4508,7 +4508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
