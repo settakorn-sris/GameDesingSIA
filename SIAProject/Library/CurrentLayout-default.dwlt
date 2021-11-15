@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Project
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7e0d0000
+      m_SelectedIDs: 62160000
       m_LastClickedID: 0
       m_ExpandedIDs: 4efbffff
       m_RenameOverlay:
@@ -772,21 +772,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Script/Manager
+    - Assets/Script/User
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 40
   m_LastFolders:
-  - Assets/Script/Manager
+  - Assets/Script/User
   m_LastFoldersGridSize: 40
   m_LastProjectPath: D:\Project\SIAProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e6510000
-    m_LastClickedID: 20966
+    m_SelectedIDs: 54520000
+    m_LastClickedID: 21076
     m_ExpandedIDs: 00000000d0510000d2510000d4510000d6510000d8510000da510000dc510000de510000e0510000e2510000e4510000e6510000e8510000ea510000ec510000ee510000f05100003a52000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0

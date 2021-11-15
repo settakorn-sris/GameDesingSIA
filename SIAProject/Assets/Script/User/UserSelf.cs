@@ -8,6 +8,6 @@ public class UserSelf : MonoBehaviour
     public TMP_Text username;
     private void Update()
     {
-        username.text = $"Username: {getUsername}";
+        username.text = $"{getUsername}";
     }
 }
