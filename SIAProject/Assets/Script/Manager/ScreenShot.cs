@@ -40,8 +40,8 @@ public class ScreenShot : MonoBehaviour
     private void Awake()
     {
         closeButton.onClick.AddListener(CloseButtonActive);
-        CaptureWidth = (Screen.height / 16) * 9;
-        CaptureHeigh = Screen.height;
+        //CaptureWidth = (Screen.height / 16) * 9;
+        //CaptureHeigh = Screen.height;
     }
 
     // Update is called once per frame

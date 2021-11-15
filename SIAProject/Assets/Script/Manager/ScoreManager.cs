@@ -19,22 +19,22 @@ public class ScoreManager : Singleton<ScoreManager>
     void Awake()
     {
         Score = 0;
-        scoreText.text = $"SCORE :{Score}";
+        scoreText.text = $"{Score}";
     }
        
     public void AddScore(int score)
     {
         Score += score;
-        scoreText.text = $"SCORE :{Score}";
+        scoreText.text = $"{Score}";
     }
     public void Rescore()
     {
         Score = 0;
-        scoreText.text= $"SCORE :{Score}";
+        scoreText.text= $"{Score}";
     }
     public void MinusScore(int score)
     {
         Score -= score;
-        scoreText.text = $"SCORE :{Score}";
+        scoreText.text = $"{Score}";
     }
 }

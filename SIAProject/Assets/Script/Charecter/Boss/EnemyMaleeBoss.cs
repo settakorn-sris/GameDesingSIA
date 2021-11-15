@@ -20,15 +20,6 @@ public class EnemyMaleeBoss : Boss
     }
     public override void NormalState()
     {
-        ///BuG
-        //if(numForChangeState== -15) Speed = normalSpeed;
-
-        //numForChangeState += Time.deltaTime;
-        //if (numForChangeState <= 15) return;
-        //Speed = 20;
-        //numForChangeState = 0;
-        //Debug.Log("AAA");
-
         Speed = 20;
         base.NormalState();
     }

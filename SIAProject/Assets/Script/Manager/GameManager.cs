@@ -16,14 +16,14 @@ public enum Wave{
 public class GameManager : Singleton<GameManager>
 {
     [Header("Game Setting")]
-    [SerializeField] private RawImage gamePanel;
+    [SerializeField] private GameObject gamePanel;
     [SerializeField] private Button puseButton;
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button mainMenuButton;
 
     [SerializeField] private TextMeshProUGUI roundText;
     [SerializeField] private EnemyCharecter[] enemy;
-    [SerializeField] private EnemyCharecter boss;
+    [SerializeField] private EnemyCharecter[] boss;
 
     [SerializeField] private int enemyInThisRound = 5;
     private float timeForEnemySpawn;
@@ -142,7 +142,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public int Damage
+    public int EnemyDamage
     {
         get
         {
@@ -158,7 +158,6 @@ public class GameManager : Singleton<GameManager>
     public EnemyBulletPooling PoolingEnemyBullet;//get pool
     public Bullet EnemyBullet;
     public float EnemyFireRate;
-    public int EnemyBulletDamage;
     //DamageSpeed
     // Distance
 
@@ -179,8 +178,17 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float bossSpeed;
     [SerializeField] private int bossDamage;
     [SerializeField] private int scoreBossInRound;
+    [SerializeField] private int bossBulletDamage;
     public int HpForBossHealing;
     public int minianAmount;
+ 
+    #region For get Enemy Bullet property
+    public int getBossBulletDamage
+    {
+        get { return bossBulletDamage; }
+    }
+    #endregion
+
     // public EnemyCharecter MinianOfBoss;
     [Header("Position for Spawn Enemy")]
     [SerializeField] private float maxSpawnEnemyForRandomX = -10f;
@@ -222,7 +230,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     #endregion
-
+   
     [SerializeField] private float spawnBossPositionX = -8;
     [SerializeField] private float spawnBossPositionZ = 13;
 
@@ -287,7 +295,6 @@ public class GameManager : Singleton<GameManager>
 
         if (wave==Wave.ENEMY)
         {
-            EnemyBulletDamage = enemyDamage;
             SpawnEnemy();
         }
         else if(wave==Wave.BOSS && bossCheck.Length==0 && enemyCheck.Length == 0)
@@ -353,14 +360,15 @@ public class GameManager : Singleton<GameManager>
         var bossCheck = GameObject.FindGameObjectsWithTag("Boss");
         if(bossCheck.Length ==0)
         {
-            boss.Init(bossHp,bossSpeed,bossDamage,scoreBossInRound);
-            Instantiate(boss, new Vector3(spawnBossPositionX, 0, spawnBossPositionZ), Quaternion.identity);
+            int indexForRandomBoss = UnityEngine.Random.Range(0, boss.Length);
+            boss[indexForRandomBoss].Init(bossHp,bossSpeed,bossDamage,scoreBossInRound);
+            Instantiate(boss[indexForRandomBoss], new Vector3(spawnBossPositionX, 0, spawnBossPositionZ), Quaternion.identity);
         }
         //UpgradeItem() //if Boss Is Die
         
         wave = Wave.BUY;
         timeCount = timeToBuy;
-        randomSkillIndex = UnityEngine.Random.Range(0, playerSkill.Length);//// For random skill  // Have bug
+        randomSkillIndex = UnityEngine.Random.Range(0, playerSkill.Length);//// For random skill  
         //print(randomSkillIndex + " Skill");
     }
     private void AddHPAndDamage(int hp,int damage,float speed)
@@ -397,12 +405,12 @@ public class GameManager : Singleton<GameManager>
     private void RoundSetting(int round)
     {
         this.round += round;
-        roundText.text = $"ROUND:{this.round}";
+        roundText.text = $"{this.round}";
     }
     private void RoundReset()
     {
         round = 1;
-        roundText.text = $"ROUND:{this.round}";
+        roundText.text = $"{this.round}";
     }
     private void StopGame()
     {
@@ -469,10 +477,10 @@ public class GameManager : Singleton<GameManager>
     {
         //show panel & button & adsButton
         RestartPanel.SetActive(true);
-        //Get score UI
-        finalScore.text = "You Score :"+scoreManager.GetScoreText.text;
-        //Get Round  UI
-        lastRound.text = "You Round :" + roundText.text;
+        //Get score UI    //"Your Score :"
+        finalScore.text = scoreManager.GetScoreText.text;
+        //Get Round  UI     //Your Round :
+        lastRound.text = roundText.text;
 
         if(scoreManager.Score >= FirebaseManager.Instance.score)
         {
