@@ -79,7 +79,6 @@ public class FirebaseManager : Singleton<FirebaseManager>
         }
         else if(!(_email.Contains("@gmail.com") || _email.Contains("@hotmail.com") || _email.Contains("@bumail.net")))
         {
-            Debug.Log("Check Email");
             warningValidEmail.text = "!Wrong Email";
         }
         else if (passwordSignup.text != confirmPasswordSinup.text)
@@ -102,9 +101,6 @@ public class FirebaseManager : Singleton<FirebaseManager>
                 PosttoDatabase(response.idToken);
                 warningValidEmail.text = string.Empty;
 
-            }).Catch(error =>
-            {
-                Debug.Log(error);
             });
         }
         
@@ -137,11 +133,9 @@ public class FirebaseManager : Singleton<FirebaseManager>
                     }
                 });
 
-        }).Catch(error =>
-        {
-            Debug.Log("Signin Error");
         });
     }
+    //Put Data User From SignUP
     public void PosttoDatabase(string idTokenTemp = "")
     {
         if(idTokenTemp == "")
@@ -149,15 +143,9 @@ public class FirebaseManager : Singleton<FirebaseManager>
             idTokenTemp = _idToken;
         }
         UserInfo user = new UserInfo(email,username, score , round);
-        Debug.Log($"{email} : {username} : {score} : {round}");
-        RestClient.Put<UserInfo>($"{databaseURL}/{localId}.json?auth={idTokenTemp}", user).Then(response =>
-        {
-            Debug.Log("Put Database");
-        }).Catch(error =>
-        {
-            Debug.Log("Put Database Error");
-        });
+        RestClient.Put<UserInfo>($"{databaseURL}/{localId}.json?auth={idTokenTemp}", user);
     }
+    //Retrieve Data For username score round 
     private void RetrieveFromDatabase()
     {
         RestClient.Get<UserInfo>($"{databaseURL}/{getLocalId}.json?auth={_idToken}").Then(response =>
@@ -166,12 +154,9 @@ public class FirebaseManager : Singleton<FirebaseManager>
             userInfo.score = response.score;
             userInfo.round = response.round;
             OnSetUserRank.Invoke();
-            Debug.Log(" Get Retrieve From Database");
-        }).Catch(error =>
-        {
-            Debug.Log("Error Retrieve From Database");
         });
     }
+    //GetUsername() => when user signin response data Userrank to collect username email score round for calculator.
     private void GetUserName()
     {
         RestClient.Get<UserInfo>($"{databaseURL}/{localId}.json?auth={_idToken}").Then(response =>
@@ -181,12 +166,9 @@ public class FirebaseManager : Singleton<FirebaseManager>
             score = response.score;
             round = response.round;
             UserSelf.getUsername = username;
-            Debug.Log("Get Username");
-        }).Catch(error =>
-        {
-            Debug.Log("Error Get User Name");
         });
     }
+    //GetLocalID() => find localID UserData from FirebaseDatabase 
     public void GetLocalID()
     {
         RestClient.Get($"{databaseURL}.json?auth={_idToken}").Then(response =>
@@ -201,16 +183,13 @@ public class FirebaseManager : Singleton<FirebaseManager>
                 {
                     getLocalId = user.localId;
                     RetrieveFromDatabase();
-                    Debug.Log("GetLocalID Complete");
                     break;
                 }
             }
-        }).Catch(error =>
-        {
-            Debug.Log("GetLocalID Error");
         });
 
     }
+    //GetData() => GetAllData in FirebaseDatabase to LeaderBoard.
     public void GetData()
     {
         RestClient.Get($"{databaseURL}.json?auth={_idToken}").Then(response =>
@@ -225,11 +204,6 @@ public class FirebaseManager : Singleton<FirebaseManager>
             }
             GetLocalID();
             OnSetRank.Invoke();
-            Debug.Log("Get Data");
-        }).Catch(error => 
-        {
-            Debug.Log("Get Data Error");
-
         });
     }
 }
