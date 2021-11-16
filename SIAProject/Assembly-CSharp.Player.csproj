@@ -60,6 +60,7 @@
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Helpers\ResponseHelper.cs" />
     <Compile Include="Assets\FullSerializer\Source\fsISerializationCallbacks.cs" />
     <Compile Include="Assets\Script\Control\EnemyController.cs" />
+    <Compile Include="Assets\Script\Charecter\Boss\IBossState.cs" />
     <Compile Include="Assets\FullSerializer\Source\Aot\fsAotConfiguration.cs" />
     <Compile Include="Assets\FullSerializer\Source\Converters\Unity\Rect_DirectConverter.cs" />
     <Compile Include="Assets\RestClient\Packages\RSG.Promise\EnumerableExt.cs" />
@@ -181,13 +182,14 @@
     <Compile Include="Assets\Script\TakeDamagePopUp.cs" />
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Helpers\RequestHelperExtension.cs" />
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Helpers\StaticCoroutine.cs" />
+    <Compile Include="Assets\Script\Charecter\Boss\EnemyRangeBoss.cs" />
     <Compile Include="Assets\RestClient\DemoScene\Scripts\MainScript.cs" />
     <Compile Include="Assets\FullSerializer\Source\fsObjectProcessor.cs" />
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Helpers\HttpBase.cs" />
     <Compile Include="Assets\FullSerializer\Source\Converters\Unity\GUIStyleState_DirectConverter.cs" />
     <Compile Include="Assets\RestClient\Packages\Proyecto26.RestClient\Helpers\Extensions.cs" />
     <Compile Include="Assets\RestClient\DemoScene\Scripts\Model\Photo.cs" />
-    <Compile Include="Assets\Script\Charecter\Boss\IBossState.cs" />
+    <Compile Include="Assets\Script\Manager\LoadSceneManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

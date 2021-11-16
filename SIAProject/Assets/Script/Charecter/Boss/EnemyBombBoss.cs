@@ -2,17 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBombBoss : MonoBehaviour
+public class EnemyBombBoss : Boss
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] int addDamageForBomb;
+    [SerializeField] ParticleSystem partical;
+    protected override void Awake()
     {
-        
+        base.Awake();
+        Damage = addDamageForBomb;
     }
-
-    // Update is called once per frame
-    void Update()
+    public override void NormalState()
     {
-        
+        Speed = 8;
+        base.NormalState();
+    }
+    public override void StateTwo()
+    {
+        Speed = 0;
+        SpawnMinian();
+        base.StateTwo();
+    }
+    protected override void OnCollisionEnter(Collision collision)
+    {
+        partical.Play();
+        base.OnCollisionEnter(collision);
     }
 }

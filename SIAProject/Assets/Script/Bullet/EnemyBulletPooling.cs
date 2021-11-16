@@ -28,14 +28,14 @@ public class EnemyBulletPooling : Singleton<EnemyBulletPooling>
         }
     }
 
-    public void GetBullet(GameObject firePosition)
+    public void GetBullet(GameObject firePosition,int bulletDamage)
     {
         if (enemyBulletQueue.Count > 0)
         {
 
             var enemyBullet = enemyBulletQueue.Dequeue();
             enemyBullet.gameObject.SetActive(true);
-            enemyBullet.GetDamage(gM.EnemyBulletDamage);
+            enemyBullet.GetDamage(bulletDamage);
             enemyBullet.transform.position = firePosition.transform.position;               //get bullet Speed From Gm 
             enemyBullet.Rb.velocity = firePosition.transform.forward * enemyBullet.GetSpeed(gM.BulletSpeed);
         }
