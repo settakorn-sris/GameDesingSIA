@@ -33,9 +33,8 @@ public class EnemyRange : EnemyCharecter
    
     private void UseBullet()
     {
-        //Check RayCast if foundPlayer => fire 
-        print("Fire");
-        enemyBulletPooling.GetBullet(firePosition);
+        //Check RayCast if foundPlayer => fire SS
+        enemyBulletPooling.GetBullet(firePosition, gM.EnemyDamage);
 
 
     }    
