@@ -28,6 +28,7 @@ public class Boss : EnemyCharecter,IBossState
         //minian = gM.MinianOfBoss;
         minian.Init(20,3,10,0);
         stateBoss = StateBoss.NORMALSTATE;
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.BOSS_SPAWN);
     }
 
     protected override void Update()
@@ -42,7 +43,11 @@ public class Boss : EnemyCharecter,IBossState
         {
             StateTwo();
         }
-        
+
+        if (Hp <= 0)
+        {
+            soundManager.PlayBGM(SoundManager.Sound.BGM_SCENEGAME);
+        }
     }
     protected override void OnCollisionEnter(Collision collision)
     {
@@ -50,6 +55,7 @@ public class Boss : EnemyCharecter,IBossState
         count++;
         if(count >= 2 && collision.gameObject.tag==("Player"))
         {
+            soundManager.Play(soundManager.AudioSorceForEnemyAction, SoundManager.Sound.Boss_Healing);
             Hp += hpForHeal;
             count = 0;
         }
@@ -66,14 +72,17 @@ public class Boss : EnemyCharecter,IBossState
     }
     protected void SpawnMinian()
     {
+        //soundManager.Play(soundManager.AudioSorceForEnemyAction, SoundManager.Sound.Boss_SPAWNMINIAN);
 
         while (minianAmount > 0)
         {
 
-            var xPosition = Random.Range(gM.MinSpawnEnemyForRandomX, gM.MaxSpawnEnemyForRandomX);
-            var zPosition = Random.Range(gM.MinSpawnEnemyForRandomZ, gM.MaxSpawnEnemyForRandomZ);
+            var xPosition = Random.Range(gM.MinMinianSpawnpositionX, gM.MaxMinianSpawnpositionX);
+            var zPosition = Random.Range(gM.MinMinianSpawnpositionZ, gM.MaxMinianSpawnPositionZ);
 
-            Instantiate(minian, new Vector3(xPosition, 0, zPosition), Quaternion.identity);
+            soundManager.Play(soundManager.AudioSorceForEnemyAction, SoundManager.Sound.ENEMY_SPAWN);
+
+            Instantiate(minian, new Vector3(transform.position.x-xPosition, 0, transform.position.z-zPosition), Quaternion.identity);//Must Check
             minianAmount--;
         }
     }
@@ -84,7 +93,6 @@ public class Boss : EnemyCharecter,IBossState
     {
         if (Hp <= (gM.GetBossHp / 2))
         {
-            Debug.Log("Spawn");
             SpawnMinian();
 
         }
@@ -102,4 +110,5 @@ public class Boss : EnemyCharecter,IBossState
         if (numForChangeState >= 0) return;
         stateBoss = StateBoss.NORMALSTATE;
     }
+
 }

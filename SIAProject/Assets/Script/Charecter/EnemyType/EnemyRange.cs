@@ -11,6 +11,7 @@ public class EnemyRange : EnemyCharecter
     [SerializeField] GameObject firePosition;
     private EnemyBulletPooling enemyBulletPooling;
 
+    private float oldFireRate;
 
     protected override void Awake()
     {
@@ -35,7 +36,18 @@ public class EnemyRange : EnemyCharecter
     {
         //Check RayCast if foundPlayer => fire SS
         enemyBulletPooling.GetBullet(firePosition, gM.EnemyDamage);
+        soundManager.Play(soundManager.AudioSorceForEnemyAction, SoundManager.Sound.ENEMY_FIRE);
+    }
 
-
-    }    
+    public override void OnStunt()
+    {
+        base.OnStunt();
+        oldFireRate = fireRate;
+        fireRate = 0;
+    }
+    public override void ExitStunt(float speed)
+    {
+        base.ExitStunt(speed);
+        fireRate = oldFireRate;
+    }
 }
