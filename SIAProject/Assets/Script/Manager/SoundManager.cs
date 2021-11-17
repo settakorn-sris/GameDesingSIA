@@ -78,8 +78,8 @@ public class SoundManager : Singleton<SoundManager>
 
     public void PlayBGM(Sound bgm)
     {
-        audioSource.loop = true;
         Play(audioSource, bgm);
+        audioSource.loop = true;
     }
 
     private SoundClip GetAudioClip(Sound sound)
