@@ -41,7 +41,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private GameObject buyPanel;
     [SerializeField] private Image skillImage;
     [SerializeField] private float timeToBuy;
-    [SerializeField] private ScoreManager scoreManager;
+    [SerializeField] private ScoreManager scoreManager = ScoreManager.Instance;
     
     
 
@@ -270,12 +270,14 @@ public class GameManager : Singleton<GameManager>
     public delegate void SlowSkillActive(float speed);
     public event SlowSkillActive OnSlow;
 
+    
+
     private void Awake()
     {
        
         ButtonListener();
-        scoreManager = ScoreManager.Instance;
         StartGame();
+        //scoreManager = ScoreManager.Instance;
         soundManager = SoundManager.Instance;
         soundManager.PlayBGM(SoundManager.Sound.BGM_SCENEGAME);
         //Sound
@@ -340,7 +342,7 @@ public class GameManager : Singleton<GameManager>
 
     private void SpawnPlayer()
     {
-        playerInScene= Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
+        playerInScene = Instantiate(player, new Vector3(0, 0, 0), Quaternion.identity);
         playerInScene.Init(playerHp, playerSpeed,playerSkill[1]);
         playerSkillImg.sprite = playerSkill[1].SkillButtonImg.sprite;
         playerInScene.playerDie += ForRestartGame;
@@ -552,7 +554,6 @@ public class GameManager : Singleton<GameManager>
             FirebaseManager.Instance.PosttoDatabase(FirebaseManager.Instance.idToken);
         }
         //Time.timeScale = 0;
-
     }
     
 

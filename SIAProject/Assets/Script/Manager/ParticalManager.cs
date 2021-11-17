@@ -5,7 +5,7 @@ using System;
 
 public class ParticalManager : Singleton<ParticalManager>
 {
-    private GameManager GM;
+    private GameManager GM ;
     public enum PlayerParticle
     {
         HEALING,
@@ -34,7 +34,7 @@ public class ParticalManager : Singleton<ParticalManager>
     }
     private void Update()
     {
-        transform.position = GM.GetPlayerInSceneTranForm;
+        this.transform.position = GM.GetPlayerInSceneTranForm;
     }
 
 
