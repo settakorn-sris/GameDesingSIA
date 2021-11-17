@@ -19,6 +19,7 @@ public class RankManager : Singleton<RankManager>
         FirebaseManager.Instance.OnSetUserRank += SetUserRank;
         FirebaseManager.Instance.OnSetRank += SetRankLeader;
         StarMainMenu();
+        soundManager = SoundManager.Instance;
         soundManager.PlayBGM(SoundManager.Sound.BGM_MAINMANU);
     }
     public void StarMainMenu()

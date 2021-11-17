@@ -9,10 +9,12 @@ public class LoadSceneManager : Singleton<LoadSceneManager>
 {
     [SerializeField] private GameObject loadingCanvas;
     [SerializeField] private Slider loadingSlider;
+    private SoundManager soundManager;
 
     private void Awake()
     {
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this.gameObject);
+        soundManager = SoundManager.Instance;
     }
 
     public async void LoadScene(string sceneName)
@@ -21,6 +23,7 @@ public class LoadSceneManager : Singleton<LoadSceneManager>
         scene.allowSceneActivation = false;
 
         loadingCanvas.SetActive(true);
+        soundManager.CountrolSoundBGMVolume(0);
         do
         {
             await Task.Delay(100);
@@ -31,7 +34,7 @@ public class LoadSceneManager : Singleton<LoadSceneManager>
         await Task.Delay(100);
 
         scene.allowSceneActivation = true;
-        loadingCanvas.SetActive(false);
+        //loadingCanvas.SetActive(false);
     }
   
 }

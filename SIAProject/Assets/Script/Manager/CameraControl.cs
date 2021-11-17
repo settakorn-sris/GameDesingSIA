@@ -23,7 +23,7 @@ public class CameraControl : MonoBehaviour
             isShake = value;
         }
     }
-    void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         CameraOffset = transform.position - player.transform.position;

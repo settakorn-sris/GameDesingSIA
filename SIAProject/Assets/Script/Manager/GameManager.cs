@@ -272,12 +272,12 @@ public class GameManager : Singleton<GameManager>
 
     private void Awake()
     {
-       
-        ButtonListener();
+        soundManager = SoundManager.Instance;
         scoreManager = ScoreManager.Instance;
         StartGame();
-        soundManager = SoundManager.Instance;
-        soundManager.PlayBGM(SoundManager.Sound.BGM_SCENEGAME);
+        ButtonListener();
+
+
         //Sound
         //soundManager = SoundManager.Instance;
         //soundManager.PlayBGM(SoundManager.Sound.BGM);
@@ -306,12 +306,14 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
+        soundManager.PlayBGM(SoundManager.Sound.BGM_SCENEGAME);
         scoreManager.Rescore();
         RoundReset();
         SpawnPlayer();
         wave = Wave.ENEMY;
         timeForEnemySpawn = 1;
         healthPrice.text = $": {healingPrice}";
+        
     }
   
     private void GameLoop()
@@ -458,6 +460,7 @@ public class GameManager : Singleton<GameManager>
     public void GotoMainMenu()
     {
         soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
+        Time.timeScale = 1;
         LoadSceneManager.Instance.LoadScene("MainMenu");
     }
 
@@ -511,7 +514,7 @@ public class GameManager : Singleton<GameManager>
     {
         soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
         aboutSkill.SetActive(false);
-        Time.timeScale += 1;
+        Time.timeScale = 1;
     }
 
     #region "For Skill"
@@ -538,20 +541,27 @@ public class GameManager : Singleton<GameManager>
         finalScore.text = scoreManager.GetScoreText.text;
         //Get Round  UI     //Your Round :
         lastRound.text = roundText.text;
+        bool isChanged = false;
 
         if(scoreManager.Score >= FirebaseManager.Instance.score)
         {
             FirebaseManager.Instance.score = scoreManager.Score;
             Debug.Log($"Final Score : {FirebaseManager.Instance.score}");
-            FirebaseManager.Instance.PosttoDatabase(FirebaseManager.Instance.idToken);
+            isChanged = true;
         }
         if(round >= FirebaseManager.Instance.round)
         {
             FirebaseManager.Instance.round = round;
             Debug.Log($"{round >= FirebaseManager.Instance.round} ?");
+            isChanged = true;
+        }
+
+        if (isChanged)
+        {
             FirebaseManager.Instance.PosttoDatabase(FirebaseManager.Instance.idToken);
         }
-        //Time.timeScale = 0;
+
+        Time.timeScale = 0;
 
     }
     
@@ -572,9 +582,10 @@ public class GameManager : Singleton<GameManager>
     #region "Ads"
     public void HealingWithAds()
     {
-       
+        soundManager.PlayBGM(SoundManager.Sound.BGM_SCENEGAME);
         playerInScene.Healing(playerHp);
-       // HealingPartical.GetPlayer(playerInScene);
+
+        // HealingPartical.GetPlayer(playerInScene);
         //var partical = Instantiate(HealingPartical, new Vector3(playerInScene.transform.position.x, 0, playerInScene.transform.position.z), Quaternion.identity);
 
     }
@@ -582,7 +593,7 @@ public class GameManager : Singleton<GameManager>
     public void CountrolAdsPanel(bool check)
     {
         RestartPanel.SetActive(false);
-        Time.timeScale += 1;
+        Time.timeScale = 1;
         if (!check)
         {
 

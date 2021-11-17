@@ -6,7 +6,6 @@ using UnityEngine.Advertisements;
 
 public class AdsManager : MonoBehaviour,IUnityAdsListener
 {
-    [SerializeField]private GameManager gm;
     private string gameID = "4417043";
     public bool testMode = true;
     private SoundManager soundManager;
@@ -14,13 +13,10 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
     private void Awake()
     {
         soundManager = SoundManager.Instance;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
         Advertisement.AddListener(this);
         Advertisement.Initialize(gameID, testMode);
     }
+    
 
     public void OpenAds(string placement)
     {
@@ -40,20 +36,21 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
 
     public void OnUnityAdsDidStart(string placementId)
     {
-        print("Start"); ;
+        print("Start"); 
     }
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
         if (showResult == ShowResult.Finished)
         {
-            gm.HealingWithAds();
-            gm.CountrolAdsPanel(true);
+            GameManager.Instance.CountrolAdsPanel(true);
+            GameManager.Instance.HealingWithAds();
+           
         }
         else
         {
             LoadSceneManager.Instance.LoadScene("MainMenu");
-            gm.CountrolAdsPanel(false);
+            GameManager.Instance.CountrolAdsPanel(false);
         }
     }
 }
