@@ -75,6 +75,10 @@ public class SoundManager : Singleton<SoundManager>
         audioSource.loop = false;
 
     }
+    public void CountrolSoundBGMVolume(float volume)
+    {
+        audioSource.volume = volume;
+    }
 
     public void PlayBGM(Sound bgm)
     {

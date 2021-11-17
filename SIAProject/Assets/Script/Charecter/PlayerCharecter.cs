@@ -31,6 +31,8 @@ public class PlayerCharecter : Charecter
     private SoundManager soundManager;
     #region GetPlayer Property
 
+    public ParticleSystem AdsParticle;
+
     public event Action playerDie; 
 
     #endregion
@@ -42,8 +44,8 @@ public class PlayerCharecter : Charecter
     private void Awake()    
     {
         GM = GameManager.Instance;
-        partical = ParticalManager.Instance;
 
+        partical = ParticalManager.Instance;
         bullet.GetBulletType(bulletType);
 
         animator = GetComponent<Animator>();
@@ -71,15 +73,10 @@ public class PlayerCharecter : Charecter
         animator.SetTrigger("ATK");
         //Instantiate(bulletType, bullet.transform.position, Quaternion.identity);
     }
-    public void ChangeBullet()
-    {
-        //For Change Bullet in pool
-    }
-
+  
     public void Healing(int hp)
     {
         Hp = hp;
-        animator.SetBool("IsDie", false);
         CanGetDamage = true;
         print(Hp);
         partical.PlayParticle(ParticalManager.PlayerParticle.HEALING);
@@ -128,7 +125,7 @@ public class PlayerCharecter : Charecter
 
         //Debug.Log("Die");
       
-        animator.SetBool("IsDie",true);
+      //  animator.SetBool("IsDie",true);
         CanGetDamage = false;
         //GM.TimeSlow(0);
 
