@@ -80,9 +80,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private PlayerCharecter player;
     [SerializeField] private int playerHp;
     [SerializeField] private float playerSpeed;
-    [SerializeField] private Skill[] playerSkill; 
+    [SerializeField] private Skill[] playerSkill;
+    [SerializeField] private TextMeshProUGUI playerDamageText;
     private PlayerCharecter playerInScene;
-    private Button playerSkillButton;
 
     #region playerInScene 
     public Vector3 GetPlayerInSceneTranForm
@@ -264,7 +264,7 @@ public class GameManager : Singleton<GameManager>
     private int randomSkillIndex = 0;
     public GameObject CheckSkillCollision;  
     //Wave
-    private Wave wave;
+    public Wave wave { get; private set; }
    
 
     public delegate void SlowSkillActive(float speed);
@@ -276,12 +276,6 @@ public class GameManager : Singleton<GameManager>
         scoreManager = ScoreManager.Instance;
         StartGame();
         ButtonListener();
-
-
-        //Sound
-        //soundManager = SoundManager.Instance;
-        //soundManager.PlayBGM(SoundManager.Sound.BGM);
-        //OnReStart += RestartGame;
 
     }
 
@@ -312,6 +306,7 @@ public class GameManager : Singleton<GameManager>
         SpawnPlayer();
         wave = Wave.ENEMY;
         timeForEnemySpawn = 1;
+        playerDamageText.text = $"Player Damage : {BulletDamage}";
         healthPrice.text = $": {healingPrice}";
         
     }
@@ -498,6 +493,7 @@ public class GameManager : Singleton<GameManager>
 
         BulletDamage += addDamage;
 
+        playerDamageText.text = $"Player Damage : {BulletDamage}";
         buyAddDamagePrice += 1;
 
         addDamage += 2;
@@ -546,13 +542,11 @@ public class GameManager : Singleton<GameManager>
         if(scoreManager.Score >= FirebaseManager.Instance.score)
         {
             FirebaseManager.Instance.score = scoreManager.Score;
-            Debug.Log($"Final Score : {FirebaseManager.Instance.score}");
             isChanged = true;
         }
         if(round >= FirebaseManager.Instance.round)
         {
             FirebaseManager.Instance.round = round;
-            Debug.Log($"{round >= FirebaseManager.Instance.round} ?");
             isChanged = true;
         }
 
@@ -582,11 +576,16 @@ public class GameManager : Singleton<GameManager>
     #region "Ads"
     public void HealingWithAds()
     {
-        soundManager.PlayBGM(SoundManager.Sound.BGM_SCENEGAME);
+        
         playerInScene.Healing(playerHp);
-
-        // HealingPartical.GetPlayer(playerInScene);
-        //var partical = Instantiate(HealingPartical, new Vector3(playerInScene.transform.position.x, 0, playerInScene.transform.position.z), Quaternion.identity);
+        if(wave == Wave.BOSS)
+        {
+            soundManager.PlayBGM(SoundManager.Sound.BGM_SPAWNBOSS);
+        }
+        else
+        {
+            soundManager.PlayBGM(SoundManager.Sound.BGM_SCENEGAME);
+        }
 
     }
 

@@ -55,6 +55,7 @@ public class Boss : EnemyCharecter,IBossState
         count++;
         if(count >= 2 && collision.gameObject.tag==("Player"))
         {
+            if (Hp >= gM.GetBossHp) return;
             soundManager.Play(soundManager.AudioSorceForEnemyAction, SoundManager.Sound.Boss_Healing);
             Hp += hpForHeal;
             count = 0;
