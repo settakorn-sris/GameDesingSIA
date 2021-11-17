@@ -11,17 +11,26 @@ public class UISignScene : MonoBehaviour
     [SerializeField] private RectTransform signUpUI;
     [SerializeField] private TMP_Text wronging;
     [SerializeField] private RectTransform wrongPopup;
+    private SoundManager soundManager;
+
+    private void Awake()
+    {
+        soundManager = SoundManager.Instance;
+        soundManager.PlayBGM(SoundManager.Sound.BGM_MAINMANU);
+    }
     public void SignInComplete()
     {
         StartCoroutine(OpenScene());
     }
     public void OnTurnOffSignIn()
     {
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
         signInUI.gameObject.SetActive(false);
         signUpUI.gameObject.SetActive(true);
     }
     public void OnTurnOffSignUp()
     {
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
         signInUI.gameObject.SetActive(true);
         signUpUI.gameObject.SetActive(false);
     }

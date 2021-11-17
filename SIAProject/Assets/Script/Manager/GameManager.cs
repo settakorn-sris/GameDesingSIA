@@ -20,7 +20,11 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private Button puseButton;
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button mainMenuButton;
-
+    [SerializeField] private Button showAbountSkillButton;
+    [SerializeField] private Button closeAboutSkillButton;
+    [SerializeField] private GameObject aboutSkill;
+    [SerializeField] private TextMeshProUGUI countTimeText;
+  
     [SerializeField] private TextMeshProUGUI roundText;
     [SerializeField] private EnemyCharecter[] enemy;
     [SerializeField] private EnemyCharecter[] boss;
@@ -38,14 +42,23 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private Image skillImage;
     [SerializeField] private float timeToBuy;
     [SerializeField] private ScoreManager scoreManager;
+    
+    
 
 
-    [Header("Buy_Button")]
+
+  [Header("Buy_Button")]
     [SerializeField] private Button buyHealingButton;
     [SerializeField] private Button buySkillButton;
     [SerializeField] private Button buyUpPlayerDamageButton;
     [SerializeField] private TextMeshProUGUI healthPrice;
     [SerializeField] private int healingPrice = 3;
+    [SerializeField] private int addDamage = 2;
+    [SerializeField] private int buyAddDamagePrice = 3;
+    [SerializeField] private TextMeshProUGUI damageToAddText;
+    [SerializeField] private TextMeshProUGUI skillPriceText;
+    [SerializeField] private TextMeshProUGUI buyAddDamagePriceText;
+    
 
     [Header("Restart_UI")]
     public GameObject RestartPanel;
@@ -158,6 +171,7 @@ public class GameManager : Singleton<GameManager>
     public EnemyBulletPooling PoolingEnemyBullet;//get pool
     public Bullet EnemyBullet;
     public float EnemyFireRate;
+    public float EnemyRangeRotateSpeed;
     //DamageSpeed
     // Distance
 
@@ -178,14 +192,14 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float bossSpeed;
     [SerializeField] private int bossDamage;
     [SerializeField] private int scoreBossInRound;
-    [SerializeField] private int bossBulletDamage;
+
     public int HpForBossHealing;
     public int minianAmount;
  
-    #region For get Enemy Bullet property
-    public int getBossBulletDamage
+    #region For get Enemy Boss property
+    public int getBossDamage
     {
-        get { return bossBulletDamage; }
+        get { return bossDamage; }
     }
     #endregion
 
@@ -195,7 +209,14 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float minSpawnEnemyForRandomX = 10f;
     [SerializeField] private float maxSpawnEnemyForRandomZ = -5f;
     [SerializeField] private float minSpawnEnemyForRandomZ = -3.9f;
-    
+
+    [Header("Position for Spawn Minian")]
+    public float MaxMinianSpawnpositionX = 6;
+    public float MaxMinianSpawnPositionZ = 6;
+    public float MinMinianSpawnpositionX = -6;
+    public float MinMinianSpawnpositionZ = -6;
+
+
     #region Get SpawnEnemPoint
     public float MaxSpawnEnemyForRandomX
     {
@@ -229,8 +250,10 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+
+
     #endregion
-   
+    [Header("Position for Spawn Boss")]
     [SerializeField] private float spawnBossPositionX = -8;
     [SerializeField] private float spawnBossPositionZ = 13;
 
@@ -253,7 +276,8 @@ public class GameManager : Singleton<GameManager>
         ButtonListener();
         scoreManager = ScoreManager.Instance;
         StartGame();
-
+        soundManager = SoundManager.Instance;
+        soundManager.PlayBGM(SoundManager.Sound.BGM_SCENEGAME);
         //Sound
         //soundManager = SoundManager.Instance;
         //soundManager.PlayBGM(SoundManager.Sound.BGM);
@@ -272,9 +296,11 @@ public class GameManager : Singleton<GameManager>
         resumeButton.onClick.AddListener(ResumeGame);
         buyHealingButton.onClick.AddListener(BuyHealing);
         buySkillButton.onClick.AddListener(BuySkill);
-        goToMainMenuButton.onClick.AddListener(GoTOMainMenu);
+        goToMainMenuButton.onClick.AddListener(GotoMainMenu);
         buyUpPlayerDamageButton.onClick.AddListener(UpDamage);
         mainMenuButton.onClick.AddListener(GotoMainMenu);
+        showAbountSkillButton.onClick.AddListener(ShowAboutSkill);
+        closeAboutSkillButton.onClick.AddListener(CloseAbountSkill);
        
     }
 
@@ -296,11 +322,13 @@ public class GameManager : Singleton<GameManager>
         if (wave==Wave.ENEMY)
         {
             SpawnEnemy();
+            
         }
         else if(wave==Wave.BOSS && bossCheck.Length==0 && enemyCheck.Length == 0)
         {
             playerCamera.SetShake= true;
             SpawnBoss();
+            
         }
         else if(wave==Wave.BUY && bossCheck.Length==0 && enemyCheck.Length == 0) //wave==Wave.BUY && bossCheck.Length==0
         {
@@ -334,16 +362,16 @@ public class GameManager : Singleton<GameManager>
 
             if (timeForEnemySpawn >= 0) return;
             
-            Debug.Log("Enemy round");
-            
             enemy[indexForRandomEnemy].Init(enemyHp, enemySpeed, enemyDamage,scoreInRound);
             Instantiate(enemy[indexForRandomEnemy], new Vector3(xPosition, 0, zPosition), Quaternion.identity);
-            
+
+            soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.ENEMY_SPAWN);
+
             timeForEnemySpawn = UnityEngine.Random.Range(1,3);
             countEnemySpawnInround++;
-            
 
         }
+        AddHPAndDamage(enemyHp, enemyDamage);
         wave = Wave.BOSS;
         AddEnemyInAnotherRound();
         countEnemySpawnInround = 0;
@@ -363,22 +391,22 @@ public class GameManager : Singleton<GameManager>
             int indexForRandomBoss = UnityEngine.Random.Range(0, boss.Length);
             boss[indexForRandomBoss].Init(bossHp,bossSpeed,bossDamage,scoreBossInRound);
             Instantiate(boss[indexForRandomBoss], new Vector3(spawnBossPositionX, 0, spawnBossPositionZ), Quaternion.identity);
+            soundManager.PlayBGM(SoundManager.Sound.BGM_SPAWNBOSS);
         }
         //UpgradeItem() //if Boss Is Die
-        
+        AddHPAndDamage(bossHp, bossDamage);
         wave = Wave.BUY;
         timeCount = timeToBuy;
         randomSkillIndex = UnityEngine.Random.Range(0, playerSkill.Length);//// For random skill  
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
         //print(randomSkillIndex + " Skill");
     }
-    private void AddHPAndDamage(int hp,int damage,float speed)
+    private void AddHPAndDamage(int hp,int damage)//++EnemyDamage & Hp
     {
         var increaseHp = UnityEngine.Random.Range(10,20);
         var increaseDamage = UnityEngine.Random.Range(2, 4);
-        var increaseSpeed = UnityEngine.Random.Range(0, 2);
         hp += increaseHp;
         damage += increaseDamage;
-        speed += increaseSpeed;
 
     }
 
@@ -389,9 +417,12 @@ public class GameManager : Singleton<GameManager>
         //skillImage = playerSkill[randomSkillIndex].SkillImage;
         
         skillImage.sprite = playerSkill[randomSkillIndex].SkillImage.sprite;//Add Skill Image  
-
+        countTimeText.text = $"0{(int)timeCount}"; //Show timeCount
         timeCount -= Time.deltaTime;
-        
+        skillPriceText.text = $"{playerSkill[randomSkillIndex].SkillPrice}";
+        buyAddDamagePriceText.text = $"{buyAddDamagePrice}";
+        damageToAddText.text = $"{addDamage}";
+
         buyPanel.gameObject.SetActive(true);
         
         if (timeCount > 0) return;
@@ -414,23 +445,26 @@ public class GameManager : Singleton<GameManager>
     }
     private void StopGame()
     {
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
         gamePanel.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
     private void ResumeGame()
     {
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
         gamePanel.gameObject.SetActive(false);
         Time.timeScale = 1;
     }
-    private void GotoMainMenu()
+    public void GotoMainMenu()
     {
-       // SceneManager.LoadScene("MainMenu");
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
         LoadSceneManager.Instance.LoadScene("MainMenu");
     }
 
     //Buy Function
     private void BuyHealing()
     {
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.BUY_HEALING);
         if (scoreManager.Score < healingPrice) return;
         scoreManager.MinusScore(healingPrice);
         playerInScene.Healing(playerHp);
@@ -444,26 +478,50 @@ public class GameManager : Singleton<GameManager>
     }
 
     private void BuySkill()
-    {   
+    {
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
         if (scoreManager.Score < playerSkill[randomSkillIndex].SkillPrice) return;
       
         scoreManager.MinusScore(playerSkill[randomSkillIndex].SkillPrice);
-        buyPanel.SetActive(false);
-        playerInScene.GetSkill(playerSkill[randomSkillIndex]);                                      //
+        playerInScene.GetSkill(playerSkill[randomSkillIndex]);                                     
         playerSkillImg.sprite = playerSkill[randomSkillIndex].SkillButtonImg.sprite;
         timeCount = 0;
     }
     private void UpDamage()
     {
-        BulletDamage += 2;
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.BUY_DAMAGE);
+        if (scoreManager.Score < buyAddDamagePrice) return;
+        scoreManager.MinusScore(buyAddDamagePrice);
+
+        BulletDamage += addDamage;
+
+        buyAddDamagePrice += 1;
+
+        addDamage += 2;
         timeCount = 0;
+    }
+
+    private void ShowAboutSkill()
+    {
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
+        aboutSkill.SetActive(true);
+        Time.timeScale = 0;
+    }
+    private void CloseAbountSkill()
+    {
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
+        aboutSkill.SetActive(false);
+        Time.timeScale += 1;
     }
 
     #region "For Skill"
 
-    public void TimeSlow(float speed)
+    public void TimeSlow(float speed,float enemyRangeRotateSpeed,float enemyFireRate)
     {
         OnSlow(speed);
+        EnemyRangeRotateSpeed = enemyRangeRotateSpeed;
+        EnemyFireRate = enemyFireRate;
+
     }
 
 
@@ -473,6 +531,7 @@ public class GameManager : Singleton<GameManager>
     #region "Regame"
     private void ForRestartGame()
     {
+        soundManager.PlayBGM(SoundManager.Sound.BGM_DIE);
         //show panel & button & adsButton
         RestartPanel.SetActive(true);
         //Get score UI    //"Your Score :"
@@ -492,28 +551,11 @@ public class GameManager : Singleton<GameManager>
             Debug.Log($"{round >= FirebaseManager.Instance.round} ?");
             FirebaseManager.Instance.PosttoDatabase(FirebaseManager.Instance.idToken);
         }
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
     }
     
-    //MainManu
-    
-    private void GoTOMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-    private void GameReset()
-    {
-        SceneManager.LoadScene("Game");
-        scoreManager.Rescore();
-        
-    }
-    
-    private void ReGamePanel()
-    {
 
-        print("Total Score,Round Active");
-    }
     #endregion
     private void RandomMap()
     {
@@ -544,7 +586,7 @@ public class GameManager : Singleton<GameManager>
         if (!check)
         {
 
-            ReGamePanel();
+            GotoMainMenu();
         }
     }
     #endregion
