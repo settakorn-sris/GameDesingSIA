@@ -551,7 +551,7 @@ public class GameManager : Singleton<GameManager>
             Debug.Log($"{round >= FirebaseManager.Instance.round} ?");
             FirebaseManager.Instance.PosttoDatabase(FirebaseManager.Instance.idToken);
         }
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
 
     }
     
