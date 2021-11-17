@@ -45,7 +45,7 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
         {
             GameManager.Instance.CountrolAdsPanel(true);
             GameManager.Instance.HealingWithAds();
-           
+
         }
         else
         {

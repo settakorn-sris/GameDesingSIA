@@ -20,7 +20,7 @@ public class EnemyMaleeBoss : Boss
     public override void NormalState()
     {
         soundManager.Play(soundManager.AudioSorceForEnemyAction, SoundManager.Sound.ENEMY_BOOSTSPEED);
-        Speed = 20;
+        Speed = 10;
         base.NormalState();
     }
     public override void StateTwo()
