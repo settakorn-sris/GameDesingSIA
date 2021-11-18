@@ -10,6 +10,7 @@ public class PoolingOBJ : MonoBehaviour
     [SerializeField] private float fireRate = 1f;//Player => GM => Pool (If we want to manage fireRate in plyer)  f
     [SerializeField] private float timeCountForFire = 0;
 
+    private SoundManager soundManager;
     private int ControlPool = 0;
     private GameManager GM;
 
@@ -17,6 +18,7 @@ public class PoolingOBJ : MonoBehaviour
     {
         GM = GameManager.Instance;
         fireRate = GM.FireRate;
+        soundManager = SoundManager.Instance;
     }
     void Start()
     {
@@ -44,7 +46,7 @@ public class PoolingOBJ : MonoBehaviour
         }
 
         if (Time.time < timeCountForFire) return;
-
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PLAYER_ATK);
         bulletInPool[ControlPool].transform.position = transform.position;
         //Get DM from GM;
         bulletInPool[ControlPool].GetDamage(GM.BulletDamage);
