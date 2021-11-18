@@ -80,9 +80,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private PlayerCharecter player;
     [SerializeField] private int playerHp;
     [SerializeField] private float playerSpeed;
-    [SerializeField] private Skill[] playerSkill; 
+    [SerializeField] private Skill[] playerSkill;
+    [SerializeField] private TextMeshProUGUI playerDamageText;
     private PlayerCharecter playerInScene;
-    private Button playerSkillButton;
 
     #region playerInScene 
     public Vector3 GetPlayerInSceneTranForm
@@ -264,7 +264,7 @@ public class GameManager : Singleton<GameManager>
     private int randomSkillIndex = 0;
     public GameObject CheckSkillCollision;  
     //Wave
-    private Wave wave;
+    public Wave wave { get; private set; }
    
 
     public delegate void SlowSkillActive(float speed);
@@ -272,16 +272,10 @@ public class GameManager : Singleton<GameManager>
 
     private void Awake()
     {
-       
-        ButtonListener();
+        soundManager = SoundManager.Instance;
         scoreManager = ScoreManager.Instance;
         StartGame();
-        soundManager = SoundManager.Instance;
-        soundManager.PlayBGM(SoundManager.Sound.BGM_SCENEGAME);
-        //Sound
-        //soundManager = SoundManager.Instance;
-        //soundManager.PlayBGM(SoundManager.Sound.BGM);
-        //OnReStart += RestartGame;
+        ButtonListener();
 
     }
 
@@ -306,12 +300,15 @@ public class GameManager : Singleton<GameManager>
 
     public void StartGame()
     {
+        soundManager.PlayBGM(SoundManager.Sound.BGM_SCENEGAME);
         scoreManager.Rescore();
         RoundReset();
         SpawnPlayer();
         wave = Wave.ENEMY;
         timeForEnemySpawn = 1;
+        playerDamageText.text = $"Player Damage : {BulletDamage}";
         healthPrice.text = $": {healingPrice}";
+        
     }
   
     private void GameLoop()
@@ -458,6 +455,7 @@ public class GameManager : Singleton<GameManager>
     public void GotoMainMenu()
     {
         soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
+        Time.timeScale = 1;
         LoadSceneManager.Instance.LoadScene("MainMenu");
     }
 
@@ -495,6 +493,7 @@ public class GameManager : Singleton<GameManager>
 
         BulletDamage += addDamage;
 
+        playerDamageText.text = $"Player Damage : {BulletDamage}";
         buyAddDamagePrice += 1;
 
         addDamage += 2;
@@ -511,7 +510,7 @@ public class GameManager : Singleton<GameManager>
     {
         soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
         aboutSkill.SetActive(false);
-        Time.timeScale += 1;
+        Time.timeScale = 1;
     }
 
     #region "For Skill"
@@ -538,20 +537,25 @@ public class GameManager : Singleton<GameManager>
         finalScore.text = scoreManager.GetScoreText.text;
         //Get Round  UI     //Your Round :
         lastRound.text = roundText.text;
+        bool isChanged = false;
 
         if(scoreManager.Score >= FirebaseManager.Instance.score)
         {
             FirebaseManager.Instance.score = scoreManager.Score;
-            Debug.Log($"Final Score : {FirebaseManager.Instance.score}");
-            FirebaseManager.Instance.PosttoDatabase(FirebaseManager.Instance.idToken);
+            isChanged = true;
         }
         if(round >= FirebaseManager.Instance.round)
         {
             FirebaseManager.Instance.round = round;
-            Debug.Log($"{round >= FirebaseManager.Instance.round} ?");
+            isChanged = true;
+        }
+
+        if (isChanged)
+        {
             FirebaseManager.Instance.PosttoDatabase(FirebaseManager.Instance.idToken);
         }
-        //Time.timeScale = 0;
+
+        Time.timeScale = 0;
 
     }
     
@@ -572,17 +576,23 @@ public class GameManager : Singleton<GameManager>
     #region "Ads"
     public void HealingWithAds()
     {
-       
+        
         playerInScene.Healing(playerHp);
-       // HealingPartical.GetPlayer(playerInScene);
-        //var partical = Instantiate(HealingPartical, new Vector3(playerInScene.transform.position.x, 0, playerInScene.transform.position.z), Quaternion.identity);
+        if(wave == Wave.BOSS)
+        {
+            soundManager.PlayBGM(SoundManager.Sound.BGM_SPAWNBOSS);
+        }
+        else
+        {
+            soundManager.PlayBGM(SoundManager.Sound.BGM_SCENEGAME);
+        }
 
     }
 
     public void CountrolAdsPanel(bool check)
     {
         RestartPanel.SetActive(false);
-        Time.timeScale += 1;
+        Time.timeScale = 1;
         if (!check)
         {
 

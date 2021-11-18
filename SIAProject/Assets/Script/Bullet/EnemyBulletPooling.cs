@@ -8,7 +8,7 @@ public class EnemyBulletPooling : Singleton<EnemyBulletPooling>
    [SerializeField] private int bulletAmount;
     private Queue<Bullet> enemyBulletQueue = new Queue<Bullet>();
     //private Queue<Bullet> playerBullet = new Queue<Bullet>();
-    private GameManager gM;
+    private GameManager gM ;
 
 
     private void Awake()

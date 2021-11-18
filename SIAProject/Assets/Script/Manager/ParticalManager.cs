@@ -28,6 +28,7 @@ public class ParticalManager : Singleton<ParticalManager>
     [SerializeField] private UseParticle[] particlesForPlayer;
     private ParticleSystem particle;
 
+
     private void Awake()
     {
         GM = GameManager.Instance;
@@ -35,12 +36,14 @@ public class ParticalManager : Singleton<ParticalManager>
     private void Update()
     {
         transform.position = GM.GetPlayerInSceneTranForm;
+     
     }
 
 
     public void PlayParticle(PlayerParticle particalName)
     {
-        var particleToPlay = GetPartical(particalName);
+        UseParticle particleToPlay = new UseParticle();
+        particleToPlay = GetPartical(particalName);
         particle = particleToPlay.partical;
         particle.Play();
     }

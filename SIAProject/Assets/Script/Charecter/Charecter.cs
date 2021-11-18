@@ -19,7 +19,6 @@ public abstract class Charecter : MonoBehaviour,ITakeDamage
     }
     protected virtual void Update()
     {
-        Debug.Log(Hp);
         healthBar.SetHealth(Hp);
     }
     protected void Init(int hp, float speed)
