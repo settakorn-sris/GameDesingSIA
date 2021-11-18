@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903171909372187585}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0193}
+  m_LocalPosition: {x: 0, y: -0.0051, z: 0.0193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2767554241355291551}
@@ -158,28 +158,6 @@ MonoBehaviour:
   player: {fileID: 0}
   enemy: {fileID: 5547396781875424948}
   distanceStopEnemy: 3
---- !u!195 &9121936458142656026
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3252587700182303013}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.009989396
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.03084693
-  m_BaseOffset: 0.01542345
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &5547396781875424948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +180,28 @@ MonoBehaviour:
   dieParticle: {fileID: 8894045807073587843, guid: d2685fc7db8a0864f8e48f5c36cab38f, type: 3}
   minian: {fileID: 4148465862400526694, guid: 02136c1376ef5104ba3360a13eb2e62c, type: 3}
   firePosition: {fileID: 903171909372187585}
-  rotateSpeed: 500
+--- !u!195 &9121936458142656026
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252587700182303013}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.009989396
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.03084693
+  m_BaseOffset: 0.01542345
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &2659648399641892142
 PrefabInstance:
   m_ObjectHideFlags: 0
