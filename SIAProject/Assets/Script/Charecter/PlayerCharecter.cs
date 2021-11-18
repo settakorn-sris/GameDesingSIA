@@ -68,7 +68,7 @@ public class PlayerCharecter : Charecter
     }
     public void Attack()
     {
-        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PLAYER_ATK);
+        //soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PLAYER_ATK);
         bullet.GetPool();
         animator.SetTrigger("ATK");
         //Instantiate(bulletType, bullet.transform.position, Quaternion.identity);
