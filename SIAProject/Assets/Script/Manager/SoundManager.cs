@@ -22,7 +22,7 @@ public class SoundManager : Singleton<SoundManager>
       SCREENSHOT,
       PUSH_BUTTON,
       PLAYER_TAKEDAMAGE,
-      //PLAYER_ATK,
+      
       BUY_HEALING,
       BUY_DAMAGE,
 
@@ -40,15 +40,15 @@ public class SoundManager : Singleton<SoundManager>
       ENEMY_DIE,
       BOSS_SPAWN,
       Boss_Healing,
-
+      PLAYER_ATK,
 
     }
-      
-
-    
 
 
-  
+
+
+
+
     [Serializable]
     public struct SoundClip
     {

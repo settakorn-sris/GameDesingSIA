@@ -242,6 +242,7 @@ MonoBehaviour:
   CanGetDamage: 1
   CheckCollisionForSkill: {fileID: 0}
   GM: {fileID: 0}
+  AdsParticle: {fileID: 0}
 --- !u!1001 &8469689491816529197
 PrefabInstance:
   m_ObjectHideFlags: 0
