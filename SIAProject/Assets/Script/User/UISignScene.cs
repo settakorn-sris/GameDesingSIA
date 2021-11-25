@@ -11,6 +11,7 @@ public class UISignScene : MonoBehaviour
     [SerializeField] private RectTransform signUpUI;
     [SerializeField] private TMP_Text wronging;
     [SerializeField] private RectTransform wrongPopup;
+    [SerializeField] private GameObject howToPlayPanel;
     private SoundManager soundManager;
 
     private void Awake()
@@ -54,5 +55,16 @@ public class UISignScene : MonoBehaviour
         //SceneManager.LoadScene("MainMenu");
         LoadSceneManager.Instance.LoadScene("MainMenu");
 
+    }
+
+    public void OpenHowToPlay()
+    {
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
+        howToPlayPanel.gameObject.SetActive(true);
+    }
+    public void CloseHowToPlay()
+    {
+        soundManager.Play(soundManager.AudioSorceForPlayerAction, SoundManager.Sound.PUSH_BUTTON);
+        howToPlayPanel.gameObject.SetActive(false);
     }
 }
